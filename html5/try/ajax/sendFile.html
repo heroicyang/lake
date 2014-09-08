@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SendFile</title>
+</head>
+<body>
+	<input type="file" name="blob" value="" placeholder="" multiple="multiple">
+	<button>send</button>
+	<div style="width:600px;height:400px;background:orange;"></div>
+	<script>
+		var input=document.querySelector('[name="blob"]');
+		var btn=document.querySelector('button');
+		var reader=new FileReader();
+
+		btn.addEventListener('click',send);
+
+		function send(){
+			console.log('begin read');
+			reader.onload=function(){
+				console.log(reader.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+
+
+	</script>
+</body>
+</html>
