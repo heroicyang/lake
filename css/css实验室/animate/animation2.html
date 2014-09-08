@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+	<style>
+	/*给方型box一个初步样式*/
+   a.box {
+      display: block;
+      width:500px;
+      height:500px;
+      background: green;
+      margin-bottom: 20px;
+   }
+   a.round {
+      display: block;
+      -webkit-animation-name: 'round'; /*动画名称*/
+      -webkit-animation-duration: 4s;/*播放一次所持续时间*/
+    }     
+   .click-btn {
+       background: green;
+       padding: 5px 10px;
+       color: #fff;
+       font-size: 16px;
+       font-weight: bold;
+       text-align: center;
+       cursor: pointer;
+   }
+	</style>
+</head>
+<body>
+	 	<a href="#" class="box"></a>
+   		<span class="click-btn">Click</span>
+		<script>
+		$(function(){
+         	$(".click-btn").click(function(){
+            	$('a').removeClass('box').addClass("round");
+       		});
+       	})
+		</script>
+</body>
+</html>

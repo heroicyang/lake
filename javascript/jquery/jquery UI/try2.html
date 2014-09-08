@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var Shaka=function(options){
+    	 if(!this.see){
+    	 return new Shaka('hi world!');
+    	 }
+         this.options=options;
+    	 };
+    	Shaka.prototype={
+          see:function(){
+          console.log(this.options);
+          }
+          }
+     var b=Shaka('hi world!');
+	     b.see();
+</script>
+</body>
+</html>

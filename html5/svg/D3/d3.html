@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="metro/d3.v3.js"></script>
+  <style>
+    .little{
+      fill: #aaa;
+      stroke: #666;
+      stroke-width: 1.5px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <svg width="360" height="180">
+      <circle class="little" cx="180" cy="45" r="12"></circle>
+      <circle class="little" cx="60" cy="90" r="12"></circle>
+      <circle class="little" cx="300" cy="135" r="12"></circle>
+    </svg>
+  </div>
+  <script>
+    var svg=d3;
+    var circle = svg.selectAll("circle");
+    circle.on('mouseover',function(){ d3.select(this)
+      .transition()
+        .duration(400)
+          .delay(100)
+          .attr("r", 40)
+          .style("fill","white");})
+    circle.on('mouseout',function(){ d3.select(this)
+      .transition()
+        .duration(400)
+        .attr("r",12)
+        .style("fill","#ccc");})
+  </script>
+</body>
+</html>

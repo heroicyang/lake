@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.container{
+		width: 600px;
+		margin:0 auto;
+	}
+	.container .box{
+		height: 200px;
+		background: #eee;
+		margin:16px 0;
+		z-index: 0;
+	}
+	.container .box .-more{
+		padding-top: 160px;
+		height: 40px;
+		line-height: 40px;
+		text-align: right;
+		position: relative;
+		z-index: 3;
+	}
+	.container .box .-more-a{
+		font-size: 12px;
+		position: absolute;
+		top: 200px;
+		right: 0;
+		background: #333;
+		z-index: 3;
+	}
+</style>
+<body>
+	<div class="container">
+		<div class="box">
+			<p>
+				<div class="-more">
+					<a>更多</a>
+					<div class="-more-a">
+						<p>更多选项A</p>
+						<p>更多选项B</p>
+						<p>更多选项C</p>
+						<p>更多选项D</p>
+					</div>
+				</div>
+			</p>
+		</div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

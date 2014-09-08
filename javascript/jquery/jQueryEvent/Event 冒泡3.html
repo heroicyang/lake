@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+
+<title></title>
+<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#div1").mousedown(function(event){
+            //event.stopPropagation();
+            //return false;
+            event.preventDefault();
+            event.stopPropagation();
+        });
+        $("#div2").mousedown(function(event){
+            console.log("div2 is down");
+        });
+    });
+</script>
+</head>
+<body>
+    <div id="rootDiv" style="position:relative;left:400px;top:200px;">
+        <div>1.单击输入框，使输入框获取焦点：</div>
+        <input id="input1" style="width:250px;" type="text"></input>
+        <div id="div2">
+            <div id="div1" style="width:200px;height:200px;background-color:#eee;"><br><br>2.然后再单击这里</div>
+        </div>
+    </div>
+</body>
+</html>

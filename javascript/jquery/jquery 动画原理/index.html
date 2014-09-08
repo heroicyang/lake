@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<style type="text/css">
+    .container{
+        position: relative;
+    }
+    #div1 {
+        background:green;
+        width:188px;
+        height:188px;
+        position:absolute;
+    }
+</style>
+<div>
+    <button id='start'>START</button>
+    <button id='stop'>STOP</button>
+</div>
+<div class='container'>
+<div id="div1">
+    <p>这是prograph1</p>
+    <p>这是prograph2</p>
+    <p>这是prograph3</p>
+    <p>这是prograph4</p>
+    <p>这是prograph5</p>
+</div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+ $(function(){
+  var timers=[];
+  var timerid;
+
+  function FX(elem,options,name){
+    this.elem=elem;
+    this.options=options;
+    this.name=name;
+    }
+   FX.prototype.custom=function(from,to){
+    this.startTime=jQuery.now();
+    this.start=from;
+    this.end=to;
+    timers.push(this);
+   };
+   
+   function cb1(){console.log(1)};
+   function cb2(){console.log(2)};
+
+   var se=$('#div1');
+   console.log(se.queue('ad'));
+       se.queue(function(){
+          console.log('hello world');
+       });
+       se.queue('ad',{
+              a:'a',
+              b:'b'
+            })
+   console.log(se.queue('ad'));
+   console.log(se.queue());
+ });
+</script>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    .div1 {
+        position:absolute;
+        width:300px;
+        height:200px;
+        background: blue;
+        left:0;
+        top:0;
+    }
+</style>
+  <div>
+    <button id='start'>动画a</button>
+    <button id='show'>动画b</button>
+    <button id='clear'>清楚队列</button>
+    <button id='stop'>停止动画</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+    </div>
+  </div>
+</body>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var se=$('.div1');
+            var start=$('#start');
+            var clear=$('#clear');
+            var stop=$('#stop');
+            var show=$('#show');
+            function change(){
+                console.log(se.queue());    
+            }
+            start.click(function(){
+                se.animate({top:'300px'},4000);
+            });
+            clear.click(function(){
+                se.clearQueue();
+            });
+            stop.click(function(){
+                //se.stop();
+                //se.stop(false,false);
+                //se.stop(false,true);
+                //se.stop(true,false);
+                se.stop(true,true);
+            });
+            show.click(function(){
+                se.animate({left:'300px'},4000);
+            });
+            setInterval(change,200);
+        });
+    </script>
+</html>

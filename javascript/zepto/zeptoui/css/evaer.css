@@ -1,0 +1,244 @@
+﻿/*\
+动画模块
+\*/
+.a-fadein{
+	-webkit-animation:fadein 0.4s ease-in;
+	-moz-animation:fadein 0.4s ease-in;
+	-ms-animation:fadein 0.4s ease-in;
+	animation:fadein 0.4s ease-in;
+}
+.a-vleftin{
+	-webkit-animation:vleftin 0.4s ease-in;
+	-moz-animation:vleftin 0.4s ease-in;
+	-ms-animation:vleftin 0.4s ease-in;
+	animation:vleftin 0.4s ease-in;
+}
+.a-vleftout{
+	-webkit-animation:vleftout 0.4s ease-in;
+	-moz-animation:vleftout 0.4s ease-in;
+	-ms-animation:vleftout 0.4s ease-in;
+	animation:vleftout 0.4s ease-in;
+}
+.a-vrightin{
+	-webkit-animation:vrightin 0.4s ease-in;
+	-moz-animation:vrightin 0.4s ease-in;
+	-ms-animation:vrightin 0.4s ease-in;
+	animation:vrightin 0.4s ease-in;
+}
+.a-vrightout{
+	-webkit-animation:vrightout 0.4s ease-in;
+	-moz-animation:vrightout 0.4s ease-in;
+	-ms-animation:vrightout 0.4s ease-in;
+	animation:vrightout 0.4s ease-in;
+}
+/* 淡入 */
+@-webkit-keyframes fadein{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+@-moz-keyframes fadein{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+@-ms-keyframes fadein{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+@keyframes fadein{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+/* 弹入-从左 */
+@-webkit-keyframes vleftin{
+    0%{-webkit-transform:translateX(-100%);}
+    100%{-webkit-transform:translateX(0);}
+}
+@-moz-keyframes vleftin{
+    0%{-moz-transform:translateX(-100%);}
+    100%{-moz-transform:translateX(0);}
+}
+@-ms-keyframes vleftin{
+    0%{-ms-transform:translateX(-100%);}
+    100%{-ms-transform:translateX(0);}
+}
+@keyframes vleftin{
+    0%{transform:translateX(-100%);}
+    100%{transform:translateX(0);}
+}
+/* 弹入-从右*/
+@-webkit-keyframes vrightin{
+    0%{-webkit-transform:translateX(100%);}
+    100%{-webkit-transform:translateX(0);}
+}
+@-moz-keyframes vrightin{
+    0%{-moz-transform:translateX(100%);}
+    100%{-moz-transform:translateX(0);}
+}
+@-ms-keyframes vrightin{
+    0%{-ms-transform:translateX(100%);}
+    100%{-ms-transform:translateX(0);}
+}
+@keyframes vrightin{
+    0%{transform:translateX(100%);}
+    100%{transform:translateX(0);}
+}
+
+/*弹出-出右*/
+@-webkit-keyframes vrightout{
+    0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(100%);}
+}
+@-moz-keyframes vrightout{
+    0%{-moz-transform:translateX(0);}
+    100%{-moz-transform:translateX(100%);}
+}
+@-ms-keyframes vrightout{
+    0%{-ms-transform:translateX(0);}
+    100%{-ms-transform:translateX(100%);}
+}
+@keyframes vrightout{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(100%);}
+}
+/*弹出-出左*/
+@-webkit-keyframes vleftout{
+    0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(-100%);}
+}
+@-moz-keyframes vleftout{
+    0%{-moz-transform:translateX(0);}
+    100%{-moz-transform:translateX(-100%);}
+}
+@-ms-keyframes vleftout{
+    0%{-ms-transform:translateX(0);}
+    100%{-ms-transform:translateX(-100%);}
+}
+@keyframes vleftout{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+}
+/*\
+幻灯模块
+\*/
+.m-mag{
+	position: relative;
+	width: 435px;
+	height: 250px;
+}
+.m-mag .m-mag-con{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.m-mag .m-mag-con div{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.m-mag .m-mag-con .preve{
+	z-index: 1;
+	display: block;
+}
+.m-mag .m-mag-con .active{
+	z-index:2;
+	display: block;
+}
+.m-mag .m-mag-con img{
+	width:100%;
+	height:100%;
+}
+.m-mag ul{
+	position: absolute;
+	z-index: 4;
+	right: 10px;
+	bottom: 10px;
+}
+.m-mag ul li{
+	display: block;
+	float: left;
+	width: 40px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+	color: #fff;
+	background: blue;
+	cursor: pointer;
+}
+.m-mag ul .active{
+	color: blue;
+	background: #fff;
+}
+/*\
+折叠模块
+\*/
+.m-ac{}
+.m-ac .m-ac-con{
+	display: none;
+}
+.m-ac .active .m-ac-con{
+	display: block;
+}
+/*\
+模态框框模块
+\*/
+.m-modal-open{
+	overflow: hidden;
+}
+.m-modal{}
+.m-modal{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000000;
+	opacity: 0.8;
+}
+.m-modal .m-modal-con{
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	z-index: 1050;
+	width: 560px;
+	margin-left: -280px;
+	background-color: #ffffff;
+	border: 1px solid #999;
+    border-radius: 6px;
+}
+/*\
+树形模块
+\*/
+.m-tree{
+	margin: 0;
+	padding: 0;
+}
+.m-tree ul,
+.m-tree li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+.m-tree ul{
+	padding-left: 1em;
+}
+.m-tree span{
+	display: block;
+	padding-left: 20px;
+	background: url(../img/tree-node.gif) no-repeat left center;
+}
+.m-tree i{
+	display: block;
+	padding-left: 10px;
+	background: url(../img/tree-open.png) no-repeat left center;
+	font-style: normal;
+}
+.m-tree .in i{
+	background: url(../img/tree-close.png) no-repeat left center;
+}
+.m-tree .in ul{
+	display: none;
+}

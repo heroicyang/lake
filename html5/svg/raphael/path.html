@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="metro/raphael.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  /*\
+  raphael图像室
+  \*/
+  var paper=Raphael(10,50,800,600);
+  var path=paper.path()
+
+  var arra="M300 200 l0 200 l300 0 Z"
+  var arrb=['M',0,0,'L',100,0,'L',100,100,'Z']
+  path.attr({stroke: "#444", "stroke-width": 2,fill:'#eee'})
+  path.attr('path',arrb)
+  </script>
+</body>
+</html>

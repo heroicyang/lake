@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!--
+	float的原则是
+	先上后左
+
+	同一行内右边高度高的元素
+	会遮挡住左边高度低的元素
+	-->
+	<style>
+		body{
+			margin:0px;
+			padding: 0px;
+		}
+		.con{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.con:after{
+			clear: both;
+			display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";
+		}
+		.g-span{
+			display: block;
+			float: left;
+			width: 198px;
+			background: #0066ff;
+			border:1px orange solid;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="g-span" style="height:200px">
+		</div>
+		<div class="g-span" style="height:300px">
+		</div>
+		<div class="g-span" style="height:220px">
+		</div>
+		<div class="g-span" style="height:180px">
+		</div>
+		<div class="g-span" style="height:180px">
+		</div>
+	</div>
+</body>
+</html>

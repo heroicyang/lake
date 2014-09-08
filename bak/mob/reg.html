@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纷享销客官网，移动互联时代最佳销售管理工具</title>
+	<meta name="author" content="北京易动纷享科技有限公司" />
+	<meta name="keywords" content="纷享,纷享科技,纷享销客,销售团队管理,分享,企业社会化,办公自动化,CRM,移动办公,移动互联网,移动审批,手机办公,移动签批,明道,Yammer" />
+	<meta name="description" content="销售外勤管理，专业销售日志，移动CRM，销售协同管理，将公司装进手机里，随时随地进行销售管理和业务沟通，助力企业销售业绩倍增。" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/zepto.min.js"></script>
+	<script src="js/lib/zepto_help.js"></script>
+	<script src="js/lib/common.js"></script>
+	<script src="js/lib/statistics.js"></script>
+
+	<!--<link rel="stylesheet" href="style/common.css">-->
+	<link rel="stylesheet" href="style/main.css?2">
+	<link rel="stylesheet" href="style/reg.css?2">
+</head>
+<body>
+	<div class="areg-page">
+		<div class="areg-header">
+			<img src="image/common_logo.png" alt="" class="f-fl" style="width:140px;height:35px;margin:5px 0 0 10px;">
+			<a href="tel:4006689050" class="areg-header-phone f-fr" style="margin-top:12px;"><img src="image/common_phone.png" alt="" style="width:27px;height:27px;"></a>
+		</div>
+		<div class="areg-nav">
+			<span class="f-fl"><a href="index.html"><img src="images/common_return.png" alt="" style="width:18px;height:18px;">返回手机版首页</a></span>
+			<span class="f-fr"><a href="downloadsection.html"><img src="images/common_download.png" alt="" style="width:24px;height:18px;">手机App下载</a></span>
+		</div>
+		<div class="areg-con">
+		<!--
+			<div class="areg-section">
+				<h3>有企业邀请您加入</h3>
+				<div class="areg-section-inviteinfo areg-section-line">
+					<div class="areg-section-inviteinfo-box">
+						<p class="-inviteinfo-title">北京创维互动信息技术有限公司</p>
+						<p><span>企业帐号:</span>BJcwhd</p>
+						<p><span>邀请人:</span>谢美美</p>
+						<p><span>邀请时间:</span>2014-07-14</p>
+					</div>
+					<p class="-invite-btn"><button class="areg-btn">接受邀请</button></p>
+					<p class="-invite-tip">登录密码请查阅当时邀请您的短信或邮件</p>
+				</div>
+				<div class="areg-section-inviteinfo areg-section-line">
+					<div class="areg-section-inviteinfo-box">
+						<p class="-inviteinfo-title">北京创维互动信息技术有限公司</p>
+						<p><span>企业帐号:</span>BJcwhd</p>
+						<p><span>邀请人:</span>谢美美</p>
+						<p><span>邀请时间:</span>2014-07-14</p>
+					</div>
+					<p class="-invite-btn"><button class="areg-btn">接受邀请</button></p>
+					<p class="-invite-tip">登录密码请查阅当时邀请您的短信或邮件</p>
+				</div>
+				<div class="areg-section-inviteinfo areg-section-line">
+					<div class="areg-section-inviteinfo-box">
+						<p class="-inviteinfo-title">北京创维互动信息技术有限公司</p>
+						<p><span>企业帐号:</span>BJcwhd</p>
+						<p><span>邀请人:</span>谢美美</p>
+						<p><span>邀请时间:</span>2014-07-14</p>
+					</div>
+					<p class="-invite-btn"><button class="areg-btn">接受邀请</button></p>
+					<p class="-invite-tip">登录密码请查阅当时邀请您的短信或邮件</p>
+				</div>
+				<p class="areg-section-line" style="color:#b3b3b3">您也可以选择以下操作</p>
+				<p class="areg-section-line"><button class="areg-btn">继续注册</button></p>
+			</div>
+			<style>
+				.areg-con{background: #fff}
+			</style>
+		-->
+		</div>
+		<div class="areg-footer">
+			<img src="image/footer_weixin.png" alt="" class="f-fl" style="width:37px;height:44px;margin:4px 4px 0 4px">
+			<div class="f-fl areg-footer-info">
+				<h6>关注纷享销客官方微信</h6>
+				<p>订阅号:fxiaoke4006689050 服务号:fxiaokevip</p>
+			</div>
+			<a href="tel:4006689050" class="areg-footer-phone f-fr" style="margin-top:5px;"><img src="image/footer_phone2.png" alt="" style="width:40px;height:40px;"></a>
+		</div>
+		<!--
+		<div class="s-alert">
+			<div class="s-alert-close"></div>
+			<div class="s-alert-content">
+				
+			</div>
+			<div class="s-alert-button">
+				<span>确认</span>
+			</div>
+		</div>
+		-->
+		<!--注册第一步 获取手机信息-->
+		<script type="text/template" id="reg-getphone">
+			<div class="areg-section">
+				<h2>注册纷享帐号</h2>
+				<div class="areg-section-line">
+					<p class="areg-section-line-tip"><span>手机号</span> <b>请输入手机号</b></p>
+					<input type="telephone" placeholder="请输入手机号码" class="-input-phone">
+				</div>
+				<div class="areg-section-line f-clear">
+					<p class="areg-section-line-tip"><span>校验码</span> <b>请输入校验码</b></p>
+					<div class="areg-imgcode-right"><img class="-captcha-img" src=""> <span class="-captcha-change">换一张</span> </div>
+					<div class="areg-imgcode-left"><input type="text" placeholder="请输入右侧字符" class="-input-imgcode"></div>
+				</div>
+				<p class="areg-section-line g-mt30"><span class="areg-btn -get-msg">获取验证短信 <span>(<b>30</b>)</span></span></p>
+				<div class="areg-section-line g-mt5">
+					<p class="areg-section-line-tip"><span>验证码</span> <b></b></p>
+					<input type="text" placeholder="请填写短信验证码" class="-input-next">
+				</div>
+				<p class="areg-section-line g-mt30"><span class="areg-btn areg-btn-false -next-stage">下一步</span></p>
+				<p class="areg-section-line g-mt30"><a class="-nomsg-tip">没收到验证码怎么办?</a></p>
+			</div>
+  		</script>
+  		<!--end-->
+
+		<!--注册第二步 获取企业信息及企业帐号-->
+  		<script type="text/template" id="reg-baseinfo">
+   			<div class="areg-section">
+				<h2>填写企业信息</h2>
+				<div class="areg-section-line">
+					<p class="areg-section-line-info"><b class="-info-label">姓名</b>      <span class="-info-tip"> <b>5</b>/18</apan></p>
+					<input type="text" placeholder="请填写真实姓名" class="-info-person-name">
+				</div>
+				<div class="areg-section-line">
+					<p class="areg-section-line-info"><b class="-info-label">企业名称</b>  <span class="-info-tip"> <b>5</b>/25</span></p>
+					<input type="text" placeholder="如:北京宝马4s店" class="-info-company-name">
+				</div>
+				<div class="areg-section-line">
+					<p class="areg-section-line-info">
+						<b class="-info-label">企业帐号</b>  
+						<span class="-info-smart"> <b>首字需英文</b> <b>6-20位字符</b> <b class="-info-smartnum"><i>5</i>/20</b> </span>
+					</p>
+					<input type="text" placeholder="登录用 请牢记" class="-info-company-account">
+				</div>
+				<div class="areg-section-line">
+					<p class="areg-section-line-info"><b class="-info-label">优惠码</b>    <span class="-info-tip"></span></p>
+					<input type="text" placeholder="(选填)" class="-info-company-coupon">
+				</div>
+				<p class="areg-section-line g-mt20"><span class="areg-btn -info-btn-send">保存信息</span></p>
+				<p class="areg-section-line g-mt30"><a href="#" class="-what-tip">什么是企业名称和企业帐号?</a></p>
+			</div>
+  		</script>
+  		<!--end-->
+
+  		<!--注册第三步 企业注册成功信息-->
+  		<script type="text/template" id="reg-success">
+   			<div class="areg-section">
+   				<h2>注册成功</h2>
+				<div class="areg-section-success areg-section-line">
+					<p><span>企业帐号:</span> <b class="-success-companyaccount">univise</b></p>
+					<p><span>个人帐号:</span> <b class="-success-personaccount">18267161221</b></p>
+					<p><span>初始密码:</span> <b class="-success-password">817271</b></p>
+				</div>
+				<div class="areg-success-info">
+					<p>注册成功! 请牢记您的登录信息。</p>
+					<p>初次登录平台会提示您修改登录密码。</p>
+				</div>
+				
+				<p class="areg-section-line"><span class="areg-btn -success-download">下载App</span></p>
+				<p class="areg-section-line">如有其他疑问请与我们联系 <span style="color:#f89c18">400-668-9050</span></p>
+			</div>
+  		</script>
+  		<!--end-->
+
+  		<!--弹出框 start-->
+  		<script type="text/template" id="layer">
+  			<div class="m-layer-wrapper">
+				<div class="m-layer-content">
+					<div class="m-layer-content-close">
+					</div>
+					<div class="m-layer-text">
+						
+					</div>
+				</div>
+				<style>
+					body{overflow: hidden;}
+				</style>
+			</div>
+  		</script>
+  		<!--end-->
+
+  		<!--邀请人列表 start-->
+  		<script type="text/template" id="invite">
+  			<div class="areg-section">
+				<h3>有企业邀请您加入</h3>
+				<div class="areg-section-inviteinfo areg-section-line">
+					<% _.each(data,function(value){ %>
+					<div class="areg-section-inviteinfo-box">
+						<p class="-inviteinfo-title"><%=value.enterprisename%></p>
+						<p><span>企业帐号:</span><%=value.enterpriseaccount%></p>
+						<p><span>邀请人:</span><%=value.inviteemployeename%></p>
+						<p><span>邀请时间:</span><%=value.createtime%></p>
+					</div>
+					<p class="-invite-btn"><span class="areg-btn -invite-accept">下载 App</span></p>
+					<p class="-invite-tip">登录密码请查阅当时邀请您的短信或邮件</p>
+					<% }) %>
+				</div>
+				<p class="areg-section-line" style="color:#b3b3b3">您也可以选择以下操作</p>
+				<p class="areg-section-line"><span class="areg-btn -invite-goon">继续注册</span></p>
+			</div>
+			<style>
+				.areg-con{background: #fff}
+			</style>
+  		</script>
+  		<!--end-->
+	</div>
+	<script src="js/areg.js?2"></script>
+</body>
+</html>

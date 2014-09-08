@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cdn.staticfile.org/uikit/1.2.0/css/uikit.gradient.css">
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.js"></script>
+	<script src="http://cdn.staticfile.org/uikit/1.2.0/js/uikit.js"></script>
+</head>
+<body>
+	<div class="uk-container-center uk-container">
+		<!--nav-->
+		<hr>
+			<h2>dropdown</h2>
+		<hr>
+		<div class="uk-grid">
+			<div class="uk-width-3-5">
+				<div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+					<button class="uk-button">CLICK</button>
+					<div class="uk-dropdown">
+						<ul class="uk-nav">
+							<li><a href="#">suna</a></li>
+							<li><a href="#">sunb</a></li>
+							<li><a href="#">sunc</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="uk-button-dropdown" data-uk-dropdown>
+					<button class="uk-button">HOVER</button>
+					<div class="uk-dropdown">
+						<ul class="uk-nav uk-nav-dropdown">
+							<li><a href="#">gua</a></li>
+							<li><a href="#">gub</a></li>
+							<li><a href="#">guc</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-2-5">
+				<div class="uk-panel uk-panel-box">
+					<div class="uk-panel-tittle">1234</div>
+					<ul class="uk-nav uk-nav-side">
+						<li><a href="#">abcd</a></li>
+						<li><a href="#">efgh</a></li>
+						<li><a href="#">ijkl</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
+			<h2>modal</h2>
+		<hr>
+		<div class="uk-clearfix">
+			<button class="uk-button" id="mbtna">Modal</button>
+		</div>
+		<div id="modal" class="uk-modal">
+			<div class="uk-modal-dialog">
+				<a class="uk-modal-close uk-close uk-close-alt"></a>
+				<h2>this is modal tittle</h2>
+				<button class="uk-button" id="mbtn">modal</button>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				var modal = new $.UIkit.modal.Modal("#modal");
+				var btn=$('#mbtn');
+				var btna=$('#mbtna');
+				btna.click(function(){
+					modal.show();
+				})
+				btn.click(function(){
+					modal.hide();
+				})
+			})
+		</script>
+		<hr>
+			<h2>tooltip</h2>
+		<hr>
+		<div class="uk-clearfix">
+			<span class="uk-badge" data-uk-tooltip="{pos:'left'}" title="i love node">yeah</span>
+			<button class="uk-button" data-uk-tooltip="{pos:'right'}" title="tooltip">Hover me</button>
+		</div>
+	</div>
+</body>
+</html>

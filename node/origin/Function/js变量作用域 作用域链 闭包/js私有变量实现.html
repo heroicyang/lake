@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript"> 
+      var name="hello";
+      var func=function(){
+	      var nam="hello";
+		  this.set=function(str){
+		  nam=str;
+		  }
+		  this.get=function(){
+		  console.log(nam);
+		  }
+		 }
+	  var a=new func();
+	  var b=new func();
+	   a.set("hello world");
+	   b.set("hi world");
+	   a.get();
+	   b.get();
+</script>
+</body>
+</html>

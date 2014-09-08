@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/uikit.js"></script>
+	<script src="addons/js/datepicker.js"></script>
+	<link rel="stylesheet" href="css/uikit.css">
+	<link rel="stylesheet" href="addons/css/datepicker.gradient.css">
+</head>
+<body>
+	<input type="" data-uk-datepicker="{format:'YYYY-MM-DD'}">
+	<script type="text/javascript">
+		var input=$('input');
+		input.on('change',function(){
+			console.log(input.val());
+		})
+	</script>
+</body>
+</html>
+

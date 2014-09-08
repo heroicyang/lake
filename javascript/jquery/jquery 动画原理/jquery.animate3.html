@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    .div1 {
+        position:absolute;
+        width:300px;
+        height:200px;
+        background: green;
+        color:#fff;
+        left:0;
+        top:-200px;
+        text-align:center;
+        z-index:-4;
+    }
+</style>
+  <div>
+    <button id='start'>START</button>
+    <button id='clear'>CLEAR</button>
+    <button id='stop'>STOP</button>
+    <button id='show'>SHOW</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+        <h4>node</h4>
+        <h5>mongodb</h5>
+        <h4>node</h4>
+        <h5>mongodb</h5>
+        <h4>node</h4>
+        <h5>mongodb</h5>
+    </div>
+  </div>
+</body>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        var con=$('.div1');
+        $('#start').click(function(){
+            con.animate({top:0},'fast');
+        })
+        $('#stop').click(function(){
+            var h=con.height();
+            con.animate({top:-h},'fast');
+        })
+    </script>
+</html>

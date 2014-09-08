@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Button - Radios</title>
+	<link rel="stylesheet" href="css/jquery.ui.all.css">
+	<script src="script/jquery-1.9.0.js"></script>
+	<script src="script/jquery.ui.core.js"></script>
+	<script src="script/jquery.ui.widget.js"></script>
+    <script src="script/jquery.ui.progress.js"></script>
+</head>
+<body>
+    <p>这是一个光彩绚丽的进度条</p>
+    <div></div>
+	<input type="text">
+	<button>BUTTON</button>
+<script>
+$(function(){
+/////////////////////////
+     $('div').progress({
+         value:60
+     });
+	 $('button').on('click',function(){
+	    var val=$('input').val();
+		$('div').progress('val',val);
+	 });
+/////////////////////////
+});
+</script>
+</body>
+</html>

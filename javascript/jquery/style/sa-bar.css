@@ -1,0 +1,60 @@
+
+.icon-glass {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px  0px;
+}
+
+.icon-music {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -25px;
+}
+
+.icon-search {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -50px;
+}
+
+.icon-envelope {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -75px;
+}
+
+.icon-heart {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -100px;
+}
+
+.icon-star {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -125px;
+    }
+
+.icon-star-empty {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -150px;
+}
+
+.icon-user {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -175px;
+}
+
+.icon-film {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -200px;
+}
+
+.icon-th-large {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -225px;
+}
+
+.icon-th {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -249px;
+}
+
+.icon-th-list {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -271px;
+}
+
+.icon-ok {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position:0px -300px;
+}
+
+.icon-remove {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -317px;
+}
+
+.icon-zoom-in {
+     display:inline-block;width:26px;height:26px;line-height:26px;vertical-align: text-top;background-image: url("images/ico.jpg");background-position: 0px -334px;
+}

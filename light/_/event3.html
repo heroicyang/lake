@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE</title>
+	<script src="underscore.js"></script>
+	<script src="base.js"></script>
+</head>
+<body>
+	<script>   
+		var base=new Event();
+		base.once('a',function(){
+			console.log('i am once a');
+		});
+		base.on('a',function(){
+			console.log('i am a_1');
+		});
+		base.on('a',function(){
+			console.log('i am a_2');
+		});
+		base.on('a',function(){
+			console.log('i am a_3');
+		});
+		base.on('a',function(){
+			console.log('i am a_4');
+		})
+	</script>
+</body>
+</html>

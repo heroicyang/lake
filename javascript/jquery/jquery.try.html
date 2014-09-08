@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.2/jquery.min.js" language="javascript"></script>
+  <style type="text/css"></style>
+</head>
+<body >
+<ul>
+	<li>page-a</li>
+	<li>page-b</li>
+	<li>page-c</li>
+	<li>page-d</li>
+	<li>page-e</li>
+	<li>page-f</li>
+</ul>
+<script type="text/javascript" language="javascript">
+  $(function(){
+  	 var sul=$('ul');
+  	 var lis=sul.children();
+  	 var length=lis.length;
+  	 var num=0;
+  	 function sh(num){setTimeout(function(){lis.eq(num).css({color:"red"}).siblings().removeAttr('style');num=(num>(length-2)) ? 0:num+1;sh(num)},1000)}
+  	 sh(num);
+  });
+</script>
+</body>
+</html>

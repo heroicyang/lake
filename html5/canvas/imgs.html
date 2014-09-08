@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="800px" height="600px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+  var canvas=document.getElementById('draw');
+  var draw=canvas.getContext('2d');	
+  var img=new Image();
+  img.src='imgs/sun.png';
+  img.onload=function(){
+   draw.drawImage(img,100,100);
+  }
+</script>
+</body>
+</html>

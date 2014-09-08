@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纷享销客官网，移动互联时代最佳销售管理工具</title>
+	<meta name="author" content="北京易动纷享科技有限公司" />
+	<meta name="keywords" content="纷享,纷享科技,纷享销客,销售团队管理,分享,企业社会化,办公自动化,CRM,移动办公,移动互联网,移动审批,手机办公,移动签批,明道,Yammer" />
+	<meta name="description" content="销售外勤管理，专业销售日志，移动CRM，销售协同管理，将公司装进手机里，随时随地进行销售管理和业务沟通，助力企业销售业绩倍增。" />
+	<script src="js/normalize.js"></script>
+	<!--<meta name="viewport" content="width=1080">-->
+	<script src="js/lib/zepto.min.js"></script>
+	<script src="js/lib/zepto_help.js"></script>
+	<script src="js/lib/statistics.js"></script>
+	<script src="js/lib/common.js"></script>
+	<link rel="stylesheet" href="style/common.css">
+	<link rel="stylesheet" href="style/reg.css">
+	<script type="text/javascript">if (ava.util.sysDetector()=="ios") {$('head link').attr('href','style/common_ios.css')}</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="common-header">
+			<div class="common-header-logo f-fl">
+				<img src="images/common_logo.png" alt="">
+			</div>
+			<div class="common-header-phone f-fr">
+				<a href="tel:4006689050" data-stat='{"creativeid":10,"positionid":2}'><img src="images/common_phone.png" alt=""></a>
+			</div>
+		</div>
+		<div class="common-link f-clear">
+			<a href="index.html"><img src="images/common_return.png" alt="">返回手机版首页</a>
+			<a class="LINK-download" href="downloadsection.html" data-stat='{"creativeid":1,"positionid":2}'><img src="images/common_download.png" alt="">手机App下载</a>
+		</div>
+		<div class="price-infoa">
+			<h3>把公司装进手机里  销售业绩提升25%</h3>
+			<p style="text-align:center">
+				<img src="images/price_img1.jpg" alt="">
+			</p>
+		</div>
+		<div class="price-infob">
+			<h3>纷享销客公有云小微版配置表</h3>
+			<ul>
+				<li><i style="background-position:0 0"></i><span>允许使用个人用户数</span> <b>20人以内</b></li>
+				<li><i style="background-position:0 -80px;"></i><span>赠送存储空间</span> <b>10G</b></li>
+				<li><i style="background-position:0 -160px;"></i><span>赠送名片扫描数</span> <b>500张</b></li>
+				<li><i style="background-position:0 -240px;"></i><span>单个文件上传最大限制</span> <b>20M</b></li>
+				<li style="border-bottom:2px #f2ede4 solid;"><i style="background-position:0 -320px;"></i><span>高级分析功能</span> <b>受限</b></li>
+			</ul>
+			<p style="text-align:center"><a href="reg.html" class="price-infob-link u-bgbtn"  data-stat='{"creativeid":6,"positionid":2}'>立即注册小微版</a></p>
+		</div>
+		<div class="price-infoc">
+			<h3>纷享销客公有云商务版价格表</h3>
+			<ul>
+				<li><b>100用户以内 </b> <span><i style="color:#ff9600">￥35</i>/用户/月</span></li>
+				<li><b>101-200用户 </b> <span><i style="color:#ff7300">￥30</i>/用户/月</span></span></li>
+				<li style="border-bottom:2px #f2ede4 solid;"><b>201用户以上 </b> <span><i style="color:#ff5900">￥25</i>/用户/月</span></span></li>
+			</ul>
+		</div>
+		<div class="price-crystal">
+			<h3>产品价格计算器</h3>
+			<p  class="price-crystal-in f-clear"><input id="price_input" type="text" placeholder="请输入您想购买的用户数"><span id="price_btn" class="u-smallbtn"><i><img src="images/price_caculator_ico.png" alt=""></i>计算</span></p>
+			<p class="price-crystal-show" style="display:none;">
+				您需支付<span id="price-showa">9240</span>元(12个月服务期) <br> 约合每用户每天<span id="price-showb">1.2</span>元。
+			</p>
+			<p class="price-crystal-info">价格咨询或1000人以上的企业私有云部署<br>请致电 400-668-9050</p>
+			<script>
+				$(function(){
+					var $input=$('#price_input'),
+						$btn=$('#price_btn'),
+						$show=$('.price-crystal-show');
+						$showa=$('#price-showa'),
+						$showb=$('#price-showb');
+					var reg=/^[1-9]\d*$/;
+
+					//每次载入时清空input内数值
+					$input.val('');
+
+					$btn.click(function(){
+						var num=$input.val();
+						var price=0,
+							total=0,
+							per=0;
+						if(!reg.test(num)){alert('请输入正确的数值');}
+						else{
+						num=parseInt(num);
+						$show.show();
+						if(num<=100){
+							price=35;
+							total=price*num*12;
+						}else if(num>100 && num<=200){
+							price=30;
+							total=price*num*12;
+						}else if(num>200){
+							price=25;
+							total=price*num*12;
+						}
+						per=(price/30).toFixed(1);
+						$showa.text(total);
+						$showb.text(per);
+						}
+					})
+					 
+				})
+			</script>
+		</div>
+		<div class="footer">
+			<div class="f-fl footer-ico">
+				<img src="images/footer_weixin.png" alt="">
+			</div>
+			<div class="f-fl footer-info">
+				<h2 style="padding-bottom:6px;">关注纷享销客官方微信</h2>
+				<p>订阅号:fxiaoke4006689050 服务号:fxiaokevip</p>
+			</div>
+			<div class="f-fr footer-phone">
+				<a href="tel:4006689050" style="display:inline-block" data-stat='{"creativeid":10,"positionid":1}'><img src="images/footer_phone.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

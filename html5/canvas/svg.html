@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+<title>JAVASCRIPT实验室</title>
+<style type="text/css">
+</style>
+</head>
+<body >
+<canvas id='draw' width="400px" height="400px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+  var canvas=document.getElementById('draw');
+  var draw=canvas.getContext('2d');
+  /*-------------样式与颜色 API---------------*\
+   fillStyle     填充色
+   strokeStyle   线条色
+   globalAlpha   整体透明度
+   lineWidth     线条宽度
+   lineCap    
+		   butt||round||square
+				 线条端点样式
+   lineJoin   
+		   miter||bevel||round
+				 线条拐点样式
+ \*-----------------------------------------*/
+	draw.fillStyle='orange';
+    draw.strokeStyle='#00aeef';
+	draw.globalAlpha=0.8;
+	draw.lineWidth=4;
+    draw.lineCap='round';
+	draw.lineJoin='miter';
+	
+	var line=draw.createLinearGradient(50,0,450,0);
+	var radial=draw.createRadialGradient(240,240,0,240,240,300);
+	
+	line.addColorStop(0,'#00aeef');
+	line.addColorStop(0.5,'#a82cff');
+	line.addColorStop(1,'#005bc1');
+	
+	radial.addColorStop(0,'#FF5F98');
+	radial.addColorStop(0.75,'#FF0188');
+	radial.addColorStop(1,'rgba(255,1,136,0)');
+
+	
+	 /*绘制矩形API*\
+	 下面的API中 x y 均指原点坐标 width height 指矩形的宽度和高度
+	 fillRect(x,y,width,height)    绘制一个有填充色的矩形
+	 strokeRect(x,y,width,height)  绘制一个无填充色只有路径的矩形
+	 clearRect(x,y,width,height)   这是一个矩形的橡皮擦
+	 \*/
+	
+    /*绘制矩形*\
+      draw.fillRect(25,25,100,100);
+	  draw.clearRect(45,45,60,60);
+	  draw.strokeRect(50,50,50,50);
+    \*/
+	
+	
+	
+	
+    /*绘制直线路径*\
+      draw.strokeStyle=radial;
+	  draw.beginPath();
+	  draw.moveTo(50,50);
+	  draw.lineTo(450,50);
+	  draw.lineTo(450,500);
+	  draw.lineTo(50,500);
+	  draw.lineTo(50,225);
+	  draw.lineTo(350,225);
+	  draw.lineTo(350,400);
+	  draw.lineTo(150,400);
+	  draw.lineTo(150,300);
+	  draw.lineTo(300,300);
+	  draw.stroke();
+	\*/
+	
+	
+	
+    ///*绘制弧线*\
+	draw.beginPath();
+	draw.arc(200,200,180,0,(Math.PI/180)*270);
+	draw.stroke();
+
+	draw.beginPath();
+	draw.arc(200,200,170,0,(Math.PI/180)*270);
+	draw.stroke();
+	//\*/
+</script>
+</body>
+</html>

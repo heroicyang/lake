@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/uikit.js"></script>
+	<link rel="stylesheet" href="css/uikit.css">
+</head>
+<body>
+	<div id="aaa">
+		
+		<a href="#my-id" data-uk-modal>哈哈哈</a>
+	</div>
+	<button>aaa</button>
+	<i>bbb</i>
+<!-- This is a button toggling the modal -->
+
+<!-- This is the modal -->
+<div id="my-id" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <p>helloword</p>
+    </div>
+</div>
+	
+	<script>
+	$(function(){
+		$('button').click(function(){
+			$('#aaa').empty();
+		})
+		$('i').click(function(){
+			$('#aaa').append('<a href="#my-id" data-uk-modal>哈哈哈</a>')
+		})
+
+	})
+	</script>
+</body>
+</html>

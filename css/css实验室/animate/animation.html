@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+	<style>
+	@-webkit-keyframes 'round' {
+    	from{
+    	-webkit-transform: rotate(360deg);
+     	-webkit-border-radius: 250px;
+     }
+  		10%{
+      	-webkit-transform: rotate(72deg);
+      	-webkit-border-radius: 40px;
+     }
+  		20% {
+      	-webkit-transform: rotate(108deg);
+      	-webkit-border-radius: 60px;
+    }
+  		30% {
+      	-webkit-transform: rotate(144deg);
+      	-webkit-border-radius: 90px;
+    	}
+  		40%{
+     -webkit-transform: rotate(180deg);
+     -webkit-border-radius: 120px;
+  	}
+  		50%{
+     -webkit-transform: rotate(216deg);
+     -webkit-border-radius: 140px;
+  	}
+  	60% {
+     -webkit-transform: rotate(252deg);
+     -webkit-border-radius: 160px;
+  	}
+  	70% {
+     -webkit-transform: rotate(288deg);
+     -webkit-border-radius: 190px;
+  	}
+  	80%{
+     -webkit-transform: rotate(324deg);
+     -webkit-border-radius: 220px;
+  	}
+  	to {
+     	-webkit-transform: rotate(36deg);
+       	-webkit-border-radius: 20px;
+  	}
+	}
+
+	/*给方型box一个初步样式*/
+   a.box {
+      display: block;
+      width:500px;
+      height:500px;
+      background: green;
+      margin-bottom: 20px;
+   }
+   a.round {
+     
+      background: green;
+      -webkit-animation-name: 'round'; /*动画名称*/
+      -webkit-animation-duration: 4s;/*播放一次所持续时间*/
+    }     
+   .click-btn {
+       background: green;
+       padding: 5px 10px;
+       color: #fff;
+       font-size: 16px;
+       font-weight: bold;
+       text-align: center;
+       cursor: pointer;
+   }
+	</style>
+</head>
+<body>
+	 	<a href="#" class="box"></a>
+   		<span class="click-btn">Click</span>
+		<script>
+		$(function(){
+         	$(".click-btn").click(function(){
+            	$('a').addClass("round");
+       		});
+       	})
+		</script>
+</body>
+</html>

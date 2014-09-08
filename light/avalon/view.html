@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Avalon</title>
+	<script src="avalon.mobile.js"></script>
+</head>
+<body>
+<fieldset ms-controller="simple">
+    <legend>例子</legend>
+    <p>First name: <input ms-duplex="firstName" /></p>
+    <p>Last name: <input ms-duplex="lastName"  /></p>
+    <p>Hello,    <input ms-duplex="fullName"></p>
+    <div>{{firstName +" | "+ lastName }}</div>
+    <p>nick name: <input ms-duplex="nick.name"  /></p>
+    <p>{{nick.name}}</p>
+</fieldset>
+<script>
+var a=avalon.define("simple", function(vm) {
+    vm.firstName = "ava"
+    vm.lastName = "lon"
+    vm.fullName = {//一个包含set或get的对象会被当成PropertyDescriptor，
+        set: function(val) {//set, get里面的this不能改成vm
+            var array = (val || "").split(" ");
+            this.firstName = array[0] || "";
+            this.lastName = array[1] || "";
+        },
+        get: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    },
+    vm.nick = {
+          name: "觉察之光"
+    }
+});
+console.log(a);
+/*
+var field=document.getElementsByTagName('fieldset')[0];
+var attr=field.getAttributeNode("ms-controller");
+var a=document.querySelectorAll('[ms-controller]');
+console.log(a);
+*/
+</script>
+</body>
+</html>

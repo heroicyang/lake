@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    .div1 {
+        position:absolute;
+        width:300px;
+        height:200px;
+        background: blue;
+        left:0;
+        top:0;
+    }
+</style>
+  <div>
+    <button id='start'>START</button>
+    <button id='clear'>CLEAR</button>
+    <button id='stop'>STOP</button>
+    <button id='show'>SHOW</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+    </div>
+  </div>
+</body>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var se=$('.div1');
+            var start=$('#start');
+            var clear=$('#clear');
+            var stop=$('#stop');
+            var show=$('#show');
+            var num=1;
+            function time(){
+                num=num+1;
+                setTimeout(function(){se.text('这是一个定时器'+num)},2000);
+            }
+            se.queue('t',time)
+            se.queue('t',time)
+            se.queue('t',time)
+            se.queue('t',time)
+            se.queue('t',time)
+            se.queue('t',time)
+
+            console.log(se.queue('t'))
+            se.dequeue('t')
+            console.log(se.queue('t'))
+            se.dequeue('t')
+            console.log(se.queue('t'))
+            se.dequeue('t')
+            console.log(se.queue('t'))
+        });
+    </script>
+</html>

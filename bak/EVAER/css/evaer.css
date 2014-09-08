@@ -1,0 +1,335 @@
+﻿/*========================[[导航]]============*/
+.m-vector{
+	position: fixed;
+	top:120px;
+	right: 50%;
+	margin-right: 430px;
+	width: 170px;
+	_position: absolute;
+	background-color: #222;
+	_top:expression(documentElement.scrollTop+100);
+	/*_top: expression(documentElement.scrollTop+documentElement.clientHeight - this.offsetHeight-100);*/
+}
+.m-vector-icon{
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 1px #cfcfcf solid;
+	background:url(ico.gif) no-repeat center top;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.m-vector-nav{
+	position: absolute;
+	top: 31px;
+	width: 160px;
+	right: 0;
+	margin: 0;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	border: 1px #cfcfcf solid;
+	color:#333;
+}
+
+/*模块全局样式*/
+.m-vector-nav ul,
+.m-vector-nav li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+/*行样式*/
+.m-vector-nav li{
+	position: relative;
+	line-height: 26px;
+	zoom:1;
+}
+.m-vector-nav ul{
+	padding-left: 1em;
+}
+.m-vector-nav li a{
+	display: block;
+	padding-left:1em;
+	padding-right:1em;
+	zoom:1;
+}
+.m-vector-nav li b{
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right:8px;
+}
+.m-vector-nav .in ul{
+	display: none;
+}
+/*a标签样式*/
+.m-vector-nav a:link,
+.m-vector-nav a:visited{
+	color:#333;
+	font-weight: bold;
+	text-decoration: none;
+}
+.m-vector-nav a:hover,
+.m-vector-nav a:active{
+	background:#0a76b7;
+	color:#fff;
+	text-decoration: none;
+}
+/*激活状态下a标签样式 为了兼容ie6才写这么多*/
+.m-vector-nav a.active:link,
+.m-vector-nav a.active:visited,
+.m-vector-nav a.active:hover,
+.m-vector-nav a.active:active{
+	background:#0a76b7;
+	color:#fff;
+}
+/*================================[[幻灯模块]]==========================*/
+.m-maga{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+}
+.m-maga .m-maga-con{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.m-maga .m-maga-con div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.m-maga .m-maga-con img{
+	width:100%;
+	height:100%;
+}
+.m-maga ul{
+	position: absolute;
+	z-index: 4;
+	right: 10px;
+	bottom: 10px;
+}
+.m-maga ul li{
+	display: block;
+	float: left;
+	width: 40px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+	color: #fff;
+	background:#0a76b7;
+	cursor: pointer;
+}
+.m-maga ul .active{
+	color:#0a76b7;
+	background: #fff;
+}
+/*-------*/
+.m-magb{
+	position: relative;
+	overflow: hidden;
+	width: 600px;
+	height: 400px;
+}
+.m-magb sub,
+.m-magb sup{
+	position: absolute;
+	width:29px;
+	height:43px;
+	background: url(arr.png);
+	cursor: pointer;
+	top: 40%;
+}
+.m-magb sub{
+	left: 0;
+	background-position: left 43px;
+}
+.m-magb sup{
+	right: 0;
+	background-position: right 43px; 
+}
+.m-magb-con{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.m-magb-con div{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.m-magb-con img{
+	width:100%;
+	height:100%;
+}
+.m-magb-con .active{
+	display: block;
+}
+.m-magb ul{
+	position: absolute;
+	z-index: 4;
+	right: 10px;
+	bottom: 10px;
+}
+.m-magb ul li{
+	display: block;
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 12px;
+	background:#0a76b7;
+	cursor: pointer;
+}
+.m-magb ul .active{
+	color:#0a76b7;
+	background: #fff;
+}
+
+/*===============================================[[树形模块]]======================*/
+.m-tree{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	line-height: 22px;
+}
+.m-tree ul,
+.m-tree li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+.m-tree ul{
+	padding-left:1.5em;
+	transition: opacity 0.1s linear;
+}
+.m-tree span{
+	display: block;
+	cursor: pointer;
+}
+.m-tree label{
+	display: block;
+	cursor: pointer;
+	font-style: normal;
+}
+.m-tree label i{
+	display: inline-block;
+	width:10px;
+	height:10px;
+	padding-right:6px; 
+	background: url(vb.png) no-repeat left top;
+	/*
+	box-sizing:border-box;
+	padding-right: 4px;
+	border-left:5px transparent solid;
+	border-top:5px #888 solid;
+	border-right:5px transparent solid;
+	border-bottom: 5px transparent solid;
+	*/
+}
+.m-tree .in i{
+	/*
+	border-left: 6px #888 solid;
+	border-top:5px transparent solid;
+	border-bottom: 5px transparent solid;
+	*/
+	background: url(vr.png) no-repeat;
+}
+.m-tree .in ul{
+	display: none;
+}
+
+/*=================================================[[折叠模块]]===============*/
+.m-ac{
+	width: 600px;
+	background: #fff;
+}
+.m-ac-head h2{
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 12px;
+	background:#444;
+	border-bottom: 1px #222 solid;
+	color:#eee;
+	padding-left: 20px;
+	cursor: pointer;
+}
+.m-ac-con{
+	display: none;
+	padding:10px 20px;
+}
+.m-ac .active .m-ac-con{
+	display: block;
+	line-height: 22px;
+}
+/*====================================================[[arr模块]]==================*/
+.m-arr{
+	width: 600px;
+	height: 90px;
+	overflow: hidden;
+	position: relative;
+}
+.m-arr .m-arr-con{
+	width: 3000px;
+	height: 90px;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+.m-arr .m-arr-li{
+	display: block;
+	float: left;
+}
+.m-arr sub,
+.m-arr sup{
+	display: block;
+	position: absolute;
+	width: 29px;
+	height: 43px;
+	top:20px;
+	background-image:url(../img/arr.png);
+	cursor: pointer;
+}
+.m-arr sub{
+	left: 0;
+	background-position:left 43px;
+	z-index: 2;
+}
+.m-arr sup{
+	right: 0;
+	background-position:right 43px;
+	z-index: 2;
+}
+/*======================================================[[Modal模块]]================*/
+.m-modal{
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1020;
+	height: 100%;
+	overflow-y: auto;
+	background:rgba(0, 0, 0, 0.6);
+	transition: opacity 0.15s linear;
+}
+.m-modal-dialog{
+	position: relative;
+	top:10%;
+	box-sizing: border-box;
+	padding: 20px;
+	width: 600px;
+	margin-left:auto;
+	margin-right: auto;
+	background: #ffffff;
+}

@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="script/jquery.js"></script>
+</head>
+<body>
+  <button>off.spaceb</button>
+  <script>
+    var $window=$(window);
+
+    $window.on('resize',function(){
+      console.log('this is normal resize');
+    })
+    $window.on('resize.spacea',function(){
+      console.log('this is spacea resize');
+    })
+    $window.on('resize.spaceb',function(){
+      console.log('this is spaceb resize');
+    })
+
+    $('button').on('click',function(){
+      $window.off('resize.spaceb');
+    })
+  </script>
+</body>
+</html>

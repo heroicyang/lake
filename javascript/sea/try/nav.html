@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>NAV</title>
+    <link rel="stylesheet" href="color/common.css">
+    <style>
+    .nav{
+    	width: 800px;
+    	margin: 0 auto;
+    	position: relative;
+    }
+    .nav span{
+    	display: block;
+    	float: left;
+    	height: 40px;
+    	line-height: 40px;
+    	padding: 0 20px;
+    	color: blue;
+    	cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+	<div class="nav clear">
+		<span class="current">lightbook</span>
+		<span>node</span>
+		<span>game</span>
+		<span>freeenergy</span>
+	</div>
+   	<script src='script/seajs/sea.js' data-config='config.js' data-main='n.js'></script>
+</body>
+</html>

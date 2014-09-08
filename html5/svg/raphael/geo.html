@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="metro/raphael.js"></script>
+    <style type="text/css">
+            body{
+              background: #666;
+            }
+            #holder {
+                height: 600px;
+                margin: 100px auto 100px auto;
+                width: 600px;
+                position: relative;
+            }
+            #time {
+                text-align: center;
+                font: 100 3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+  /*\
+  raphael clock
+  自己写的钟表
+  \*/
+  window.onload=function(){
+    var pen=Raphael('holder',600,600)   //画笔
+    var cx=300,cy=300;                  //设置圆心点坐标
+    var R=200                           //缺省半径
+    var param={stroke:"#00baff",'stroke-width':30}  //进度条样式
+    var marksAttr={fill:'#444',stroke:'none'}       //时间标记样式
+
+    /*\
+    属性画出圆弧 返回一个path
+    \*/
+    pen.customAttributes.arc=function(value,total,R){
+      var alpha=360/total*value
+      var a=(90-alpha)*Math.PI/180
+      var x=300+R*Math.cos(a)
+      var y=300-R*Math.sin(a)
+      var path
+      if(total == value){
+        path=[["M",300,300-R],["A",R,R,0,1,1,299.99,300-R]];
+      }else{
+        //path=[["M",300,300-R],["A",R,R,0,+(alpha>180),1,x,y]];
+        path=[["M",300,300-R],["A",R,R,0,+(alpha>180),1,x,y]];
+        //path=[["M",300,300-R],["A",R,R,0,1,1,x,y]];
+      }
+      return {path:path}
+    }
+
+    /*\
+    函数画出marks时间标记
+    R:半径        
+    total:marks总数
+    \*/
+    function drawMarks(R,total){
+      var arr=pen.set();//点元素组
+      for(var value=0;value<total;value++)
+      {var alpha=360/total*value;//以360为圆周角获取每个mark的角度
+       var a=(90-alpha)*Math.PI/180;
+       var x=cx+R*Math.cos(a);
+       var y=cy-R*Math.sin(a);
+       arr.push(pen.circle(x,y,2).attr(marksAttr));
+      }
+      return arr;
+    }
+    drawMarks(R,60)
+
+    var timehandle;
+    var current=0;
+    var sec = pen.path().attr(param).attr({arc: [current, 60, R]})
+    function clock(){
+      sec.animate({arc:[current,60,R]},500,'bounce')
+      if(current>=60)
+        current=1
+      else
+        current=current+1;
+      tick();
+    }
+    function tick(){
+      setTimeout(clock, 1000);
+    }
+    tick();
+  }
+  </script>
+    <div id="holder"></div>
+</body>
+</html>

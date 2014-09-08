@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var wave;
+	function closure(){
+		var a="这是首维变量a"
+		function ca(){
+			var b="这是二维变量b"
+			function cb(){
+				var c="这是三维变量c"
+				function ce(ea,eb){
+					var d=c;
+				}
+				wave={
+					'a':'clousre',
+					'b':b
+				}
+			}
+			cb()
+		}
+		ca()
+	}
+	closure();
+	console.log(wave);
+</script>
+</body>
+</html>

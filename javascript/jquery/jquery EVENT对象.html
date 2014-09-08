@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JAVASCRIPT实验室</title>
+<link rel="stylesheet" href="style/sa-grid.css">
+<script type="text/javascript" src="script/jquery.js" language="javascript"></script>
+<style type="text/css">
+</style>
+</head>
+<body >
+<div class="container">
+     <div class="layout">
+			 <div class="span4 ml0"></div>
+			 <div class="span4">
+				  <div id="box">
+					 <ul id="cont">
+					   <li>美丽的内容一</li>
+					   <li>美丽的内容二</li>
+					   <li>美丽的内容三</li>
+					   <li>美丽的内容四</li>
+					   <li>美丽的内容五</li>
+					   <li>美丽的内容六</li>
+					   <li>美丽的内容七</li>
+					   <li>美丽的内容八</li>
+					 </ul>
+				  </div>
+			 </div>
+			 <div class="span4 mr0"></div>
+	 </div>
+	 <div class="layout">
+	   <span class="show1">
+	   </span>
+	   <span class="show2">
+	   </span>
+	   <span class="show3">
+	   </span>
+	   <span class="show4">
+	   </span>
+	 </div>
+  </div>
+  <script type="text/javascript" language="javascript">
+    var wrapper=$('#box');
+    var cont=$('#cont');
+	var eve=function(e){
+				$('.show1').text(e.pageX);
+				$('.show2').text(e.pageY);
+				$('.show3').text(e.screenX);
+				$('.show4').text(e.screenY);
+				}
+	$('body').bind('mousemove',eve);
+  </script>
+</body>
+</html>

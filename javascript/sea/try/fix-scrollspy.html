@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>avaer</title>
+    <link rel="stylesheet" href="color/common.css">
+    <style>
+		.main{
+		
+		}
+		.main .main-left{
+			width: 200px;
+		}
+		.main .main-left a{
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			color: #444;
+		}
+		.main .main-left .active{
+			color:#0080c9;
+		}
+		.main .main-right{
+			width: 780px;
+		}
+		.main .main-right .right-li{
+			height: 400px;
+			background: #eee;
+			text-align: center;
+			line-height: 60px;
+			margin-bottom: 40px;
+		}
+    </style>
+</head> 
+<body data-spy="scroll" data-target=".main-left">
+	<h1 class="area">hello seajs</h1>
+	<div class="main clear area">
+		<div class="main-left fl">
+			<a href="#a" class='active'>NAV-A</a>
+			<a href="#b">NAV-B</a>
+			<a href="#c">NAV-C</a>
+			<a href="#d">NAV-D</a>
+			<a href="#e">NAV-E</a>
+			<a href="#f">NAV-F</a>
+		</div>
+		<div class="main-right fr">
+			<div class="right-li" id="a" >
+				<h2>this is nav-a</h2>
+			</div>
+			<div class="right-li" id="b">
+				<h2>this is nav-b</h2>
+			</div>
+			<div class="right-li" id="c">
+				<h2>this is nav-c</h2>
+			</div>
+			<div class="right-li" id="d">
+				<h2>this is nav-d</h2>
+			</div>
+			<div class="right-li" id="e">
+				<h2>this is nav-e</h2>
+			</div>
+			<div class="right-li" id="f">
+				<h2>this is nav-f</h2>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="script/seajs/sea.js" data-config="config.js" data-main="f-m.js"></script>
+</html>

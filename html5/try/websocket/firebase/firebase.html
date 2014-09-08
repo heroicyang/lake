@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FIREBASE</title>
+	<script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+</head>
+<body>
+	<script>
+		var Jihe= new Firebase('https://avaer.firebaseio.com/list');
+		var list=Jihe.child('list')
+		var data=list.limit(100)
+		console.log(data);
+	</script>
+</body>
+</html>

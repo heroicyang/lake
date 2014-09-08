@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+	<style>
+		[bone-model="sidebar"]{
+			width: 200;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div bone-model="sidebar">
+			this is sidebar
+		</div>
+		<div style="float:right">
+			<button id="btn">button</button>
+			<button id="history">history</button>
+			<button id="state">state</button>
+		</div>
+	</div>
+	<script>
+		var Model=Backbone.Model;
+		var Collection=Backbone.Collection;
+		var View=Backbone.View;
+		var maps=new Collection([
+			{id:0,name:'spiderman',age:111,obj:{a:1,b:2}},
+			{id:1,name:'superman',age:222},
+			{id:2,name:'ironman',age:333},
+			{id:3,name:'hulkman',age:444},
+			{id:4,name:'thorman',age:555}
+		]);
+		maps.set({id:0,obj:{a:11}});
+		console.log(maps.models);
+	</script>
+</body>
+</html>

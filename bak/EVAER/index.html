@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>UI整理</title>
+	<link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/evaer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/raphael.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/ui_core.js"></script>
+    <script src="js/ui_accordion.js"></script>
+    <script src="js/ui_arr.js"></script>
+    <script src="js/ui_magic.js"></script>
+    <script src="js/ui_modal.js"></script>
+    <script src="js/ui_scrollspy.js"></script>
+    <script src="js/ui_tree.js"></script>
+    <script src="js/ui_vector.js"></script>
+</head>
+<body>
+  <div class="m-vector">
+        <div class="m-vector-icon">
+        </div>
+        <ul class="m-vector-nav">
+          <li><a href="#holder">svg初学</a></li>
+          <li>
+            <a href="#magic">幻灯</a>
+            <b>></b> 
+            <ul>
+              <li><a href="#magica">渐隐渐现幻灯</a></li>
+              <li><a href="#magicb">滑动幻灯</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#accordion">accordion</a> 
+          </li>
+          <li>
+            <a href="#arr">滚动效果</a>
+          </li>
+          <li>
+            <a href="#tree">树形菜单</a>
+          </li>
+          <li>
+            <a href="#modal">Modal</a>
+          </li>
+        </ul>
+  </div>
+  <div class="content">
+<!--svg钟表-->
+    <style>
+      #holder {
+          height: 600px;
+          width: 600px;
+          position: relative;
+      }
+      #time {
+          text-align: center;
+          font: 100 3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+    </style>
+    <div id="holder" data-ui-scrollspy></div>
+    <script type="text/javascript">
+    /***************\
+    raphael clock
+    自己写的钟表
+    \***************/
+    window.onload=function(){
+      var pen=Raphael('holder',600,600);                   //画笔
+      var cx=300,cy=300;                                   //设置圆心点坐标
+      var R=200;                                           //缺省半径
+      var param={stroke:"#00baff",'stroke-width':30};      //进度条样式
+      var marksAttr={fill:'#444',stroke:'none'};           //时间标记样式
+
+      /*\
+      属性画出圆弧 返回一个path
+      \*/
+      pen.customAttributes.arc=function(value,total,R){
+          var alpha=360/total*value;
+          var a=(90-alpha)*Math.PI/180;
+          var x=300+R*Math.cos(a);
+          var y=300-R*Math.sin(a);
+          var path;
+          if(total == value){
+              path=[["M",300,300-R],["A",R,R,0,1,1,299.99,300-R]];
+          }else{
+              path=[["M",300,300-R],["A",R,R,0,+(alpha>180),1,x,y]];
+          }
+          return {path:path};
+      };
+
+      /*\
+      函数画出marks时间标记
+      R:半径        
+      total:marks总数
+      \*/
+      function drawMarks(R,total){
+          var arr=pen.set();                               //点元素组
+          for(var value=0;value<total;value++)
+          {
+              var alpha=360/total*value;                      //以360为圆周角获取每个mark的角度
+              var a=(90-alpha)*Math.PI/180;
+              var x=cx+R*Math.cos(a);
+              var y=cy-R*Math.sin(a);
+              arr.push(pen.circle(x,y,2).attr(marksAttr));
+          };
+          return arr;
+      }
+
+      /*****************\
+            时 分 秒
+      \*****************/
+      drawMarks(R,60);
+      var sec=pen.path().attr(param).attr({arc:[0,60,R]});     //秒
+      R -= 40;
+      drawMarks(R,60);
+      var min=pen.path().attr(param).attr({arc:[0,60,R]});     //分
+      R -= 40;
+      drawMarks(R,12);
+      var hor=pen.path().attr(param).attr({arc:[0,12,R]});     //时
+
+      /*\
+      自启函数
+      \*/
+      (function(){
+          var d=new Date();
+          var am=(d.getHours() < 12);
+          var hour=d.getHours() % 12 || 12;
+          var minu=d.getMinutes();
+          var secs=d.getSeconds();
+
+          sec.attr({arc:[secs,60,200]});
+          min.attr({arc:[minu,60,160]});
+          hor.attr({arc:[hour,12,120]});
+
+          setTimeout(arguments.callee, 1000);
+        })();
+    }
+    </script>
+<!--/svg钟表-->
+<!--渐隐渐现幻灯-->
+  <div id="magica" class="m-maga" data-ui-maga data-ui-scrollspy>
+    <div class="m-maga-con">
+      <div style="display:block"><img src="img/1.jpg" alt=""></div>
+      <div><img src="img/2.jpg" alt=""></div>
+      <div><img src="img/3.jpg" alt=""></div>
+      <div><img src="img/4.jpg" alt=""></div>
+    </div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+<!--/渐隐渐现幻灯-->
+  <hr>
+<!--左右滑动幻灯-->
+  <div id="magicb" class="m-magb" data-ui-magb data-ui-scrollspy>
+    <div class="m-magb-con">
+      <div class="active"><img src="img/1.jpg" alt=""></div>
+      <div><img src="img/2.jpg" alt=""></div>
+      <div><img src="img/3.jpg" alt=""></div>
+      <div><img src="img/4.jpg" alt=""></div>
+    </div>
+    <sub></sub>
+    <sup></sup>
+    <ul>
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+<!--/左右滑动幻灯-->
+  <hr>
+<!--accordion-->
+  <div class="main-accordion" id="accordion" data-ui-scrollspy>
+    <div class="m-ac" data-ui-accordion >
+        <div class="m-ac-cube">
+          <div class="m-ac-head">
+            <h2>角色直升90级服务正式推出！叮！</h2>
+          </div>
+          <div class="m-ac-con">
+           我们非常高兴地宣布，《魔兽世界》角色直升90级服务已于今天正式推出。
+  如果你很想尝试一个新的职业或种族，但又苦于没有时间练级，那角色直升90级服务也许正适合你。此外，角色直升90级服务还可以让之前暂离的战友们快速地追上小伙伴们的步伐，并再次开始一起冒险。该服务价格为150战网点数，在购买该服务后，玩家能够立即将自己账号下一个《魔兽世界》角色直接提升到90级
+          </div>
+        </div>
+        <div class="m-ac-cube">
+          <div class="m-ac-head">
+            <h2>大服务器实装维护公告</h2>
+          </div>
+          <div class="m-ac-con">
+            自第一组测试大服务器组（加基森＋黑暗虚空）测试配对开始以来，我们对该配对进行了监测，到目前，我们发现服务器状况非常稳定，游戏环境优化明显。测试配对上的玩家们非常活跃，迅速习惯了热闹的新环境，结交了新战友。同时，我们听到了不少玩家的呼声，希望能够在各个服务器迅速地实装大服务器技术，以便大家都能体验到该技术带来的便利和乐趣。因此，我们已正式启动中国地区大服务器实装的配对工作。
+          </div>
+        </div>
+        <div class="m-ac-cube">
+          <div class="m-ac-head">
+            <h2>《德拉诺之王》的种族特长</h2>
+          </div>
+          <div class="m-ac-con">
+            我们计划在《德拉诺之王》资料片对种族特长做出一些改动。在我们之前发布的一篇“开发者与你聊”（ 压缩与梳理）博文中我们对改动理念进行概述。在此，我们希望向大家介绍即将到来改动的相关细节。
+
+  为了保持各个种族间的一致性，我们决定削弱过于突出的部分种族特性，然后建立起一条公平的基准线和其他种族都能达到对应的标准。我们根据需要对一些原有的被动技能进行了改进，替换掉了过时的被动技能，并增加了若干全新的被动技能。从根本上说，我们的目标是让各个种族能够实现平起平坐。
+          </div>
+        </div>
+    </div>
+  </div>
+<!--/accordion-->
+  <hr>
+<!--arr-->
+  <div class="m-arr" data-ui-arr id="arr" data-ui-scrollspy>
+    <sub></sub>
+    <sup></sup>
+    <div class="m-arr-con">
+      <div class="m-arr-li">
+        <img src="img/wo1.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo2.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo3.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo4.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo5.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo6.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo7.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo8.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo9.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo10.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo11.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo12.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo13.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo14.jpg" alt="">
+      </div>
+      <div class="m-arr-li">
+        <img src="img/wo15.jpg" alt="">
+      </div>
+    </div>
+  </div>
+<!--/arr-->
+  <hr>
+<!--tree-->
+  <div class="main-tree" id="tree" data-ui-scrollspy>
+  <ul class='m-tree' data-ui-tree>
+    <li>
+      <label><i></i>序章</label>
+      <ul>
+        <li>
+          <span>前言</span>
+        </li>
+        <li>
+          <span>目录</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <label><i></i>第一章</label>
+      <ul>
+        <li>
+          <span>1.1节</span>
+        </li>
+        <li>
+          <span>1.2节</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <label><i></i>第二章</label>
+      <ul>
+        <li>
+          <span>2.1节</span>
+        </li>
+        <li>
+          <span>2.2节</span>
+        </li>
+      </ul>
+    </li>
+    <li class="in">
+      <label><i></i>第三章</label>
+      <ul>
+        <li class="in">
+          <label><i></i>3.1节</label>
+          <ul>
+            <li>
+              <span>3.1.1节</span>
+            </li>
+            <li>
+              <span>3.1.2节</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>3.2节</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <label><i></i>第四章</label>
+      <ul>
+        <li>
+          <span>4.1节</span>
+        </li>
+        <li>
+          <span>4.2节</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+<!--/tree-->
+  <hr>
+<!--modal-->
+  <div class="main-modal" data-ui-scrollspy id="modal">
+    <h3>Modal</h3>
+    <p>完善中</p>
+  </div>
+<!--/modal-->
+  <hr>
+  </div>
+  <script>
+    $(function(){
+        var vectors=new $.UI.Vector('.m-vector');
+
+        $('[data-ui-scrollspy]').on('scrollspy.online', function(){
+            var id=$(this).attr('id');
+            vectors.active($("[href='#"+id+"']"))
+        });
+    })
+  </script>
+</body>
+</html>

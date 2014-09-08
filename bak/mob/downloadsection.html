@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纷享销客app下载</title>
+	<meta name="author" content="北京易动纷享科技有限公司" />
+	<meta name="keywords" content="纷享,纷享科技,纷享销客,销售团队管理,分享,企业社会化,办公自动化,CRM,移动办公,移动互联网,移动审批,手机办公,移动签批,明道,Yammer" />
+	<meta name="description" content="销售外勤管理，专业销售日志，移动CRM，销售协同管理，将公司装进手机里，随时随地进行销售管理和业务沟通，助力企业销售业绩倍增。" />
+	<meta http-equiv="cache-control" content="no-transform"/> 
+	<script src="js/normalize.js"></script>
+	<script src="js/lib/zepto.min.js"></script>
+	<script src="js/lib/zepto_help.js"></script>
+	<script src="js/lib/statistics.js"></script>
+	<style>
+		body{background:#eee;}
+		h1{line-height:50px; text-align: center;color: #0097dd;margin-top:100px;font-size:42px;}
+	</style>
+</head>
+<body>
+	<h1></h1>
+	<script type="text/javascript">
+	if (ava.util.sysDetector()=="ios") {
+		
+		$('h1').text('正在跳转到手机客户端下载页面，请稍候...')
+		//setTimeout(function(){location.href="https://itunes.apple.com/cn/app/fen-xiang-ping-tai/id560969504?mt=8";},500);
+		setTimeout(function(){location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.facishare.fs&g_f=993946";},500);
+	}else if(ava.util.sysDetector()=='android'){
+
+		$('h1').text('正在跳转到手机客户端下载页面，请稍候...')
+		//setTimeout(function(){location.href="http://fusion.qq.com/app_download?appid=1101064135&platform=qzone&via=QZ.MOBILEDETAIL.QRCODE";},500);
+		setTimeout(function(){location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.facishare.fs&g_f=993946";},500);
+	}else{
+		$('h1').text('暂不支持您的机型系统')
+	}
+	</script>
+</body>
+</html>

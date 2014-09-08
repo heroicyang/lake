@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="metro/raphael.js"></script>
+    <style type="text/css">
+            body{
+              background: #666;
+            }
+            #holder {
+                height: 600px;
+                margin: 100px auto 100px auto;
+                width: 600px;
+            }
+            #time {
+                text-align: center;
+                font: 100 3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+  </style>
+</head>
+<body>
+    <script type="text/javascript">
+  /*\
+  raphael clock
+  酷炫钟表
+  \*/
+  window.onload=function(){
+    var pen=Raphael('holder',600,600) //画笔
+    var R=200
+    var init=true
+    var group
+    var param={stroke:"#00baff",'stroke-width':30}
+    var marksAttr={fill:'#444',stroke:'none'}  //时间标记样式
+    var html=[
+        document.getElementById('h'),
+        document.getElementById('m'),
+        document.getElementById('s'),
+        document.getElementById('d'),
+        document.getElementById('mnth'),
+        document.getElementById('ampm')
+    ]
+    /**************************
+        函数画出进度条
+    ***************************/
+    pen.customAttributes.arc=function(value,total,R){
+      var alpha=360/total*value
+      var a=(90-alpha)*Math.PI/180
+      var x=300+R*Math.cos(a)
+      var y=300-R*Math.sin(a)
+      var path
+      if(total == value){
+        path=[["M",300,300-R],["A",R,R,0,1,1,299.99,300-R]];
+      }else{
+        path=[["M",300,300-R],["A",R,R,0,+(alpha>180),1,x,y]];
+      }
+      return {path:path}
+    }
+    /**************************
+      函数画出marks时间标记
+      R:半径        
+      total:marks总数
+    ***************************/
+    function drawMarks(R,total){
+      if(total==31){
+        var d=new Date;
+        d.setDate(1);
+        d.setMonth(d.getMonth()+1);
+        d.setDate(-1);
+        total=d.getDate();
+      }
+      out=pen.set();//点元素组
+      for(var value=0;value<total;value++)
+      { var alpha=360/total*value;//以360为圆周角获取每个mark的角度
+        var a=(90-alpha)*Math.PI/180;
+        var x=300+R*Math.cos(a);
+        var y=300-R*Math.sin(a);
+        out.push(pen.circle(x,y,2).attr(marksAttr));
+      }
+      return out;
+    }
+    drawMarks(R,60)
+    var sec = pen.path().attr(param).attr({arc: [38, 60, R]});
+  }
+  </script>
+    <div id="holder"></div>
+</body>
+</html>

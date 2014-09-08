@@ -1,0 +1,38 @@
+.btn {
+    display: inline-block;
+    *display: inline;
+    width: 60px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 28px;
+    *line-height: 28px;
+    color: #131313;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background:url(images/btn.jpg) no-repeat -2px -2px;
+    border: 0px;
+}
+.btn:hover{
+    background-position-y:-32px;
+    color: #ffffff;
+}
+.btn-primary{
+    background-position: -65px -2px;
+}
+.btn-info{
+    background-position: -128px -2px;
+}
+.btn-success{
+    background-position: -191px -2px;
+}
+.btn-warning{
+    background-position: -254px -2px;
+}
+.btn-danger{
+    background-position: -317px -2px;
+}
+.btn-inverse{
+    background-position: -380px -2px;
+}

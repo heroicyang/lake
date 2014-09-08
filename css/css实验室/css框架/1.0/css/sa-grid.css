@@ -1,0 +1,164 @@
+/*-----------
+
+  布局样式表
+
+----------*/
+/*-----------
+
+  布局样式表
+
+----------*/
+/*
+网格运算 设置数值
+*/
+/*
+容器
+*/
+.container:before,
+.container:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+.container-left {
+  width: 670px;
+  float: left;
+}
+.container-right {
+  width: 280px;
+  float: right;
+}
+.layout {
+  display: block;
+  *zoom: 1;
+  margin: 0px auto;
+}
+.layout:before,
+.layout:after {
+  display: table;
+  line-height: 0;
+  content: "";
+  clear: both;
+}
+.clear {
+  clear: both;
+}
+/*
+12个网格的基本属性
+*/
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 {
+  float: left;
+  _height: 30px;
+  min-height: 30px;
+  margin-left: 6px;
+  margin-right: 6px;
+  display: inline;
+}
+/*
+清除左右margin
+*/
+.ml0 {
+  margin-left: 0;
+}
+.mr0 {
+  margin-right: 0;
+}
+/*
+定义12个网格的宽度
+*/
+.span12 {
+  width: 960px;
+}
+.span11 {
+  width: 879px;
+}
+.span10 {
+  width: 798px;
+}
+.span9 {
+  width: 717px;
+}
+.span8 {
+  width: 636px;
+}
+.span7 {
+  width: 555px;
+}
+.span6 {
+  width: 474px;
+}
+.span5 {
+  width: 393px;
+}
+.span4 {
+  width: 312px;
+}
+.span3 {
+  width: 231px;
+}
+.span2 {
+  width: 150px;
+}
+.span1 {
+  width: 69px;
+}
+/*
+常用布局属性
+*/
+.ml5 {
+  margin-left: 5px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+.pl5 {
+  padding-left: 5px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+.pl15 {
+  padding-left: 15px;
+}
+.pr5 {
+  padding-right: 5px;
+}
+.pr10 {
+  padding-right: 10px;
+}
+.pr15 {
+  padding-right: 15px;
+}

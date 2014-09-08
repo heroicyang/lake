@@ -1,0 +1,36 @@
+﻿        /*====================================================================公用样式 begin===============================*/
+/*清除文档类型声明中的默认属性*/
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;} 
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+
+/*字体定义*/
+body {font-size:12px; font-family: simsun,Georgia, serif; background:#fff;}
+table {font-size:inherit;font:100%;}
+
+/*超链接样式定义*/
+a:link,a:visited{
+text-decoration: none;
+color:#06529a;
+}
+a:hover,a:active{
+color: #ff6600;
+}
+
+/*浮动*/
+.fl{
+float: left;
+}
+.fr{
+float: right;
+}
+
+/*清除浮动*/
+.clear{*zoom:1;}
+.clear:after{display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:".";}
+/*====================================================================公用样式 end===================================*/

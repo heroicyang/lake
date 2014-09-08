@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+</head>
+<body>
+	<div bone-view>
+		<a href="#help">help</a>
+		<a href="#search/avaer">serach/avaer</a>
+		<a href="#search/avaer/p6">search/avaer/p6</a>
+	</div>
+	<script>
+	$(function(){
+		var route=Backbone.Router.extend({
+			routes:{
+				"":"init",
+				"help": "help",
+				"search/:query": "search",
+				"search/:query/p:page": "search"
+			},
+			init:function(){
+				this.navigate("help",{trigger:true});
+			},
+			help:function(){
+				console.log('RouteA');
+				console.log('help');
+			},
+			search:function(query,page){
+				console.log('RouteA');
+				console.log(query);
+				console.log(page);
+			}
+		});
+		var routeb=Backbone.Router.extend({
+			routes:{
+				"":"init",
+				"help":"help",
+				"search/:query":"search",
+				"search/:query/p:page":"search"
+			},
+			init:function(){
+				this.navigate("help",{trigger:true});
+			},
+			help:function(){
+				console.log('RouteB');
+				console.log('help');
+			},
+			search:function(query,page){
+				console.log('RouteB');
+				console.log(query);
+				console.log(page);
+			}
+		})
+		var router=new route;
+		var routeb=new routeb;
+
+		Backbone.history.start();
+		
+		/*
+		var $window=$(window);
+		$window.on('popstate',function(data){
+			console.log('popstate');
+			console.log(window.history.state);
+		})
+		*/
+	})
+	</script>
+</body>
+</html>

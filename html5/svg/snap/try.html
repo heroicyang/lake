@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title></title>
+  <script src="js/snap.svg.js"></script>
+  <script src="js/wave.js"></script>
+</head>
+<body>
+  <svg></svg>
+  <svg id="tu"></svg>
+  <script type="text/javascript">
+    var svgelement=document.createElement('svg');
+  	//var s=Snap('#tu');
+    var s=Snap(svgelement);
+  	var bigCircle=s.circle(150,150,100);
+  	var line=s.line(50,50,100,100);
+  	var mline=s.polyline([10,10,20,30,40,60,40,0])
+
+    var group=s.g();
+    group.push(bigCircle,line,mline);
+    group.attr({
+      stroke:"#ccc",
+      strokeWidth:4,
+      fill:"#fff"
+    })
+
+    //var arra=[[0,0],[60,160],[120,20],[180,180],[240,10],[300,156],[300,648]];
+    //s.wave(arra).attr({stroke:"#00baff",strokeWidth:8});
+  </script>
+</body>
+</html>

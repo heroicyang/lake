@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="800px" height="600px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+   var canvas=document.getElementById('draw');
+   var draw=canvas.getContext('2d');
+   
+    draw.fillStyle='orange';
+    draw.strokeStyle='#00aeef';
+	draw.globalAlpha=0.8;
+	draw.lineWidth=8;
+    draw.lineCap='round';
+	draw.lineJoin='miter';
+	
+    function wang(draw,circle,line)
+	{ draw.beginPath();
+	
+	  /*----------
+	  网格中心坐标
+	  -----------*/
+	  var ox=circle.x;
+	  var oy=circle.y;
+	  
+	  var x=ox;
+	  var y=oy+line;
+	     draw.moveTo(x,y);
+	      x=x+Math.sqrt(5)/2*line;
+		  y=y-line/2;
+	     draw.lineTo(x,y);
+          y=y-line;
+	     draw.lineTo(x,y);
+	      x=ox;
+		  y=oy-line;
+		 draw.lineTo(x,y);
+		  x=x-Math.sqrt(5)/2*line;
+	  draw.stroke();
+	}
+	
+	var circle={
+	    x:400,
+		y:400
+	}
+	wang(draw,circle,80);
+</script>
+</body>
+</html>

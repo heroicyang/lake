@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    #div1 {
+        background:green;
+        width:188px;
+        height:188px;
+        position:absolute;
+    }
+</style>
+  <div>
+    <button id='start'>START</button>
+    <button id='stop'>STOP</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+      <p>这是prograph1</p>
+      <p>这是prograph2</p>
+      <p>这是prograph3</p>
+      <p>这是prograph4</p>
+      <p>这是prograph5</p>
+    </div>
+  </div>
+</body>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript">
+$(function(){
+    var se=$('.div1');
+    se.queue('ax','hello world!');
+    se.queue('ax','javascript');
+    se.queue('ax','python')
+    console.log(se.queue('ax'));
+    se.dequeue();
+ });
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hash</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <h1>HASH</h1>
+    <p><a href="#hasha">hasha</a></p>
+    <p><a href="#hashb">hashb</a></p>
+    <p><a href="#hashc">hashc</a></p>
+    <p><a href="#hashd">hashd</a></p>
+    <p><a href="#hashe">hashe</a></p>
+    <p> 
+        <button id="io">ioi</button>
+    </p>
+    <p>
+        <button id="href">href</button>
+    </p>
+    <script>
+        var $window=$(window);
+        var $io=$('#io');
+        var $href=$('#href');
+
+        $window.on('hashchange',function(){
+            console.log("Hash is:"+window.location.hash);
+            console.log("history length is:"+window.history.length);
+        });
+
+        $io.on('click',function(){
+            console.log('click');
+            //window.history.go('hash.html#hashe');
+            window.history.go(-2);
+        });
+
+        $href.on('click',function(){
+            window.location.pathname="a/b/c";
+        })
+            
+    </script>
+</body>
+</html>

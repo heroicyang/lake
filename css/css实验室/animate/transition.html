@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+	<style>
+		.cube{
+			width: 800px;
+			height: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			background: #660099;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 1s cubic-bezier(0.25,-2, 0.25, 2.0);
+		}
+		.circle{
+			width: 800px;
+			height: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			background: #0099FF;
+			border-radius: 80px;
+			cursor: pointer;
+			transition: all 1s cubic-bezier(0.25,-2, 0.25, 2.0);
+		}
+	</style>
+</head>
+<body>
+	<div class="cube">
+		
+	</div>
+	<script>
+	$(function(){
+		var se=$('div');
+		se.click(function(){
+			var $this=$(this);
+			if($this.hasClass('cube'))
+				$this.removeClass('cube').addClass('circle');
+			else
+				$this.removeClass('circle').addClass('cube');
+		});
+	})
+	</script>
+</body>
+</html>

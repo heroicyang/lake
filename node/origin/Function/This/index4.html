@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+(function(cont){
+	var _=function(obj){
+		console.log(obj);
+	}
+	_.each=function(na){
+		console.log(na);
+	}
+	_.map=function(obj){
+		each(obj)
+	}
+	cont._=_;
+})(window)
+_.each('hello world!');
+_.map('hi');
+</script>
+</body>
+</html>

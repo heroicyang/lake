@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EVAER-DEMO</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/ui_core.js"></script>
+	<script src="js/ui_modal.js"></script>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/evaer.css">
+</head>
+<body>
+	<h1>Modal</h1>
+	<p>
+		<button data-ui-modal="{target:'#dia'}">Modal Change</button>
+	</p>
+	<div class="m-modal" id="dia">
+		<div class="m-modal-dialog">
+			<a class="m-modal-close">关闭</a>
+			<p>这是内容一</p>
+			<p>这是内容二</p>
+			<p>这是内容三</p>
+			<p>这是内容四</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		/*
+		var modal=new $.UI.Modal('#dia');
+		$('button').click(function(){
+			modal.show();
+		})
+		*/
+	</script>
+</body>
+</html>

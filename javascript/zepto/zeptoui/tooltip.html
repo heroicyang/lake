@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0-rc2/css/bootstrap.min.css">
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+	<script src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row container">
+        <p>language1</p>
+        <p>language2</p>
+        <p>language3</p>
+        <p>language4</p>
+    </div>
+    <div class="row container">
+	<div class="bs-example-tooltips" id="tooltip">
+        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left">左侧Tooltip</button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">上方Tooltip</button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">下方Tooltip</button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">右侧Tooltip</button>
+    </div>
+    </div>
+    <script>
+    $(function(){
+        $('#tooltip').tooltip('show');
+        
+    })
+    </script>
+</body>
+</html>

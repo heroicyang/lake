@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>树形菜单</title>
+	<link rel="stylesheet" href="css/evaer.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/ui_tree.js"></script>
+</head>
+<body>
+	<button id="open">打开全部</button>
+	<button id="close">关闭全部</button>
+	<ul class='m-tree' data-ui-tree>
+		<li>
+			<label><i></i>序章</label>
+			<ul>
+				<li>
+					<span>前言</span>
+				</li>
+				<li>
+					<span>目录</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<label><i></i>第一章</label>
+			<ul>
+				<li>
+					<span>1.1节</span>
+				</li>
+				<li>
+					<span>1.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<label><i></i>第二章</label>
+			<ul>
+				<li>
+					<span>2.1节</span>
+				</li>
+				<li>
+					<span>2.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li class="in">
+			<label><i></i><a href="#">第三章</a></label>
+			<ul>
+				<li class="in">
+					<label><i></i>3.1节</label>
+					<ul>
+						<li>
+							<span><a href="#">3.1.1节</a></span>
+						</li>
+						<li>
+							<span>3.1.2节</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>3.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<label><i></i>第四章</label>
+			<ul>
+				<li>
+					<span>4.1节</span>
+				</li>
+				<li>
+					<span>4.2节</span>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

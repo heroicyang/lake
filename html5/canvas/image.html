@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="800px" height="600px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+  var canvas=document.getElementById('draw');
+  var draw=canvas.getContext('2d');
+  
+  var img=new Image();
+  img.src='imgs/jihe.png';
+  img.onload=function(){
+  
+    /*-------
+    drawImage(image,x,y)  x和y是其在目标canvas里的起始坐标
+    --------*/
+   
+    //draw.drawImage(img,20,20); 
+	
+    /*-------
+	缩放scaling
+    drawImage(image,x,y,width,height)  x和y是起始坐标 width和height是图像的大小
+    -------*/
+  
+   //draw.drawImage(img,20,20,300,300);
+   
+   /*-------
+   切片slicing
+   drawImage(image,sx,sy,sWidth,sHeight,dx,dy,dWidth,dHeight)
+   -------*/
+  
+   draw.drawImage(img,20,20,300,300,20,20,100,100);
+   
+   
+  }	
+</script>
+</body>
+</html>
+

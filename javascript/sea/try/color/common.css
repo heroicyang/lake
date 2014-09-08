@@ -1,0 +1,40 @@
+﻿/*====================================================================公用样式 begin===============================*/
+/*清除文档类型声明中的默认属性*/
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;} 
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+
+/*字体定义*/
+body {font-size:16px; font-family:"微软雅黑", simsun,Georgia, serif; background:#fff;}
+table {font-size:inherit;font:100%;}
+
+/*超链接样式定义*/
+a:link,a:visited{
+text-decoration: none;
+}
+a:hover,a:active{
+text-decoration: underline;
+}
+/*浮动*/
+.fl{
+float: left;
+}
+.fr{
+float: right;
+}
+
+/*清除浮动*/
+.clear{*zoom:1;}
+.clear:after{display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:".";}
+
+/*方块*/
+.area{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*====================================================================公用样式 end===================================*/

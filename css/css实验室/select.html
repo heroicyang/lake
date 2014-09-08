@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+	<style>
+	.select{
+    	display: inline-block;
+    	border:1px solid black;
+    	position: relative;
+    	border-radius:4px;
+	}
+	.select:after{
+	    display: inline-block;
+	    width: 20px;
+	    height: 20px;
+	    content: "\25BC";
+	    position: absolute;
+	    right: 0px;
+	    top: 6px;
+	    pointer-events:none; /*元素不再是鼠标事件的目标，鼠标不再监听当前层而去监听下面的层中的元素*/
+	}
+	select{
+	    appearance:none;
+	    -webkit-appearance:none; /*设置元素表示形式(normal|icon|window|button|menu|field)*/
+	    -moz-appearance: none;
+	    border: none;
+	    width: 50px;
+	    padding:3px;
+	    outline:none;
+	} 
+	</style>
+</head>
+<body>
+	<div class="select">
+	     <select>        
+	         <option>1</option>      
+	         <option>2</option>      
+	     </select>
+	</div>
+</body>
+</html>

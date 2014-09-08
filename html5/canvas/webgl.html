@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="400px" height="400px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script id="shader-fs" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(void){
+		gl_FragColor=vec4(1.0,1.0,1.0,1.0);
+	}
+</script>
+<script id="shader-vs" type="x-shader/x-vertex">
+	attribute vec3 aVertexPosition;
+	uniform mat4 uMVMatrix;
+	uniform mat4 uPMatrix;
+	void main(void){
+		gl_Position=uPMatrix*uMVMatrix*vec4(aVertexPosition，1.0)；
+	}
+</script>
+<script type="text/javascript" language="javascript">
+function webGLStart(){
+	var canvas=document.getElementById('draw');
+	initGl(canvas);
+	initShaders();
+	initBuffers();
+
+	gl.clearColor(0.0,0.0,0.0,1.0);
+	gl.enable(gl.DEPTH_TEST);
+
+	drawScene();
+}
+var gl;                              //传说中的webgl
+var triangleVertexPositionBuffer;    //三角形位置数组
+var squareVertexPositionBuffer;      //四边形位置数组
+
+/**根据传入的canvas初始化gl**/
+function initGL(canvas){
+	gl=canvas.getContext("experimental-webgl");
+	gl.viewportWidth=canvas.width;
+	gl.viewportHeightcanvas.height;
+	if(!gl){
+		alert("Could not initialise WebGL,sorry");
+	}
+}
+var mvMatrix;  //模型视图矩阵
+var pMatrix;   //投影矩阵
+function initBuffers(){
+  	/*三角形对象*/
+  	triangleVertexPositionBuffer=gl.createBuffer();
+  	gl.bindBuffer(gl.ARRAY_BUFFER,triangleVertexPositionBuffer);
+  	var vertices=[
+  	 0.0, 1.0, 0.0,
+  	-1.0,-1.0, 0.0,
+  	 1.0,-1.0, 0.0
+  	];
+  	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
+  	triangleVertexPositionBuffer.itemSize=3;
+  	triangleVertexPositionBuffer.numItems=3;
+
+  	/*四边形对象*/
+  	squareVertexPositionBuffer=gl.createBuffer();
+  	gl.bindBuffer(gl.ArrayBuffer,squareVertexPositionBuffer)
+  	vertices=[
+  	 1.0, 1.0, 0.0,
+  	-1.0, 1.0, 0.0,
+  	 1.0,-1.0, 0.0,
+  	-1.0,-1.0, 0.0
+  	];
+  	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
+  	squareVertexPositionBuffer.itemSize=3;
+  	squareVertexPositionBuffer.numItems=4;
+}
+function drawScene(){
+	gl.viewport(0,0,gl.viewportWidth,gl.viewportHeight);
+	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+	pMatrix=okMat4Proj(45,gl.viewportWidth/gl.viewportHeight,0.1,100.0);
+	mvMatrix=okMat4Trans(-1.5,0.0,-7.0);
+	gl.bindBuffer(gl.ARRAY_BUFFER,triangleVertexPositionBuffer);
+	gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,triangleVertexPositionBuffer.itemSize,gl.Float,false,0,0);
+	setMatrixUniforms();
+	gl.drawArrays(gl.TRIANGLES,0,triangleVertexPositionBuffer.numItems);
+	mvMatrix=okMat4Trans(1.5,0.0,-7.0);
+	gl.bindBuffer(gl.ARRAY_BUFFER,squareVertexPositionBuffer);
+	gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,squareVertexPositionBuffer.itemSize,gl.FLOAT,false,0,0);
+	setMatrixUniforms();
+	gl.drawArrays(gl.TRIANGLE_STRIP,0,squareVertexPositionBuffer.numItems);
+}
+</script>
+</body>
+</html>

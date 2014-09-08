@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>shaka-css库</title>
+    <link href="css/shaka.css" rel="stylesheet" >
+    <link href="css/reset.css" rel="stylesheet" >
+    <link href="css/main.css" rel="stylesheet" >
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/huadong.js"></script>
+</head>
+<body>
+ <!--
+    <div class="row">
+        <div class="container">
+            <h1>css3 ie6 兼容性调整</h1>
+            <hr>
+           <div class="row">
+               <div class="span3">
+                    渐变
+               </div>
+               <div class="span9">
+                   　　<div class="box"></div>
+               </div>
+           </div>
+        </div>
+    </div>
+ -->
+    <div class="row" id="nav">
+        <div class="row">
+        <div class="container">
+        <span class="span2"><a href="#liebiao">列表</a></span>
+        <span class="span2"><a href="#biaodan">表单</a></span>
+        <span class="span2"><a href="#biaoge">表格</a></span>
+        <span class="span2"><a href="#anniu">按钮</a></span>
+        <span class="span2"><a href="#tubiao">图标</a></span>
+        <span class="span2"><a href="#more">更多</a></span>
+        </div>
+        </div>
+        <div class="row" id="fly"></div>
+    </div>
+    <!------------------列表----------------->
+    <div class="row" id="liebiao">
+        <div class="container">
+            <h1>列表</h1>
+            <hr>
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>默认样式</th>
+                        <th>无样式</th>
+                        <th>序号</th>
+                    </tr>
+                    </thead>
+                       <tbody>
+                       <tr>
+                           <td> <ul>
+                               <li>Django是个好框架</li>
+                               <li>Pyramid是个好框架</li>
+                               <li>Tornado是个好框架</li>
+                               <li>Flask是个好框架</li>
+                               <li>Uliweb是个好框架
+                                   <ul>
+                                       <li>MVT模型</li>
+                                       <li>组织结构</li>
+                                       <li>资源共享的处理方式</li>
+                                       <li>URL映射</li>
+                                       <li>View和Template</li>
+                                       <li>ORM</li>
+                                       <li>I18N</li>
+                                       <li>功能扩展</li>
+                                       <li>命令行工具</li>
+                                       <li>运行环境支持</li>
+                                       <li>其它特点</li>
+                                   </ul>
+                               </li>
+                               <li>Bottle是个好框架</li>
+                               <li>Rails是个好框架</li>
+                               <li>Yii是个好框架</li>
+                           </ul></td>
+                           <td>
+                               <ul class="unstyled">
+                                   <li>以动手实践为荣 , 以只看不练为耻;</li>
+                                   <li>以打印日志为荣 , 以单步跟踪为耻;</li>
+                                   <li>以空格缩进为荣 , 以制表缩进为耻;</li>
+                                   <li>以单元测试为荣 , 以人工测试为耻;
+                                       <ul  class="unstyled">
+                                           <li>UnitTest很不错</li>
+                                           <li>Nose也很好用</li>
+                                           <li>配合Profile很爽</li>
+                                           <li>配合pdb也不错</li>
+                                       </ul>
+                                   </li>
+                                   <li>以模块复用为荣 , 以复制粘贴为耻;</li>
+                                   <li>以多态应用为荣 , 以分支判断为耻;</li>
+                                   <li>以Pythonic为荣 , 以冗余拖沓为耻;</li>
+                                   <li>以总结分享为荣 , 以跪求其解为耻;</li>
+                               </ul>
+                           </td>
+                           <td>
+                               <ol>
+                                   <li>以热爱祖国为荣，以危害祖国为耻吗？</li>
+                                   <li>以服务人民为荣，以背离人民为耻吗？</li>
+                                   <li>以崇尚科学为荣，以愚昧无知为耻吗？</li>
+                                   <li>以辛勤劳动为荣，以好逸恶劳为耻吗？</li>
+                                   <li>以团结互助为荣，以损人利己为耻吗？</li>
+                                   <li>以诚实守信为荣，以见利忘义为耻吗？</li>
+                                   <li>以遵纪守法为荣，以违法乱纪为耻吗？</li>
+                                   <li>以艰苦奋斗为荣，以骄奢淫逸为耻吗？</li>
+                               </ol>
+                           </td>
+                       </tr>
+                       </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr><th>红色三角<small> (.triangle-red)</small></th>
+                        <th>蓝色方块<small> (.rectangle-blue)</small></th>
+                        <th>灰色圆点<small> (.dot-gray)</small></th>
+                        <th>蓝色圆点<small> (.dot-blue)</small></th>
+                        <th>红色圆点<small> (.dot-red)</small></th>
+                        <th>黑色圆点<small> (.dot-dark)</small></th></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <ul class="triangle-red">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="rectangle-blue">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="dot-gray">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="dot-blue">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="dot-red">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="dot-dark">
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                                <li>测试内容一</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!------------------表单----------------->
+    <div class="row" id="biaodan">
+        <div class="container">
+            <h1>表单</h1>
+            <hr>
+            <div class="span8">
+            <div class="row ">
+
+                <div class="span3"><p>默认样式</p></div>
+                <div class="span4">
+                    <form>  <div><label>用户名</label><input type="text" placeholder="请输入用户名"></div>
+                             <div><label>密码</label><input type="text" placeholder="请输入密码"></div>
+                             <div><button class="btn btn-primary">确定</button></div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="span3"><p>警告样式  class=input-warning</p></div>
+                <div class="span4">
+                    <form>  <div><label>用户名</label><input type="text" placeholder="请输入用户名" class="input-warning"></div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="span3"><p>错误样式 class=input-error</p></div>
+                <div class="span4">
+                    <form>  <div><label>用户名</label><input type="text" placeholder="请输入用户名" class="input-error"></div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="span3"><P>成功样式 class=input-success</P></div>
+                <div class="span4">
+                    <form>  <div><label>用户名</label><input type="text" placeholder="请输入用户名" class="input-success"></div>
+                    </form>
+                </div>
+
+            </div>
+            </div>
+            <div class="span4"><p>
+                表单设计没怎么接触 以后用上时再添加
+            </p></div>
+        </div>
+    </div>
+    <!------------------表格------------------>
+    <div class="row" id="biaoge">
+      <div class="container">
+        <h1>表格样式库</h1>
+        <hr >
+        <div class="row">
+            <div class="span12">
+            <h2>表格标签</h2>
+            <table class="table table-bordered">
+            <thead><tr><th>标签</th><th>描述</th></tr></thead>
+                <tbody>
+                <tr><td> (table)</td><td>用以包装格式化的数据</td></tr>
+                <tr><td>（thead)</td><td>容纳表格标题行</td></tr>
+                <tr><td>（tbody)</td><td>容纳表格主要内容行</td></tr>
+                <tr><td>（tr）</td><td>容纳行内的一组单元格（td)(th)</td></tr>
+                <tr><td> (td)</td><td>默认的表格单元格</td></tr>
+                <tr><td>(th)</td><td>用过列头（thead）内</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <h2>表格样式选项</h2>
+                <table class="table table-striped table-bordered ">
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类</th>
+                        <th>描述</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>默认</td>
+                        <td class="muted">None</td>
+                        <td>无样式，仅仅有列和行</td>
+                    </tr>
+                    <tr>
+                        <td>基本</td>
+                        <td>
+                            <code>.table</code>
+                        </td>
+                        <td>行与行之间以水平线相隔</td>
+                    </tr>
+                    <tr>
+                        <td>有边线</td>
+                        <td>
+                            <code>.table-bordered</code>
+                        </td>
+                        <td>表格外围均有外边框</td>
+                    </tr>
+                    <tr>
+                        <td>间隔背景</td>
+                        <td>
+                            <code>.table-striped</code>
+                        </td>
+                        <td>奇数行背景设为浅灰色</td>
+                    </tr>
+                    <tr>
+                        <td>紧凑</td>
+                        <td>
+                            <code>.table-condensed</code>
+                        </td>
+                        <td>竖直方向padding缩减一半，从8px变为4px，所有的 <code>td</code> 和 <code>th</code> 元素都受影响</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 alpha">
+               <h3>1。默认表格样式</h3>
+                <p>仅使用一组边线对表格进行格式化，以保证可读性并维持表格结构不变</p>
+            </div>
+            <div class="span8 omega">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>电视剧</th>
+                        <th>类型</th>
+                        <th>年代</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>爱情公寓</td>
+                        <td>都市爱情喜剧</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>邪恶力量</td>
+                        <td>悬疑魔幻</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008 </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 alpha">
+                <h3>2. 背景交替的表格</h3>
+                <p>添加 .table-striped 让表格变得生动一点。</p>
+            </div>
+            <div class="span8 omega">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>电视剧</th>
+                        <th>类型</th>
+                        <th>年代</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>爱情公寓</td>
+                        <td>都市爱情喜剧</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>邪恶力量</td>
+                        <td>悬疑魔幻</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 alpha">
+                <h3>3. 有边线的表格</h3>
+                <p>为整个表格添加边线，出于美观考虑，每个边角都呈现圆角。table-bordered</p>
+            </div>
+            <div class="span8 omega">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>电视剧</th>
+                        <th>类型</th>
+                        <th>年代</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>爱情公寓</td>
+                        <td>都市爱情喜剧</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>邪恶力量</td>
+                        <td>悬疑魔幻</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 alpha">
+                <h3>4. 紧凑表格</h3>
+                <p>添加 .table-condensed 让表格更加紧凑，所有表格单元的padding都会减半(从8px到4px)</p>
+            </div>
+            <div class="span8 omega">
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>电视剧</th>
+                        <th>类型</th>
+                        <th>年代</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>爱情公寓</td>
+                        <td>都市爱情喜剧</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>邪恶力量</td>
+                        <td>悬疑魔幻</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 alpha">
+                <h3>5. 表格行样式</h3>
+                <p>在tr里添加类 改变行样式</p>
+            </div>
+            <div class="span8 omega">
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>tr类名</th>
+                        <th>电视剧</th>
+                        <th>类型</th>
+                        <th>年代</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success">
+                        <td>（.success)</td>
+                        <td>爱情公寓</td>
+                        <td>都市爱情喜剧</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr class="error">
+                        <td>(.error)</td>
+                        <td>邪恶力量</td>
+                        <td>悬疑魔幻</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr class="warning">
+                        <td>(.warning)</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008</td>
+                    </tr>
+                    <tr class="info">
+                        <td>(.info)</td>
+                        <td>神探伽俐略</td>
+                        <td>推理探案</td>
+                        <td>2008</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!------------------按钮------------------>
+    <div class="row" id="anniu">
+        <div class="container" >
+         <h1>按钮样式库</h1>
+            <hr >
+         <div class="row">
+             <div class="span12">
+             <h2>按钮样式</h2>
+             <table class="table table-bordered">
+              <thead><tr><th>按钮</th><th>类 class=“”</th><th>描述</th></tr></thead>
+              <tbody><tr><td><button class="btn" href="#">默认</button></td><td>.btn</td><td>标准灰色按钮</td></tr>
+                      <tr><td><button class="btn btn-primary" href="#">首页</button></td><td>.btn .btn-primary</td><td>视觉吸引力强 用于标识一组安妮中最主要的那个动作</td></tr>
+                      <tr><td><button class="btn btn-info" href="#">信息</button></td><td>.btn .btn-info</td><td>可用于替换默认样式</td></tr>
+                      <tr><td><button class="btn btn-success" href="#">成功</button></td><td>.btn .btn-success</td><td>表示操作成功或动作正确</td></tr>
+                      <tr><td><button class="btn btn-warning" href="#">警告</button></td><td>.btn .btn-warning</td><td>表示动作应谨慎</td></tr>
+                      <tr><td><button class="btn btn-danger" href="#">危险</button></td><td>.btn .btn-danger</td><td>表示危险或有潜在威胁的动作</td></tr>
+                      <tr><td><button class="btn btn-inverse" href="#">相反</button></td><td>.btn .btn-inverse</td><td>做为补充的深灰色按钮，与具体行为或动作无关。</td></tr>
+              </tbody>
+             </table>
+             </div>
+         </div>
+         <div class="row">
+                <div class="span12">
+                    <p>
+                       <em>因ie6兼容性问题 全都改成了图片 这样就必须限定按钮的宽高了 以后可以根据需要 改进btn图片</em>
+                    </p>
+                </div>
+          </div>
+     </div>
+    </div>
+    <!------------------图标------------------>
+    <div class="row" id="tubiao">
+        <div class="container">
+            <h1>图标库</h1>
+            <hr >
+                <div class="row">
+                    <div class="span3">
+                        <ul class="unstyled">
+                            <li><i class="icon-glass"></i> icon-glass</li>
+                            <li><i class="icon-music"></i> icon-music</li>
+                            <li><i class="icon-search"></i> icon-search</li>
+                            <li><i class="icon-envelope"></i> icon-envelope</li>
+                            <li><i class="icon-heart"></i> icon-heart</li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <ul class="unstyled">
+                        <li><i class="icon-star"></i> icon-star</li>
+                        <li><i class="icon-star-empty"></i> icon-star-empty</li>
+                        <li><i class="icon-user"></i> icon-user</li>
+                        <li><i class="icon-film"></i> icon-film</li>
+                        <li><i class="icon-th-large"></i> icon-th-large</li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <ul class="unstyled">
+                        <li><i class="icon-th"></i> icon-th</li>
+                        <li><i class="icon-th-list"></i> icon-th-list</li>
+                        <li><i class="icon-ok"></i> icon-ok</li>
+                        <li><i class="icon-remove"></i> icon-remove</li>
+                        <li><i class="icon-zoom-in"></i> icon-zoom-in</li>
+                        </ul>
+                    </div>
+                    <div class="span3">
+                        <p>
+                            <h4>看以后网站需要什么图标 继续添加</h4>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

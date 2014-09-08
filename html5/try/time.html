@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="public/js/zepto.js"></script>
+</head>
+<body>
+	<input type="date" value="2014-03-01">
+	<script type="text/javascript">
+		var time=$('input');
+		time.on('change',function(data){
+			var value=time.val();
+				console.log(value);
+				console.log(typeof value);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="script/jquery.js"></script>
+</head>
+<body>
+  <h1>文章标题</h1>
+  <div class="content">
+     <p>这是文章的主要内容</p>
+  </div>
+  <button id="a">append</button>
+  <button id="b">change</button>
+  <script>
+
+    $(function(e){
+      console.log('wawa load');
+    })
+
+    var a=$('#a');
+    var b=$('#b');
+    var p=$('.content p');
+    p.click(function(){
+      console.log('i am click');
+    })
+    a.click(function(){
+      $('.content').html('<p>这是文章的主要内容</p>');  
+    });
+    b.click(function(){
+
+    })
+  </script>
+</body>
+</html>

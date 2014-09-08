@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="metro/d3.v3.js"></script>
+  <style>
+   .chart div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var data=[4,8,15,16,23,42];
+    var div=d3.select("body").append("div").attr('class','square')
+    var svg=div.append("svg")
+    console.log(div);
+    console.log(svg);
+    svg.selectAll('div').data(data).enter().append('rect')
+    /*-----------------------------
+    var data=svg.data(data)
+    var enter=data.enter()
+    var inenter=enter.append('div')
+    console.log(svg);
+    console.log(data);
+    console.log(enter);
+    console.log(inenter);
+    -------------------------------*/
+  </script>
+</body>
+</html>

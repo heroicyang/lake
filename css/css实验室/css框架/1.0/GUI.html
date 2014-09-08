@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>slider demo</title>
+    <link rel="stylesheet" href="css/shaka.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
+    <style>#slider { margin: 10px; }  </style>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span4">
+            <div id="slider">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $( "#slider" ).slider({
+        range: "max",
+        max:100,
+        min:50,
+        min-height:13px;
+    });
+</script>
+</body>
+</html>

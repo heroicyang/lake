@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+	<style>
+		[bone-model="sidebar"]{
+			width: 200;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div bone-model="sidebar">
+			this is sidebar
+		</div>
+		<div style="float:right">
+			<button>button</button>
+		</div>
+	</div>
+	<script>
+		var sidebar=new Backbone.Model({color:'white',num:123456,bone:{a:1,b:2,c:3}});
+		sidebar.on('change:bone',function(model,color){
+			console.log('change:bone');
+			console.log(this.attributes);
+		});
+		sidebar.on('change',function(){
+			console.log('change');
+			console.log(this.attributes);
+		});
+		sidebar.id=678;
+		$('button').click(function(){
+			var num=prompt("please enter a css color:");
+			sidebar.set({bone:{c:num}});
+		})
+		console.log(sidebar.cid);
+		console.log(sidebar.id);
+		console.log(sidebar);
+		//sidebar.promptColor();
+		//console.log(sidebar.get('num'));
+		//console.log(JSON.stringify(sidebar));
+	</script>
+</body>
+</html>

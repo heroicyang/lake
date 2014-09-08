@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    .div1 {
+        position:absolute;
+        width:300px;
+        height:200px;
+        background: blue;
+        left:0;
+        top:0;
+    }
+</style>
+  <div>
+    <button id='start'>动画a</button>
+    <button id='show'>动画b</button>
+    <button id='clear'>清楚队列</button>
+    <button id='stop'>停止动画</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+    </div>
+  </div>
+</body>
+    <script src="js/zepto.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var se=$('.div1');
+            var start=$('#start');
+            var show=$('#show');
+            var clear=$('#clear');
+            var stop=$('#stop');
+            start.on('click',function(){
+                se.animate({top:'300px'},4000);
+            });
+            show.on('click',function(){
+                se.animate({left:'300px'},4000);
+            });     
+        });
+    </script>
+</html>

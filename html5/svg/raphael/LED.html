@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="metro/raphael.js"></script>
+    <style type="text/css">
+            body{
+              background: #666;
+            }
+            #holder {
+                height: 600px;
+                margin: 100px auto 100px auto;
+                width: 600px;
+            }
+            #time {
+                text-align: center;
+                font: 100 3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+  </style>
+</head>
+<body>
+    <script type="text/javascript">
+  /*\
+  raphael clock
+  酷炫钟表
+  \*/
+  window.onload=function(){
+    var pen=Raphael('holder',600,600) //全局画笔
+    var R=200
+    var init=true
+    var param={fill:'#ccc'}
+    var marksAttr={fill:'#444',stroke:'none'}  //时间标记样式
+    /**************************
+      函数画出marks时间标记
+      R:半径        
+      total:marks总数
+    ***************************/
+    function drawMarks(R,total){
+      var arr=pen.set();//点元素组
+      for(var value=0;value<total;value++)
+      { var alpha=360/total*value;//以360为圆周角获取每个mark的角度
+        var a=(90-alpha)*Math.PI/180;
+        var x=300+R*Math.cos(a);
+        var y=300-R*Math.sin(a);
+        arr.push(pen.circle(x,y,2).attr(marksAttr));
+      }
+      return arr;
+    }
+    var pos=drawMarks(R,60)
+    function t(n){
+      pos[n].animate({r:6,fill:'#222'},300,function(){
+        pos[n].animate({r:2,fill:'#444'},300)
+      })
+    }
+    var n=0;
+    setInterval(function(){
+      t(n)
+      if(n<59){
+        n=n+1
+      }else{
+        n=0
+      }
+    },60);
+  }
+  </script>
+    <div id="holder"></div>
+</body>
+</html>

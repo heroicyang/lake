@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=640">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">-->
+	<title>图表</title>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/O.js"></script>
+	
+	<script src="js/raphael-min.js"></script>
+	<script src="js/chart_helper.js"></script>
+	
+	<script src="js/chart.js"></script>
+	<style>
+		*{margin: 0;}
+		#container{
+			width:94%;
+			padding:0;
+			margin-left:auto;
+			margin-right: auto; 
+		}
+		.crm-chart-b-text{padding-top: 20px;}
+		.crm-chart-b-text div{height: 26px;font-size: 14px;}
+		.crm-chart-b-text p{line-height: 26px;width:58%;float: right;}
+		.crm-chart-b-text p b{display: block;float: left;font-weight: normal;color: #888;}
+		.crm-chart-b-text p span{display: block;float: right;width: 140px;text-align: right;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+		.crm-chart-b-text-first{border-bottom: 1px #ccc solid;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+	</div>
+	<script src="js/index.js"></script>
+	<script>
+	renderChart('b',{"pipelineColumns": [
+                    {
+                        "salesStageNo": 2,
+                        "name": "立项跟踪很长很长很长很长很长很长很长很长很长的字",
+                        "winRate": 35,
+                        "amount": 999999999999999
+                    },
+                    {
+                        "salesStageNo": 3,
+                        "name": "呈报方案很长很长很长很长很长很长很长很长很长很长很长的字",
+                        "winRate": 50,
+                        "amount": 0
+                    },
+                    {
+                        "salesStageNo": 4,
+                        "name": "789很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的字",
+                        "winRate": 60,
+                        "amount": 0
+                    },
+                    {
+                        "salesStageNo": 5,
+                        "name": "1212很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的字",
+                        "winRate": 90,
+                        "amount": 0
+                    },
+                    {
+                        "salesStageNo": 10,
+                        "name": "赢单",
+                        "winRate": 100,
+                        "amount": 0
+                    }
+                ],
+                "salesTargetAmount": 0,
+                "pipelineAmount": 2,
+                "maybeWinAmount": 0.7,
+                "salesForecastAmount": 0.7,
+                "winAmount": 0
+        })
+	</script>
+</body>
+</html>

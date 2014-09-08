@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    #div1 {
+        background:green;
+        width:188px;
+        height:188px;
+        position:absolute;
+    }
+</style>
+  <div>
+    <button id='start'>START</button>
+    <button id='stop'>STOP</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+      <p>这是prograph1</p>
+      <p>这是prograph2</p>
+      <p>这是prograph3</p>
+      <p>这是prograph4</p>
+      <p>这是prograph5</p>
+    </div>
+  </div>
+</body>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript">
+ $(function(){
+      var se=$('.div1');
+      /*-----------------------------
+      function ca(){
+        console.log('this is queue a');
+      }
+      function cb(){
+        console.log('this is queue b');
+      }
+      se.queue('as',ca);
+      console.log(se.queue('as'));
+      se.queue('as',cb);
+      console.log(se.queue('as'));
+      se.queue('as',function(){
+        console.log('this is queue c');
+      })
+      console.log(se.queue('as'));
+      ---------------------------------*/
+        se.queue('as',function(){
+            console.log('this is queue a');
+            $(this).dequeue('as');
+        });
+        se.queue('as',function(){
+            console.log('this is queue b');
+            $(this).dequeue('as');
+        });
+        se.queue('as',function(){
+            console.log('this is queue c');
+            $(this).dequeue('as');
+        })
+        se.queue('as',function(){
+            console.log('this is queue d');
+            $(this).dequeue('as');
+        })
+        se.dequeue('as');
+ });
+</script>
+</html>

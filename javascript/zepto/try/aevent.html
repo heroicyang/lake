@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于鼠标hoverintent的实验</title>
+<style>
+	.demo{
+	   margin:0px;
+	   padding:0px;
+	   display:block;
+	   width:500px;
+	   height:86px;
+	   background:#9cc;
+	   list-style:none;
+	   position:relative;
+	}
+	.p1{
+	  float:left;
+	  width:120px;
+	  height:40px;
+	  background:#FCC;
+	}
+	.p2{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ffc;
+	}
+	.p3{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#cfc;
+	}
+	.p4{
+	 width:120px;
+	 height:40px;
+	 background:#ccf;
+	 position:absolute;
+	 top:200px;
+	}
+</style>
+</head>
+<body>
+	<ul class='demo'>
+	    <li class='p1'></li>
+		<li class='p2'></li>
+		<li class='p3'></li>
+		<li class='p4'></li>
+	</ul>
+</body>
+	<script src="js/zepto.js"></script>
+	<script>
+	/*\
+	查看控制台信息可知 在事件冒泡阶段 仅有一个e事件对象 
+	在各元素间传播
+	单独看每次事件的e对象时e.currentTarget均为null
+	这是因为e.currentTarget保留的是指针 此时冒泡完毕 currentTarget已无
+	但是单独输出的时候 捕获了e对象每次的currentTarget并把它输出了出来
+	\*/
+		Zepto(function(){
+			var e=$.Event('eae',{bubbles:true,haha:'event'});
+			$('.p4').on('eae',function(e){
+		   		console.log('p4:');
+		   		console.log(e);
+		   		console.log(e.currentTarget);
+			});
+			$('.demo').on('eae',function(e){
+				console.log('demo');
+				console.log(e);
+				console.log(e.currentTarget);
+			});
+			$('body').on('eae',function(e){
+				console.log('body');
+				console.log(e);
+				console.log(e.currentTarget);
+			})
+			$('.p4').trigger(e,{timemap:'earth'});
+		});
+	</script>
+</html>

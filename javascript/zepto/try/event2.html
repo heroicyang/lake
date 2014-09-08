@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于鼠标hoverintent的实验</title>
+<style>
+	.demo{
+	   margin:0px;
+	   padding:0px;
+	   display:block;
+	   width:500px;
+	   height:86px;
+	   background:#9cc;
+	   list-style:none;
+	   position:relative;
+	 }
+	 .p1{
+	  float:left;
+	  width:120px;
+	  height:40px;
+	  background:#FCC;
+	 }
+	 .p2{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ffc;
+	 }
+	 .p3{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#cfc;
+	 }
+	 .p4{
+	 width:120px;
+	 height:40px;
+	 background:#ccf;
+	 position:absolute;
+	 top:200px;
+	 }
+</style>
+</head>
+<body>
+	  <ul class='demo'>
+	      <li class='p1'></li>
+		  <li class='p2'></li>
+		  <li class='p3'></li>
+		  <li class='p4'></li>
+	  </ul>
+	  <div class='mode'>
+	      <div class='m1'></div>
+		  <div class='m2'></div>
+		  <div class='m3'></div>
+		  <div class='m4'></div>
+	  </div>
+</body>
+	<script src="js/zepto.js"></script>
+	<script>
+		Zepto(function(){
+		   $('.p4').on('click',function(e){
+		   		console.log('.p4');
+		   		//e.stopPropagation();
+		   })
+		   $('.demo').on('click',function(e){
+		   		console.log('demo');
+		   		//e.stopPropagation();
+		   });
+		   $('body').on('click',function(e){
+		   		console.log('body');
+		   })
+		});
+		</script>
+</html>

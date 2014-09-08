@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于鼠标hoverintent的实验</title>
+<style>
+	.con{
+		width: 800px;
+		height: 400px;
+		background: #eee;
+		margin-top: 40px;
+		margin-left:auto;
+		margin-right: auto;
+		overflow: auto;
+	}
+	.con-info{
+		width: 600px;
+		height: 2000px;
+		background: blue;
+	}
+</style>
+</head>
+<body>
+	<div class="con">
+	  	<div class="con-info">
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4 class="object">infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  		<h4>infoa</h4>
+	  	</div>
+	</div>
+</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function(){
+			var con=$('.con');
+			var info=$('.con-info');
+			var obj=$('.object');
+			con.on('scroll',function(){
+				var top=con.scrollTop();
+				if(top>400)
+					con.scrollTop(0);
+			});
+		})
+	</script>
+</html>

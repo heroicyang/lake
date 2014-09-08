@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="metro/raphael.js"></script>
+    <script src="metro/wave.js"></script>
+    <style type="text/css">
+      body{background: #666;}
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+    var pen = Raphael(0, 0, 800, 600);
+
+    pen.vecright([107,100],60);
+    var vector=pen.vecright([160,100],60);
+    //vector.transform('r90,160,100');
+    //vector.transform('s2,2,160,100');
+    vector.transform('T10,10');
+  </script>
+</body>
+</html>

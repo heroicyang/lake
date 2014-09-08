@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>hello world</h1>
+	<img src="w.jpg" alt="">
+	<script>
+		var file=new FileReader();
+		var xml=new XMLHttpRequest();
+		xml.open('GET','w.jpg',true);
+		//xml.open('GET','XMLHttpRequest.html',true);
+		xml.onreadystatechange=function(){
+			if (xml.readyState==4 && xml.status==200){
+    			//console.log(xml.response);
+    		}
+		}
+		xml.send();
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.tpl-chart{
+	margin-top: 20px;
+}
+.tpl-chart-card{
+	background: #fefefe;
+	height: 360px;
+	margin-bottom: 20px;
+	border: 1px #ccc solid;
+}
+#chart-funnel{height: 600px;}

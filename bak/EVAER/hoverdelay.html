@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于鼠标hoverintent的实验</title>
+<style>
+	 .demo{
+	   margin:0px;
+	   padding:0px;
+	   display:block;
+	   width:500px;
+	   height:86px;
+	   background:#9cc;
+	   list-style:none;
+	 }
+	 .p1{
+	  float:left;
+	  width:120px;
+	  height:40px;
+	  background:#FCC;
+	 }
+	 .p2{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ffc;
+	 }
+	 .p3{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#cfc;
+	 }
+	 .p4{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ccf;
+	 }
+</style>
+</head>
+<body>
+	  <ul class='demo'>
+	      <li class='p1'></li>
+		  <li class='p2'></li>
+		  <li class='p3'></li>
+		  <li class='p4'></li>
+	  </ul>
+	  <div class='mode'>
+	      <div class='m1'></div>
+		  <div class='m2'></div>
+		  <div class='m3'></div>
+		  <div class='m4'></div>
+	  </div>
+</body>
+	<script src="js/jquery.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/jquery.hoverdelay.js"></script>
+	<script>
+		jQuery(function(){
+		    function makeTall(){
+			  var Athis=$(this);
+			  Athis.animate({height:'160%'},200);
+		    };
+			function makeShort(){
+			 var Athis=$(this);
+			  Athis.animate({height:'60%'},200);
+			};
+			function showE(e){
+              console.log(e);
+			};
+		   //$('.demo li').on('mouseenter',makeTall);
+		   //$('.demo li').on('mouseleave',makeShort);
+		   var config = {    
+     				over: makeTall, // function = onMouseOver callback (REQUIRED)    
+    				timeout: 0, // number = milliseconds delay before onMouseOut    
+     			    out: makeShort // function = onMouseOut callback (REQUIRED)    
+                    };
+
+            $(".demo li").hoverdelay( config );
+            //$(".demo li").hoverdelay( config );
+		});
+	</script>
+</html>

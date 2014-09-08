@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node</title>
+	<script src="js/zepto.js"></script>
+</head>
+<body>
+	<a>ajax</a>
+	<script>
+		var a=$('a');
+		a.on('click',function(){
+			$.post('/create', { sample: 'payload',a:[0,1,2,3,4],b:{ba:1,bb:2,bc:3} }, function(response){
+  				console.log(response);
+			})
+		})
+	</script>
+</body>
+</html>

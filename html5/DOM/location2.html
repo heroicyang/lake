@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<style>
+	canvas{
+	display:block;
+	margin:60px auto;
+	background-color:#ccc;
+	}
+	</style>
+</head>
+<body>
+<h1>hello world</h1>
+<button id="a">click me</button>
+<script type="text/javascript">
+var a=document.getElementById('a')
+a.onclick=function(){
+	window.showModalDialog('location.html',{name:'hello world'},"dialogWidth=1500px;dialogHeight=800px")
+	  //window.showModalDialog(url, obj, "dialogWidth=1500px;dialogHeight=800px");
+}
+</script>
+ 
+</body>
+</html>

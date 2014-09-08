@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://raphaeljs.com/growing-pie.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Raphaël · Growing Pie</title>
+        <link rel="stylesheet" href="http://raphaeljs.com/demo.css" media="screen">
+        <link rel="stylesheet" href="http://raphaeljs.com/demo-print.css" media="print">
+        <style media="screen">
+            #holder {
+                height: 400px;
+                margin: -200px 0 0 -200px;
+                width: 400px;
+            }
+        </style>
+        <script src="./Raphaël · Growing Pie_files/raphael.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var r = Raphael("holder");
+
+                r.customAttributes.segment = function (x, y, r, a1, a2) {
+                    var flag = (a2 - a1) > 180,
+                        clr = (a2 - a1) / 360;
+                    a1 = (a1 % 360) * Math.PI / 180;
+                    a2 = (a2 % 360) * Math.PI / 180;
+                    return {
+                        path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, +flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
+                        fill: "hsb(" + clr + ", .75, .8)"
+                    };
+                };
+
+                function animate(ms) {
+                    var start = 0,
+                        val;
+                    for (i = 0; i < ii; i++) {
+                        val = 360 / total * data[i];
+                        paths[i].animate({segment: [200, 200, 150, start, start += val]}, ms || 1500, "bounce");
+                        paths[i].angle = start - val / 2;
+                    }
+                }
+
+                var data = [24, 92, 24, 52, 78, 99, 82, 27],
+                    paths = r.set(),
+                    total,
+                    start,
+                    bg = r.circle(200, 200, 0).attr({stroke: "#fff", "stroke-width": 4});
+                data = data.sort(function (a, b) { return b - a;});
+
+                total = 0;
+                for (var i = 0, ii = data.length; i < ii; i++) {
+                    total += data[i];
+                }
+                start = 0;
+                for (i = 0; i < ii; i++) {
+                    var val = 360 / total * data[i];
+                    (function (i, val) {
+                        paths.push(r.path().attr({segment: [200, 200, 1, start, start + val], stroke: "#fff"}).click(function () {
+                            total += data[i];
+                            data[i] *= 2;
+                            animate();
+                        }));
+                    })(i, val);
+                    start += val;
+                }
+                bg.animate({r: 151}, 1000, "bounce");
+                animate(1000);
+                var t = r.text(200, 20, "Click on segments to make them bigger.").attr({font: '100 20px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#fff"});
+            };
+        </script>
+    <style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></head>
+    <body>
+        <div id="holder"></div>
+        <p id="copy">Demo of <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library</p>
+    
+</body></html>

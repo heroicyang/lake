@@ -1,0 +1,98 @@
+﻿/*********幻灯片样式**********/
+h1{
+	font-family: "微软雅黑";
+	font-size: 26px;
+	color: #333;
+	text-align: center;
+	line-height: 200px;
+}
+/*幻灯样式a*/
+.magic-a{
+	position: relative;
+	width: 400px;
+	height: 225px;
+}
+.magic-a .magic-con{
+	position: relative;
+	width: 400px;
+	height: 225px;
+	overflow: hidden;
+}
+.magic-a .magic-con .con-li{
+	position: absolute;
+	width: 400px;
+	height: 225px;
+	display: none;
+}
+.magic-a .magic-con .active{
+	display: block;
+}
+.magic-a .magic-con .con-li img{
+	width: 400px;
+	height: 225px;
+}
+.magic-a .magic-vector{
+	position: absolute;
+	right: 2%;
+	bottom: 2%;
+}
+.magic-a .magic-vector span{
+	display: inline-block;
+	padding: 0 4px;
+	cursor: pointer;
+	background: #fff;
+	color: blue;
+}
+.magic-a .magic-vector .active{
+	background: blue;
+	color: #fff;
+}
+/*幻灯样式b*/
+.magic-b{
+	position: relative;
+	width: 400px;
+	height: 225px;
+	overflow: hidden;
+}
+.magic-b .magic-con{
+	position: relative;
+	width: 400px;
+	height: 225px;
+}
+.magic-b .magic-con .con-li{
+	position: absolute;
+	width: 400px;
+	height: 225px;
+	display: none;
+}
+.magic-b .magic-con .active{
+	display: block;
+}
+.magic-b .magic-con .preve{
+	display: block;
+	left: -100%;
+}
+.magic-b .magic-con .next{
+	display: block;
+	left: 100%;
+}
+.magic-b .magic-con .con-li img{
+	width: 400px;
+	height: 225px;
+}
+.magic-b .magic-vector{
+	position: absolute;
+	right: 2%;
+	bottom: 2%;
+}
+.magic-b .magic-vector span{
+	display: inline-block;
+	padding: 0 4px;
+	cursor: pointer;
+	background: #fff;
+	color: blue;
+}
+.magic-b .magic-vector .active{
+	background: blue;
+	color: #fff;
+}

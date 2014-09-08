@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+a:link,a:visited{
+	text-decoration: none;
+	color:#333;
+}
+a:hover,a:active{
+color: #333;
+}
+a img{border: 0;}
+ul li{list-style: none;}
+body{margin: 0;padding: 0;font:normal 16px arial "微软雅黑";background: #fff;}
+
+/*兼容性解决 安卓原生浏览器在加了bg后才渲染为block*/
+/*h1,h2,h4,h5,p{background:rgba(255,255,255,0.01)}*/
+/*模块*/
+
+
+/* 清理浮动 */
+.f-clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.f-clear {zoom:1;}/* for IE6 IE7 */
+.f-fl,
+.f-fr{display: block;}
+.f-fl{float: left;}
+.f-fr{float: right;}
+.f-hide{display: none;}
+.f-show{display: block;}
+
+

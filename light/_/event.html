@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE</title>
+	<script src="underscore.js"></script>
+	<script src="base.js"></script>
+</head>
+<body>
+	<script>   
+		var base=new Event();
+		base.on('evea',function(){
+			console.log('i am evea');
+		})
+		base.on('evea',function(arga,argb){
+			console.log('i am evea1');
+			console.log(arga);
+			console.log(argb);
+		})
+		base.on('eveb',function(){
+			console.log('i am eveb');
+		})
+		base.on('evec',function(){
+			console.log('i am evec');
+		})
+		base.on('all',function(arga,argb){
+			console.log('i am all 1');
+			console.log(arga);
+			console.log(argb);
+		})
+		base.on('all',function(arga,argb){
+			console.log("i am all 2");
+			console.log(arga);
+			console.log(argb);
+		})
+		base.trigger('evea',123,456);
+	</script>
+</body>
+</html>

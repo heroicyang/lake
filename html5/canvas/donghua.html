@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="800px" height="600px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+  
+  var canvas=document.getElementById('draw');
+  var draw=canvas.getContext('2d');	
+ 
+      draw.fillStyle='rgba(0,0,0,0.4)';
+	  draw.strokeStyle='rgba(0,153,255,0.4)';
+	  draw.translate(150,150);
+	  
+  var sun=new Image();
+  var moon=new Image();
+  var earth=new Image();
+  
+  sun.src='imgs/sun.png';
+  moon.src='imgs/moon.png';
+  earth.src='imgs/earth.png';
+  
+  earth.onload=function(){
+  draw.drawImage(eaRth,12,12);
+  }
+  
+  function fly(){
+   draw.clearRect(0,0,800,600);
+   var time=new Date();
+  }
+</scrispt>
+</body>
+</html>

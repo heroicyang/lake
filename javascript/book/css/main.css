@@ -1,0 +1,84 @@
+body{
+	background: #eee;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*========================[[导航]]============*/
+.m-vector{
+	position: fixed;
+	top: 100px;
+	left: 60px;
+}
+.m-vector-icon{
+	border: 1px #ccc solid;
+	background: #fff;
+	line-height:6px;
+	width: 24px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 4px;
+	cursor: pointer;
+	border-radius:4px;
+	color: #aaa;
+	font-weight: bold;
+}
+.m-vector-icon p{
+	text-align: center;
+	margin: 0px;
+	font-size: 26px;
+}
+.m-vector-nav{
+	margin: 0;
+	padding: 10px;
+	padding-right: 15px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	background: #fff;
+	border: 1px #ccc solid;
+	color:#660099;
+	border-radius: 6px;
+}
+
+/*模块全局样式*/
+.m-vector-nav ul,
+.m-vector-nav li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+/*行样式*/
+.m-vector-nav li{
+	position: relative;
+	line-height: 26px;
+}
+.m-vector-nav ul{
+	padding-left: 1em;
+}
+.m-vector-nav li a{
+	display: block;
+	padding-left:1em;
+	padding-right:1em;
+}
+.m-vector-nav li b{
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right:-4px;
+}
+.m-vector-nav .in ul{
+	display: none;
+}
+.m-vector-nav a:link,
+.m-vector-nav a:visited{
+	color:#660099;
+	text-decoration: none;
+}
+.m-vector-nav a:hover,
+.m-vector-nav a:active{
+	color:blue;
+	text-decoration: none;
+}
+.m-vector-nav a.active{
+	color: blue;
+}

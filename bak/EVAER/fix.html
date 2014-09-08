@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery.js" language="javascript"></script>
+	<script type="text/javascript" src="js/evaer-fix1.js" language="javascript"></script>
+	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.css">
+	<style>
+		body{
+			background: #eee;
+		}
+		#cat{
+			background: #ccc;
+			width: 800px;
+			margin: 40px auto 0 auto;
+			border-radius: 9px;
+		}
+		#cat .cat-c{
+			background: #33CCFF;
+			border-radius: 8px;
+		}
+		#cat .show{
+			background: #999;
+			font-size: 28px;
+			border-radius: 8px;
+			font-style: "微软雅黑";
+			padding: 10px;
+			line-height: 32px;
+			height: 80px;
+		}
+	</style>
+</head>
+<body>
+<div id="cat">
+	<div style="height:200px">
+		
+	</div>
+	<div style="height:200px">
+		
+	</div>
+	<div class="row cat-c">
+		<div class="col-xs-8">
+			<img src="img/cat.jpg" alt="" class="img-responsive">
+		</div>
+		<div class="col-xs-4">
+			<div class="show">
+				这是一个猫咪
+				哈哈
+			</div>
+		</div>
+	</div>
+	<div class="row" style="height:200px">
+		
+	</div>
+	<div class="row" style="height:200px">
+		
+	</div>
+	<div class="row" style="height:200px">
+		
+	</div>
+	<div class="row" style="height:200px">
+		
+	</div>
+</div>
+</body>
+<script>
+	$(function(){
+		$('.show').fix({container:'.row'});
+	})
+</script>
+</html>

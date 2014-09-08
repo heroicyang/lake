@@ -1,0 +1,102 @@
+body{
+	background:#fff;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+#book{
+	position: relative;
+	background: #fff;
+	border-left: 1px #cfcfcf solid;
+	border-right: 1px #cfcfcf solid;
+}
+#book-article{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 36px;
+	padding-right:36px;
+}
+/*========================[[导航]]============*/
+.m-vector{
+	position: fixed;
+	top:60px;
+	left: 0;
+	width: 170px;
+}
+.m-vector-icon{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px #cfcfcf solid;
+	background:url(ico.gif) no-repeat center top #fff;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.m-vector-nav{
+	position: absolute;
+	display: none;
+	top: 30px;
+	width: 160px;
+	right: 0;
+	margin: 0;
+	padding: 10px;
+	padding-right: 15px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	background: #fff;
+	border: 1px #cfcfcf solid;
+	color:#333;
+}
+
+/*模块全局样式*/
+.m-vector-nav ul,
+.m-vector-nav li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+/*行样式*/
+.m-vector-nav li{
+	position: relative;
+	line-height: 26px;
+	zoom:1;
+}
+.m-vector-nav ul{
+	padding-left: 1em;
+}
+.m-vector-nav li a{
+	display: block;
+	padding-left:1em;
+	padding-right:1em;
+	zoom:1;
+}
+.m-vector-nav li b{
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right:-4px;
+}
+.m-vector-nav .in ul{
+	display: none;
+}
+/*a标签样式*/
+.m-vector-nav a:link,
+.m-vector-nav a:visited{
+	color:#333;
+	font-weight: bold;
+	text-decoration: none;
+}
+.m-vector-nav a:hover,
+.m-vector-nav a:active{
+	color:blue;
+	text-decoration: none;
+}
+/*激活状态下a标签样式 为了兼容ie6才写这么多*/
+.m-vector-nav a.active:link,
+.m-vector-nav a.active:visited,
+.m-vector-nav a.active:hover,
+.m-vector-nav a.active:active{
+	color: blue;
+}

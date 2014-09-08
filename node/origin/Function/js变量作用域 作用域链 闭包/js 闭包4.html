@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var name="hello world!";
+function hello(){
+      var age=23;
+      return{
+	  sayname:function(){
+	  console.log(name);
+	  },
+	  sayage:function(){
+	  console.log(age);
+	  },
+	  setage:function(num){
+	  age=num;
+	  }
+	  }
+}
+var a=hello();
+var b=hello();
+a.sayname();
+b.sayname();
+name='hi world!';
+a.sayname();
+b.sayname();
+</script>
+</body>
+</html>

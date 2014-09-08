@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var i=1,k;  //全局环境的变量  
+function a()//全局环境的函数  
+{  
+var x=2;//a下的变量  
+function f(){//a下面的函数f  
+        alert(x)  
+}  
+function f2(){//a下面的函数f2  
+       var x=1;//f2下面的变量x  
+        f()}  
+f2();}  
+a();    
+</script>
+</body>
+</html>

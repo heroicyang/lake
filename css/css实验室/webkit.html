@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>webkit</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		ul,li{
+			list-style: none;
+		}
+		body{
+			background: #666;
+		}
+		.container{
+			width:400px;
+			height:600px; 
+			overflow: auto;
+			background: #eee;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.container ul li{
+			line-height: 60px;
+			height: 60px;
+		}
+		.container ul li:nth-child(even){
+			background: #ccc;
+		}
+		::-webkit-scrollbar {  
+    		width: 10px;
+    		background:#ccc;  
+		}
+		::-webkit-scrollbar-track {
+
+		} 
+		::-webkit-scrollbar-thumb {
+			cursor: pointer;  
+    		border-radius: 4px;  
+    		background: rgba(0,0,0,0.4);   
+		}
+		::-webkit-scrollbar-thumb:window-inactive {  
+    		background: rgba(0,0,0,0.3);   
+		}  
+		/*////hover到滚动条上//////滚动条按下///////*/  
+		::-webkit-scrollbar-thumb:hover,
+		::-webkit-scrollbar-thumb:active{  
+    		background-color: rgba(0,0,0,0.6);  
+		} 
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>
+

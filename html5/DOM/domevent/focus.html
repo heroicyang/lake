@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript">
+        function setFocus(){
+            document.getElementById('text1').focus()
+        }
+        function loseFocus()
+        {
+            document.getElementById('text1').blur()
+        }
+</script>
+</head>
+<body>
+
+<form>
+    <input type="text" id="text1" />
+    <br />
+    <input type="button" onclick="setFocus()" value="设置焦点" />
+    <input type="button" onclick="loseFocus()" value="失去焦点" />
+</form>
+
+</body>
+</html>

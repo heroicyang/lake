@@ -1,0 +1,19 @@
+body{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    background: url("../images/grid-18px-masked.png") #ffffff;
+    margin: 0px;
+    padding: 70px 0px 0px 0px;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+label{
+    width:150px;
+    display: block;
+    padding-left: 6px;
+    font-size: 14px;
+    color: #535353;
+    font-weight: bold;
+}

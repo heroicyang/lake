@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+	<style>
+		[bone-model="sidebar"]{
+			width: 200;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+	</div>
+	<script type="text/template" id="tem">
+	 <p><%=na.a.aa %></p>
+	</script>
+	<script>
+		var Tu=Backbone.Model.extend({
+			aa:function(){
+				this.trigger('changea');
+			}
+		});
+		var Shina=Backbone.View.extend({
+			el:"<section>",
+			template:$("#tem").html(),
+			initialize:function(){
+				this.$el.html(_.template(this.template,this.model.toJSON()))
+				this.listenTo(this.model,'changea',this.rendera)
+			},
+			rendera:function(){
+				console.log('changea');
+			}
+		});
+		var Shinb=Backbone.View.extend({
+			el:"<section>",
+			template:"<p>mengge</p>",
+			events:{
+				"click p":"action"
+			},
+			initialize:function(){
+				this.$el.html(this.template);
+			},
+			action:function(){
+				this.model.aa();
+			}
+		})
+		var tu=new Tu({
+			na:{
+				a:{
+					aa:6},
+				b:22,
+				c:33
+			},
+			nb:{
+				a:111,
+				b:222,
+				c:333
+			}
+		});
+		var viewa=new Shina({model:tu});
+		var viewb=new Shinb({model:tu});
+		$('.container').append(viewa.el).append(viewb.el);
+	</script>
+</body>
+</html>

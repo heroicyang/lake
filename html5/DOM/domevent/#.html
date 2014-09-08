@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<a href="#123">123</a>
+	<a href="#456">456</a>
+	<a href="#789">789</a>
+	<script>
+		var $window=$(window);
+		$window.on('hashchange',function(){
+			console.log('the hash is: '+location.hash);
+		})
+	</script>
+</body>
+</html>

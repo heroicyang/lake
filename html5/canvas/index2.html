@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+<canvas id='draw' width="800px" height="600px">
+  Sorry 你的浏览器不支持canvas 请更新个好点的浏览器吧!
+</canvas>
+<script type="text/javascript" language="javascript">
+  var canvas=document.getElementById('draw');
+  var draw=canvas.getContext('2d');	
+  var sun=new Image();
+  var moon=new Image();
+  var earth=new Image();
+	function init(){
+	 sun.src='imgs/sun.png';
+	 moon.src='imgs/moon.png';
+	 earth.src='imgs/earth.png';
+	 setInterval(draw,100);
+	}
+	function draw(){
+	
+	}
+
+</script>
+</body>
+</html>

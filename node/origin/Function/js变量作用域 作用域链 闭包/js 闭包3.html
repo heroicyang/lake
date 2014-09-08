@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var O={};
+var a={ wa:'hi world!',
+	    ea:'hello world!',
+	    ra:'hahahahahaha'
+	   };
+  function  haha(){
+       var  c=a;
+	   O.say=function(){
+	    console.log(a.wa);
+		console.log(a.ea);
+		console.log(a.ra);
+	   }
+  };
+  haha();
+  O.say();
+  a.wa='i am changing';
+  a.ea='i am changing';
+  a.ra='i am changing';
+  haha();
+  O.say();
+</script>
+</body>
+</html>

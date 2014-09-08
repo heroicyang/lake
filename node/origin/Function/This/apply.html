@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+function foo(str){
+console.log(str+'  '+this.fruit);
+}
+var fruit='apple';
+var pack={
+    fruit:'orange'
+};
+foo.apply(pack,['hi']);
+</script>
+</body>
+</html>

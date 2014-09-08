@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+function foo()
+{
+console.log(this.fruit);
+}
+var fruit='apple';
+var pack={
+    fruit:'orange',
+	foo:foo
+};
+pack.foo();
+</script>
+</body>
+</html>

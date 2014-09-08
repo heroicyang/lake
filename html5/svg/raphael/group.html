@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      body{
+        background:#444;
+      }
+      #paper{
+        width: 800px;
+        margin: 0 auto;
+        background:#fff;
+      }
+    </style>
+    <script src="metro/raphael.js"></script>
+</head>
+<body>
+    <div id="paper">
+    </div>
+    <script>
+      var paper=Raphael('paper',800,600) //画笔
+      var rect=paper.rect(0,0,200,200,4).attr({'stroke':'orange'})
+    </script>
+</body>
+</html>

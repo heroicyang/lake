@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin:0px;
+			padding: 0px;
+		}
+		.con{
+			width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.con:after{
+			clear: both;
+			display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";
+		}
+		.g-spana{
+			display: block;
+			float: left;
+			width: 200px;
+			background: #0066ff;
+			margin-left: -20px;
+		}
+		.g-spanb{
+			display: block;
+			float: left;
+			width: 200px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="g-spana" style="height:400px">
+		</div>
+		<div class="g-spanb" style="height:200px">
+		</div>
+	</div>
+</body>
+</html>

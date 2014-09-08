@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FIREBASE</title>
+	<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+	<script type='text/javascript' src='zepto.js'></script>
+	<style>
+		body{background: #3399FF}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#connect{
+			width: 800px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border: 4px #ccc solid;
+			border-radius:12px;
+			background: #eee;
+		}
+		#connect .cn-wraper{
+			height: 400px;
+		}
+		#connect .cn-in input{
+			line-height: 46px;
+		}
+	</style>
+</head>
+<body>
+	<div id="connect">
+		<div class="cn-wraper" id="messagesDiv">
+			
+		</div>
+		<div class="cn-in">
+			<input type="text" placeholder='名字' id="c-name">
+			<input type="text" placeholder='内容' id="c-msg">
+		</div>
+	</div>
+	<script>
+	var Net=new Firebase('https://lightline.firebaseio.com/');
+	Net.set('Hello World!');
+
+	var $name=$('#c-name'),
+		$msg=$('#c-msg');
+	$msg.keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $name.val();
+          var text = $msg.val();
+          Net.push({name: name, text: text});
+          $msg.val('');
+        }
+      });
+      Net.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+	</script>
+</body>
+</html>

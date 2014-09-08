@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JAVASCRIPT实验室</title>
+<link rel="stylesheet" href="style/sa-grid.css">
+<script type="text/javascript" src="script/jquery.js" language="javascript"></script>
+<style type="text/css">
+</style>
+</head>
+<body >
+<div>
+ <p class="event1">这是事件event1</p>
+ <p class="event2">这是事件event2</p>
+</div>
+<button>
+自定义事件
+</button>
+<script type="text/javascript" language="javascript">
+  $(function(){
+  /////////////////////////
+  $('.event1').bind('wow',function(){
+     $('.event1').text('我接收到 wow 事件了');
+  });
+  $('button').click(function(){
+    $('*').trigger('wow');
+  });
+  ///////////////////////
+  });
+</script>
+</body>
+</html>

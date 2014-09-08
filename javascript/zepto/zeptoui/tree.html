@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>树形菜单</title>
+	<link rel="stylesheet" href="css/evaer.css">
+	<script src="js/Zepto.js"></script>
+	<script src="js/evaer-tree.js"></script>
+</head>
+<body>
+	<button id="open">打开全部</button>
+	<button id="close">关闭全部</button>
+	<ul class='m-tree'>
+		<li>
+			<i>序章</i>
+			<ul>
+				<li>
+					<span>前言</span>
+				</li>
+				<li>
+					<span>目录</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<i>第一章</i>
+			<ul>
+				<li>
+					<span>1.1节</span>
+				</li>
+				<li>
+					<span>1.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<i>第二章</i>
+			<ul>
+				<li>
+					<span>2.1节</span>
+				</li>
+				<li>
+					<span>2.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li class="in">
+			<i>第三章</i>
+			<ul>
+				<li class="in">
+					<i>3.1节</i>
+					<ul>
+						<li>
+							<span>3.1.1节</span>
+						</li>
+						<li>
+							<span>3.1.2节</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>3.2节</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<i>第四章</i>
+			<ul>
+				<li>
+					<span>4.1节</span>
+				</li>
+				<li>
+					<span>4.2节</span>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<script>
+	$(function(){
+		
+		$('.m-tree').tree();
+		$('#open').click(function(){
+			$('.m-tree').tree('open');
+		})
+		$('#close').click(function(){
+			$('.m-tree').tree('close');
+		})
+		/*
+		var a=$('.m-tree').get(0);
+		var b=$('.m-tree').get(0);
+		a.draggable=true;
+		console.log(a);
+		*/
+	})
+	</script>
+</body>
+</html>

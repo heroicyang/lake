@@ -1,0 +1,43 @@
+<!--原来dom 自定义事件后 trigger后也会冒泡-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+        <script src="js/jquery.js"></script>
+        <style type="text/css">
+        	#book{
+
+        	}
+        	#book-info{
+        		width: 400px;
+        		height: 400px;
+        		margin-right: auto;
+        		margin-left: auto;
+        		background: #eee;
+        	}
+        </style>
+    </head>
+  	<body>
+  		<div id="book">
+  			<div id="book-info">
+  			</div>
+  		</div>
+		<script type="text/javascript">
+    		var book=$('#book');
+    		var bookinfo=$('#book-info');
+
+    		bookinfo.on('click',function(e){
+    			bookinfo.trigger('eve');
+    		})
+
+    		book.on('eve',function(){
+    			console.log('bookeve');
+    		})
+    		bookinfo.on('eve',function(){
+    			console.log('bookinfoeve');
+    		})
+    	</script>
+</body>
+</html>

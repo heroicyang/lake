@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<h1>这是标题一</h1>
+	<p>这是内容一</p>
+	<div></div>
+	<script>
+		console.log('hello');
+		$.getJSON('http://127.0.0.1:800/data.json',function(data){
+			console.log('this is ajax');
+			console.log(data.css);
+		})
+	</script>
+</body>
+</html>

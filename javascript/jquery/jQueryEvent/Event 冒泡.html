@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>关于鼠标hoverintent的实验</title>
+<style>
+	.demo{
+	   margin:0px;
+	   padding:0px;
+	   display:block;
+	   width:500px;
+	   height:86px;
+	   background:#9cc;
+	   list-style:none;
+	 }
+	 .p1{
+	  float:left;
+	  width:120px;
+	  height:40px;
+	  background:#FCC;
+	 }
+	 .p2{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ffc;
+	 }
+	 .p3{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#cfc;
+	 }
+	 .p4{
+	 float:left;
+	 width:120px;
+	 height:40px;
+	 background:#ccf;
+	 }
+</style>
+</head>
+<body>
+	  <ul class='demo'>
+	      <li class='p1'></li>
+		  <li class='p2'></li>
+		  <li class='p3'></li>
+		  <li class='p4'></li>
+	  </ul>
+	  <div class='mode'>
+	      <div class='m1'></div>
+		  <div class='m2'></div>
+		  <div class='m3'></div>
+		  <div class='m4'></div>
+	  </div>
+</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		jQuery(function(){
+
+			/*--鼠标事件x y 坐标--*/
+			function showXY(event){
+             console.log(
+                 'pageX:'+event.pageX+'pageY'+event.pageY
+             	);
+			}
+
+			/*--鼠标事件显示事件类型--*/
+			function showType(event){
+				console.log(
+                    'eventtype:'+event.type
+					);
+			}
+
+		   //$('.demo li').on('mouseenter',makeTall);
+		   //$('.demo li').on('mouseleave',makeShort);
+		   $('.demo').on('mouseenter',showType);
+		   $('.demo').on('mouseleave',showType);
+		});
+		</script>
+</html>

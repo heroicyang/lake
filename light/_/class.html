@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE</title>
+	<script src="underscore.js"></script>
+	<script src="base.js"></script>
+</head>
+<body>
+	<script>   
+		var Ca=Class.extend({
+			_init_:function(a,b,c,d){
+				this.a=a || 1;
+				this.b=b || 2;
+				this.c=c || 3;
+				this.d=d || 4;
+				//console.log('i am Ca constructor');
+			},
+			say:function(){
+				console.log('hello world');
+			},
+			saya:function(){
+				console.log(this.a);
+			},
+			sayb:function(){
+				console.log(this.b);
+			}
+		});
+		var Cb=Ca.extend({
+			_init_:function(a,b,c,d,e){
+				Cb.__super__._init_.apply(this,arguments);
+				this.e=e || 5;
+				//console.log('i am Cb constructor');
+			},
+			sayc:function(){
+				console.log(this.c);
+			},
+			sayd:function(){
+				console.log(this.d);
+			},
+			saye:function(){
+				console.log(this.e);
+			}
+		})
+		var cb=new Cb('i am A','i am B','i am C','i am D','i am E');
+		
+		//console.log(cb);
+		cb.saya();cb.sayb();cb.sayc();cb.sayd();cb.saye();
+		
+		/*
+		console.dir(Ca);
+		console.dir(Cb);
+		*/
+	</script>
+</body>
+</html>

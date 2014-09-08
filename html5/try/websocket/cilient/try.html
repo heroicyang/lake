@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebSockets Client</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<script>
+		var socket=io.connect('http://localhost');
+		socket.on('connection',function(data){
+			console.log('websocket');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+ul,
+ol {
+    padding: 0;
+    margin: 0 0 10px 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-bottom: 0;
+}
+ul{
+    list-style: disc;
+}
+li {
+    line-height: 20px;
+}
+/*--------------------------unstyled-----------------------------*/
+ul.unstyled,
+ol.unstyled {
+    margin-left: 0;
+    list-style: none;
+}
+ul.triangle-red{
+    margin-left: 0;
+    list-style: none;
+}
+ul.triangle-red li{
+    background: url(images/ul-red.jpg) no-repeat 3px 2px;
+    padding: 0px 10px 0 16px;
+}
+ul.rectangle-blue{
+    margin-left: 0;
+    list-style: none;
+}
+ul.rectangle-blue li{
+    background: url(images/ul-blue.jpg) no-repeat 3px 2px;
+    padding: 0px 10px 0px 16px;
+}
+ul.dot-gray{
+    margin-left: 0;
+    list-style: none;
+}
+ul.dot-gray li{
+    background: url(images/dot.gif) no-repeat 3px -2px;
+    padding: 0px 10px 0px 16px;
+}
+ul.dot-blue{
+    margin-left: 0;
+    list-style: none;
+}
+ul.dot-blue li{
+    background: url(images/dot.gif) no-repeat 3px -50px;
+    padding: 0px 10px 0px 16px;
+}
+ul.dot-red{
+    margin-left: 0;
+    list-style: none;
+}
+ul.dot-red li{
+    background: url(images/dot.gif) no-repeat 3px -98px;
+    padding: 0px 10px 0px 16px;
+}
+ul.dot-dark{
+    margin-left: 0;
+    list-style: none;
+}
+ul.dot-dark li{
+    background: url(images/dot.gif) no-repeat 3px -145px;
+    padding: 0px 10px 0px 16px;
+}
+dl {
+    margin-bottom: 20px;
+}
+
+dt,
+dd {
+    line-height: 20px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 10px;
+}

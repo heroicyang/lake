@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EVAER-DEMO</title>
+	<script src="js/zepto.js"></script>
+</head>
+<body>
+	<h1><p>hahaha</p></h1>
+	<ul>
+		<li>a</li>
+	</ul>
+	<script>
+		var body=$(document.body);
+		var h1=$('h1');
+		var li=$('li');
+		var p=$('p');
+		var ul=$('ul');
+		li.on('eve',function(e){
+			console.log('this is li');
+			console.log(e);
+		})
+		h1.on('eve',function(e){
+			console.log('this is h1');
+			console.log(e);
+		})
+		ul.on('eve',function(e){
+			console.log('this is ul');
+			console.log(e);
+		})
+		body.on('eve',function(e){
+			console.log('this is body');
+			console.log(e);
+		})
+		p.trigger('eve');
+	</script>
+</body>
+</html>

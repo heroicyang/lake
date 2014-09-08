@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+	<style>
+		[bone-model="sidebar"]{
+			width: 200;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div bone-view>
+		
+	</div>
+	<script type="text/template" id="stats-template">
+    	<p><%=color%></p><p><%=num%></p>
+  	</script>
+<script>
+$(function(){
+	var Sview=Backbone.View.extend({
+		el:"<div>",
+		template:_.template($('#stats-template').html()),
+		events:{
+			"click p":"change"
+		},
+		render:function(){
+			var html=this.template(this.model.attributes);
+			this.$el.html(html);
+			return this;
+		},
+		initialize:function(){
+			this.render();
+			this.listenTo(this.model,'change',this.render);
+		},
+		change:function(){
+			this.model.set({num:Math.random()})
+		}
+	});
+	var Xview=Backbone.View.extend({
+		el:"<div>",
+		template:_.template($('#stats-template').html()),
+		render:function(){
+			var html=this.template(this.model.attributes);
+			this.$el.html(html);
+			return this;
+		},
+		initialize:function(){
+			this.render();
+			this.listenTo(this.model,'change',this.render);
+		},
+	})
+
+	var moe=new Backbone.Model({color:'white',num:123456,bone:{a:1,b:2,c:3}});
+	var vew=new Sview({'model':moe});
+	var vewb=new Xview({'model':moe});
+
+	$('[bone-view]').append(vew.$el);
+	$('[bone-view]').append(vewb.$el);
+})
+</script>
+</body>
+</html>

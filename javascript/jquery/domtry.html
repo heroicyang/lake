@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="script/jquery.js"></script>
+</head>
+<body>
+	<div>
+		<button id="btn1">button1</button>
+		<button id="btn2">button2</button>
+		<button id="btn3">button3</button>
+	</div>
+	<script>
+		var template='<div id="layer" class="layer-wrapper"><div class="layer-content"><div><h1>hello world</h1></div></div><style>body{overflow:hidden}#layer{position: fixed;top: 100px;right: 0;bottom: 0;left: 0;z-index: 1020;background:rgba(0, 0, 0, 0.6);}#layer .layer-content{overflow:hidden;margin-top:100px;padding: 10px;margin-left:auto;margin-right: auto;background: #ffffff;border-radius:4px;}</style></div>';
+		var $tpl=$(template);
+		var $content=$tpl.find('.layer-content');
+		console.log($content);
+		$('#btn1').on('click',function(){
+			$('body').append($tpl);
+		})
+		$('#btn2').on('click',function(){
+			$tpl.empty();
+		})
+		$('#btn3').on('click',function(){
+
+			$('body').append($content);
+		})
+		
+	</script>
+</body>
+</html>

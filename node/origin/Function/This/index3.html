@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+function Person(name) {
+this.name = name;
+}
+Person.prototype = {
+constructor:Person,
+getName: function() {
+return this.name;
+}
+}
+function Employee(name,employeeID){
+this.name=name;
+this.employeeID=employeeID;
+}
+Employee.prototype=new Person();
+Employee.prototype.getEmployeeID=function(){
+return this.employeeID;
+};
+var zhang=new Employee('zhangsan','1234');
+
+</script>
+</body>
+</html>

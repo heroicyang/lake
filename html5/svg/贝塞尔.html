@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVG path</title>
+	<meta charset="UTF-8">
+	<script src="js/jquery.js"></script>
+	<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #444;
+}
+</style>
+</head>
+<body>
+	<!--三次贝塞尔曲线-->
+	<svg width="300" height="300">
+		<text>三次贝塞尔曲线 CODE:C</text>
+		<path d="M10 10 C 90 100 170 100 250 10 C 70 20 100 80 60 70" stroke="#00baff" fill="transparent"/>
+		<path d="M10 110 C 90 300 170 200 250 110 C" stroke="#00baff" fill="transparent"/>
+	</svg>
+	<!--二次贝塞尔曲线-->
+	<svg width="300" height="200">
+		<text x="10" y="30" style="fill:#00baff; text-anchor:left">二次贝塞尔曲线 CODE:Q</text>
+		<path d="M10 80 Q 55 10 100 80 145 150 190 80" stroke="#00baff" fill="transparent"/>
+	</svg>
+	<!--圆滑二次方贝塞尔曲线 话说他没控制点怎么控制的-->
+	<svg width="300" height="200">
+		<text x="10" y="30" style="fill:#00baff; text-anchor:left">圆滑的二次方贝塞尔曲线 CODE:T</text>
+		<path d="M10 10 t0 100 100 0 0 -100 -100 0" stroke="#00baff" fill="transparent"/>
+	</svg>
+	<!--还有那些？-->
+</body>
+</html>

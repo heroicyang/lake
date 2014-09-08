@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>网页倒计时，这里是北京奥运倒计时间</title>
+	<script language="JavaScript"> 
+		var DifferenceHour = -1
+		var DifferenceMinute = -1
+		var DifferenceSecond = -1
+		var Tday = new Date("Aug 27, 2012 20:00:00")   //**倒计时时间点-注意格式
+
+		var microsecond = 1000 		//秒
+		var Secondms = 60 * 1000  	//分钟
+		var hoursms=60*Secondms		//小时
+		var daysms=24*hoursms		//天
+		
+		function clock(){
+			var time = new Date()
+			var convertHour = DifferenceHour
+			var convertMinute = DifferenceMinute
+			var convertSecond = DifferenceSecond
+			var Diffms = Tday.getTime() - time.getTime()
+			DifferenceHour = Math.floor(Diffms / daysms)
+			Diffms -= DifferenceHour * daysms
+			DifferenceMinute = Math.floor(Diffms / hoursms)
+			Diffms -= DifferenceMinute * hoursms
+			DifferenceSecond = Math.floor(Diffms / Secondms)
+			Diffms -= DifferenceSecond * Secondms
+			var dSecs = Math.floor(Diffms / microsecond)
+			if(convertHour != DifferenceHour) document.formnow.dd.value=DifferenceHour
+			if(convertMinute != DifferenceMinute) document.formnow.hh.value=DifferenceMinute
+			if(convertSecond != DifferenceSecond) document.formnow.mm.value=DifferenceSecond
+			document.formnow.ss.value=dSecs
+			// document.formnow.Tnow.value= DifferenceHour DifferenceMinute + DifferenceSecond + dSecs
+			setTimeout(clock,1000)
+		} 
+</script>
+</head>
+
+<body onload="clock();return true">
+	距2012奥运还有：
+	<br>
+	<form name="formnow">
+		<input name="dd" type="text" style="border:0;" size="2">
+		天
+		<input name="hh" type="text" style="border:0;" size="2">
+		小时
+		<input name="mm" type="text" style="border:0;" size="2">
+		分
+		<input name="ss" type="text" style="border:0;" size="2">秒</form>
+</body>
+</html>

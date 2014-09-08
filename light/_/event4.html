@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE</title>
+	<script src="underscore.js"></script>
+	<script src="base.js"></script>
+</head>
+<body>
+	<script>   
+		var base=new Event();
+		var pandra=new Event();
+
+		pandra.listenToOnce(base,'haha',function(arg){
+			console.log('pandra listen base haha once');
+			console.log(arg);
+		})
+		/*
+		pandra.listenTo(base,'haha',function(arg){
+			console.log('pandra listen base haha');
+			console.log(arg);
+		})
+		*/
+	</script>
+</body>
+</html>

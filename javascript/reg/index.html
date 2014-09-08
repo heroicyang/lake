@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reg</title>
+	<script src="jquery.js"></script>
+	<style>
+		body{
+			background: #eee;
+		}
+		.reg-con{
+			width: 980px;
+			margin: 0 auto;
+		}
+		.reg-con label{
+			display: inline-block;
+			width: 140px;
+			text-align: right;
+		}
+		.reg-con b{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="reg-con">
+		<div> <label for="">手机号</label> <input type="text" class="reg-phone"> <b>请输入正确格式的手机号码</b></div>
+		<div> <label for="">邮箱</label> <input type="text" class="reg-mail"><b>请输入正确格式的邮箱地址</b></div>
+		<div> <label for="">密码</label> <input type="text" class="reg-password"><b>请输入6-10位密码</b></div>
+	</div>
+	<script>
+	/*验证汉字 字母 数字 下划线*/
+	//var reg=/[a-zA-Z0-9_\u4e00-\u9fa5]/
+	var regCheck={
+
+		//验证正则表达式
+		_reg:{
+			phoneReg:/^1[0-9]{10}$/,    //手机正则
+			mailReg:/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+[\.][a-zA-Z0-9_-]+$/, //邮箱正则
+			passwordReg:/^[a-zA-Z0-9]{6,10}$/
+		},
+		checkPhone:function(str){
+			return this._reg.phoneReg.test(str);
+		},
+		checkMail:function(str){
+			return this._reg.mailReg.test(str);
+		},
+		checkPassword:function(str){
+			return this._reg.passwordReg.test(str);
+		}
+	};
+
+	(function(){
+		var $phone=$('.reg-phone'),
+			$mail=$('.reg-mail'),
+			$password=$('.reg-password');
+
+		$phone.on('focusout',function(e){
+			var value=$phone.val();
+			var $next=$(e.target).next();
+			if(!regCheck.checkPhone(value)){
+				$next.show();
+			}else{
+				$next.hide();
+			}
+		})
+		$mail.on('focusout',function(e){
+			var value=$mail.val();
+			var $next=$(e.target).next();
+			if(!regCheck.checkMail(value)){
+				$next.show();
+			}else{
+				$next.hide();
+			}
+		})
+		$password.on('focusout',function(e){
+			var value=$password.val();
+			var $next=$(e.target).next();
+			if(!regCheck.checkPassword(value)){
+				$next.show();
+			}else{
+				$next.hide();
+			}
+		})
+	})()
+	</script>
+</body>
+</html>

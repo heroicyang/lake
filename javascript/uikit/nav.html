@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cdn.staticfile.org/uikit/1.2.0/css/uikit.gradient.css">
+	<script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.js"></script>
+	<script src="http://cdn.staticfile.org/uikit/1.2.0/js/uikit.js"></script>
+</head>
+<body>
+	<div class="uk-container-center uk-container">
+		<!--nav-->
+		<div class="uk-grid">
+			<h2>nav</h2>
+			<div class="uk-width-1-2">
+				<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
+					<li class="uk-active"><a href="#">nav-a</a></li>
+					<li><a href="#">nav-b</a></li>
+					<li><a href="#">nav-c</a></li>
+					<li class="uk-parent">
+						<a href="#">nav-d</a>
+						<ul class="uk-nav-sub">
+							<li><a href="">nav-d-a</a>
+								<ul>
+									<li><a href="">nav-d-a-a</a></li>
+									<li><a href="">nav-d-a-b</a></li>
+									<li><a href="">nav-d-a-c</a></li>
+								</ul>
+							</li>
+							<li><a href="">nav-d-b</a></li>
+						</ul>
+					</li>
+					<li><a href="#">nav-e</a></li>
+				</ul>
+			</div>
+			<div class="uk-width-1-2">
+				<div class="uk-panel uk-panel-box">
+					<h3 class="uk-nav-tittle">PANNEL</h3>
+					<ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
+					<li class="uk-active"><a href="#">nav-a</a></li>
+					<li class="uk-nav-header">ELEC</li>
+					<li><a href="#">nav-b</a></li>
+					<li class="uk-parent">
+						<a href="#">nav-c</a>
+						<ul class="uk-nav-sub">
+							<li><a href="#">nav-c-a</a></li>
+							<li><a href="#">nav-c-b</a></li>
+						</ul>
+					</li>
+					<li class="uk-parent">
+						<a href="#">nav-d</a>
+						<ul class="uk-nav-sub">
+							<li><a href="">nav-d-a</a>
+								<ul>
+									<li><a href="">nav-d-a-a</a></li>
+									<li><a href="">nav-d-a-b</a></li>
+									<li><a href="">nav-d-a-c</a></li>
+								</ul>
+							</li>
+							<li><a href="">nav-d-b</a></li>
+						</ul>
+					</li>
+					<li><a href="#">nav-e</a></li>
+					<li class="uk-nav-divider"></li>
+					<li><a href="#">nav-f</a></li>
+				</ul>
+				</div>	
+			</div>
+		</div>
+		<!--navbar-->
+		<div class="uk-grid">
+			<h2>navbar</h2>
+			<nav class="uk-navbar">
+				<ul class="uk-navbar-nav">
+					<li class="uk-active"><a href="#">navbar-a</a></li>
+					<li><a href="#">navbar-b</a></li>
+					<li><a href="#">navbar-c</a></li>
+					<li class="uk-parent" data-uk-dropdown>
+						<a>navbar-d</a>
+						<div class="uk-dropdown uk-dropdown-navbar">
+							<ul class="uk-nav uk-nav-side">
+								<li><a href="#">navbar-d-a</a></li>
+								<li><a href="#">navbar-d-b</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>

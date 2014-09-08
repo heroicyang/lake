@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalabale=yes">
+        <title>Document</title>
+        <script src="js/zepto.js"></script>
+        <script src="js/Atouch.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/markdown.css">
+    </head>
+  	<body>
+        <h1>touch 测试页面</h1>
+        <h2> <span>触摸事件:&nbsp;</span><span class="infoevent"></span> </h2>
+        <h2>
+             <span>x点坐标:&nbsp;</span> <span class="infox"></span> 
+             <span>y点坐标:&nbsp;</span> <span class="infoy"></span>
+        </h2>
+
+		<script type="text/javascript">
+            var $doc=$(document);
+
+            var $infoe=$('.infoevent');
+            var $infox=$('.infox');
+            var $infoy=$('.infoy');
+
+            $infoe.text('init');
+            $doc.on('click touchstart touchmove touchend',function(e){
+                $infoe.text(e.type);
+                $infox.text(e.clientX);
+                $infoy.text(e.clientY);
+            })
+            /*
+            $doc.on('touchstart',function(e){
+                $infoe.text('touchstart');
+                $infox.text(e.clientX);
+                $infoy.text(e.clientY);
+            })
+            $doc.on('touchmove',function(e){
+                $infoe.text('touchmove');
+                $infox.text(e.clientX);
+                $infoy.text(e.clientY);
+            })
+            $doc.on('touchend',function(e){
+                $infoe.text('touchend');
+                $infox.text(e.clientX);
+                $infoy.text(e.clientY);
+            })
+            */
+            /*
+            $doc.on('touchcancel',function(){
+                $text.text('touchcancel');
+            })
+            */
+    	</script>
+    </body>
+</html>

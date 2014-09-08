@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,菜单导航,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为smooth scroll 平滑滚动菜单，属于站长常用代码，更多菜单导航代码请访问JS代码站。" />
+<title>smooth scroll 平滑滚动菜单_JS代码站</title>
+</head>
+<body >
+<input type="button" value="移动滚动条，然后点击进行查看" onclick="move()">
+<div id="d" style="background-color:#000000; position:absolute; left:200px; top:100px;width:400;height:300;overflow:scroll"
+onclick="alert(
+'offsetLeft:'+this.offsetLeft+'/n'+
+'offsetTop:'+this.offsetTop+'/n'+
+'scrollWidth:'+this.scrollWidth+'/n'+
+'scrollHeight:'+this.scrollHeight+'/n'+
+'scrollLeft:'+this.scrollLeft+'/n'+
+'offsetHeight:'+this.offsetHeight+'/n'+
+'offsetWidth:'+this.offsetWidth+'/n'+
+'clientHeight:'+this.clientHeight+'/n'+
+'clientWidth:'+this.clientWidth)">
+<div style="height:20px;width:380px;background-color:blue"></div>
+</div>
+<script language="javascript">
+function move()
+{
+var d=document.getElementById("d");
+a=eval(20);
+d.scrollLeft+=a;
+}
+</script>
+</body>
+</html>

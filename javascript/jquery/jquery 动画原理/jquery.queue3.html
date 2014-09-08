@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style type="text/css">
+    .container{
+        position: relative;
+    }
+    .div1 {
+        position:absolute;
+        width:300px;
+        height:200px;
+        background: blue;
+        left:0;
+        top:0;
+    }
+</style>
+  <div>
+    <button id='start'>START</button>
+    <button id='clear'>CLEAR</button>
+    <button id='stop'>STOP</button>
+    <button id='show'>SHOW</button>
+  </div>
+  <div class='container'>
+    <div class="div1">
+    </div>
+  </div>
+</body>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var se=$('.div1');
+            var start=$('#start');
+            var clear=$('#clear');
+            var stop=$('#stop');
+            var show=$('#show');
+            function change(){
+                console.log(se.queue('ax'));    
+            }
+            setInterval(change,200);
+            se.queue('ax',function(){
+                var i=0;
+                for(i=0;i<10000;i+=1){
+                console.log('hello world');
+                }
+            });
+            se.queue('ax',function(){
+                var i=0;
+                for(i=0;i<10000;i+=1){
+                console.log(i);
+                }
+            })
+            start.click(function(){
+                se.dequeue('ax');
+            });
+            clear.click(function(){
+                se.clearQueue('ax');
+            });
+        });
+    </script>
+</html>

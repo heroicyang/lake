@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title><% =Model.Name %>邀请您加入【<% =Model.EnterpriseName %>】</title>
+	<link rel="stylesheet" href="/style/common.css">
+	<link rel="stylesheet" href="/style/invite.css">
+	<script src="/static/js/invite/underscore.js"></script>
+	<!--<script src="/static/js/invite/zepto.js"></script>-->
+	<script src="/static/js/jquery-2.0.0.min.js"></script>
+</head>
+<body>
+	<div class="invite-title">
+		<% =Model.Name %>邀请您加入【<% =Model.EnterpriseName %>】
+	</div>
+	<!--第一步 begin-->
+	<div class="invite-section invite-section-a" data-order="1">
+		<h3 style="margin-bottom:-20px;">简单三步 即刻加入</h3>
+		<div class="-invite-in">
+			<span class="-invite-in-icon"><i class="i-icon-phone"></i></span>
+			<input type="text" checked="checked" placeholder="输入您的手机号" class="-section-input-phone -invite-in-input">
+			<p class="-invite-in-tip">手机号输入有误</p>
+		</div>
+		<div>
+			<span class="-section-getmsg u-btn">获取短信验证码 <span>(<b>60</b>)</span></span>
+		</div>
+		<script>
+		(function(){
+			var $self=$('.-invite-in');
+			$self.on('focusin',function(){$self.addClass('-invite-in-focus')}).on('focusout',function(){$self.removeClass('-invite-in-focus')})
+		})()
+		</script>
+	</div>
+	<!--第一步 end-->
+	
+	<!--第二步 begin-->
+	<div class="invite-section invite-section-b" data-order="2" style="background:#79e0bb">
+		<div class="-section-vector"></div>
+		<h2 style="color:#468c6f">短信验证</h2>
+		<h4 style="color:#468c6f" class="-section-b-tip">验证短信 秒速送达</h4>
+		<!--<h4 style="color:#468c6f;display:none">验证码已发送至 <span>13800138000</span> <a>换个号码</a></h4>-->
+		<div class="code-err">验证码错误</div>
+		<div class="-section-verify">
+			<input type="text" placeholder="输入验证码" class="-section-input-msg f-fl">
+			<span class="f-fr -section-verify-btn">重新发送 <span>(<b>60</b>)</span> </span>
+		</div>
+		<p><span class="u-btn u-btn-false -section-checkmsg">验证</span></p>
+	</div>
+	<!--第二步 end-->
+	
+	<!--第三步 begin-->
+	<div class="invite-section invite-section-c" data-order="3" style="background:#4a7aaf">
+		<div class="-section-vector"></div>
+		<h2 style="color:#c6e2f7">完善资料</h2>
+		<h4 style="color:#c6e2f7">如实填写 加速审核</h4>
+		<div class="info-err"></div>
+		<div class="-section-form">
+			<div class="-section-line"><span>真实姓名</span> <input type="text" class="-section-input-name" disabled="disabled"></div>
+			<div class="-section-line"><span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</span> <input type="text" class="-section-input-position" disabled="disabled"></div>
+			<div class="-section-line"><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span> <input type="password" class="-section-input-password" disabled="disabled"></div>
+			<div class="-section-line"><span>确认密码</span> <input type="password" class="-section-input-repeat-password" disabled="disabled"></div>
+		</div>
+		<p> <span class="u-btn u-btn-false -section-save">提交</span></p>
+	</div>
+	<script>
+		$('.-section-line input').on('focus',function(e){$(e.currentTarget).parent().addClass('-section-line-focus').siblings().removeClass('-section-line-focus')}).on('focusout',function(e){$(e.currentTarget).parent().removeClass('-section-line-focus')});
+	</script>
+	<!--第三步 end-->
+	
+	<!--第四步 begin-->
+	<div class="invite-section invite-section-d" data-order="4" style="background:#ffda88">
+		<div class="success-area">
+			<div class="-area-info">
+				<img src="/style/imgs/right.png" style="padding-top:62px;padding-bottom:12px;width:70px;height:54px;"></img>
+				<h2 style="color:#f45611;">申请成功!</h2>
+				<h4 style="line-height:26px;color:#f45611;">请等待管理员审批  审批通过后，会以短信形式提醒您。</h4>
+			</div>
+			<div class="-area-download">
+				<a href="/mob/downloadsection.html"><img src="/style/imgs/success.png" style="width:191px;height:47px;padding-bottom:42px;"></img></a>
+				<a href="tel:4006689050"><img src="/style/imgs/phone.png" style="width:108px;height:16px;padding-bottom:30px;"></img></a>
+			</div>
+		</div>
+		<!--
+		<div class="-section-success">
+			<a href="#"></a>
+		</div>
+		-->
+	</div>
+	<!--第四步 end-->
+
+	<div class="f-hide">
+		<input type="hidden" id="token" value=<% =Model.Token %> />
+		<input type="hidden" id="Hidden1" value=<% =Model.Name %> />
+		<input type="hidden" id="Hidden2" value=<% =Model.EnterpriseName %> />
+		<input type="hidden" id="Hidden3" value=<% =Model.InviteTime %> />
+	</div>
+	<script type="text/javascript" src="/statistics/common.js"></script>
+	<script src="/static/js/invite/invite_help.js"></script>
+	<script src="/static/js/invite/invite.js"></script>
+</body>
+</html>
+
+        
+

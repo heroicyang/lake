@@ -1,0 +1,26 @@
+﻿body{
+	font-family:"微软雅黑";
+	background-color: #f7f7f7;
+}
+.content{
+	width: 600px;
+	padding-left: 100px;
+	padding-right: 100px;
+	background: #666;
+	margin-left: auto;
+	margin-right: auto;
+}
+hr{
+	height: 160px;
+	border: 0;
+}
+.main-accordion{
+	height: 300px;
+}
+.main-modal,
+.main-info,
+.main-tree{
+	background: #fff;
+	padding: 20px;
+	line-height: 26px;
+}

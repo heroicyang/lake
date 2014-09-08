@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="metro/d3.v3.js"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
+  <style>
+     .little{
+      fill: #aaa;
+      stroke: #666;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <svg width="360" height="180">
+      <circle class="little ca" cx="180" cy="45" r="12"></circle>
+      <circle class="little cb" cx="60" cy="90" r="12"></circle>
+      <circle class="little cc" cx="300" cy="135" r="12"></circle>
+      <circle class="little cd" cx="300" cy="135" r="12"></circle>
+    </svg>
+  </div>
+  <script>
+    var ca=d3.select('.ca');
+    var cb=d3.select('.cb');
+    var cc=d3.select('.cc');
+    var cd=d3.select('.cd');
+    var cirs=d3.selectAll('circle');
+
+    var dav=[{a:'hello node',b:'hello tu'}];
+    var arr=_.map(_.range(10),function(){return Math.floor(Math.random()*1024)});
+    var matrix=[
+      [11975,  5871, 8916, 2868],
+      [ 1951, 10048, 2060, 6171],
+      [ 8010, 16145, 8090, 8045],
+      [ 1013,   990,  940, 6907]
+    ];
+    console.log(d3.select('svg').append('hello:circle'));
+  </script>
+</body>
+</html>

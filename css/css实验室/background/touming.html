@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.a{
+			width: 200px;
+			height: 200px;
+			position: relative;
+		}
+		.a p{
+			line-height: 26px;
+			color: blue;
+		}
+		.b{
+			position: absolute;
+			z-index: 2;
+			width: 200px;
+			height: 200px;
+			background: #222;
+			filter: alpha(opacity=60);
+			-moz-opacity: 0.6;
+			opacity: 0.6;
+		}
+	</style>
+</head>
+<body>
+	<div class="a">
+		<div class="b"></div>
+		<div class="c">
+			<p>显示内容a</p>
+			<p>显示内容b</p>
+			<p>显示内容c</p>
+			<p>显示内容d</p>
+		</div>
+	</div>
+</body>
+</html>

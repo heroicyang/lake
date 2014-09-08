@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery.js" language="javascript"></script>
+	<script type="text/javascript" src="js/evaer-pin.js" language="javascript"></script>
+	<style>
+		.head{
+			height: 200px;
+			background: #eee;
+		}
+		.fi{
+			background: #ccc;
+		}
+		.fi .span4{
+			background: blue;
+			color: #fff;
+			text-align: center;
+			height: 400px;
+		}
+		.body{
+			background: #eee;
+			height: 800px;
+		}
+		.footer{
+			background: #ccc;
+			height: 600px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row head"></div>
+		<div class="row fi">
+			<div class="span4">滑动固定</div>
+			<div class="span8"></div>
+		</div>
+		<div class="row body"></div>
+		<div class="row footer"></div>
+	</div>
+</body>
+<script>
+	$(function(){
+		$('.span4').pin();
+	})
+</script>
+</html>

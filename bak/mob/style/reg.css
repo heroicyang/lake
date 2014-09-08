@@ -1,0 +1,299 @@
+﻿@charset "utf-8";
+/*第二版注册页*/
+.areg-page{
+
+}
+.areg-header{
+	height: 50px;
+	background: url(../image/header_bg.png) repeat-x;
+}
+.areg-header-phone{
+	/*background: url(../image/common_phone.png) no-repeat;*/
+	width: 42px;
+	height: 28px;
+}
+.areg-nav{
+	height: 44px;
+	background: #ff9600;
+	border-top: 1px #e98900 solid;
+	border-bottom: 1px #e98900 solid;
+}
+.areg-nav span{
+	line-height: 44px;
+	width: 48%;
+	text-align: center;
+}
+.areg-nav span a{display: block;color: #fff;}
+.areg-nav span a img{position: relative; top: 3px;}
+.areg-con{
+	background: url(../image/con_bg.png) repeat-x #fff;
+	padding-bottom: 140px;
+}
+.areg-section{
+
+}
+.areg-section h2{
+	line-height: 60px;
+	font-weight: normal;
+	text-align: center;
+	padding-bottom: 20px;
+	font-size: 120%;
+}
+.areg-section h3{
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px 0 0 30px;
+	font-weight: normal;
+	color: #b3b3b3;
+}
+/*=================正常状态=============*/
+.areg-section-line{
+	position: relative;
+	text-align: center;
+	width: 80%;
+	margin:0 auto 0 auto;
+}
+/*第一页提示*/
+.areg-section-line-tip{
+	text-align: left;
+	line-height:30px;
+	min-height: 30px;
+	font-size: 14px;
+	color: #8c8c8c;
+	zoom:1;
+	position: relative;
+	padding-left: 80px;
+}
+.areg-section-line-tip span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:80px;
+	font-weight: bold;
+}
+.areg-section-line-tip b{
+	font-weight: normal;
+	color:#ff5500;
+	display: none;
+}
+/************************第二页 基本信息提示**********************/
+.areg-section-line-info{
+	text-align:left;
+	line-height: 30px;
+	min-height: 30px;
+	font-size: 14px;
+	color: #8c8c8c;
+	zoom: 1;
+	position: relative;
+	padding-left: 64px;
+	margin-top: 6px;
+}
+.areg-section-line-info .-info-label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 64px;
+}
+.areg-section-line-info .-info-tip{
+	display: none;
+	float: right;
+	font-weight: normal;
+}
+.areg-section-line-info .-info-tip b{
+	font-weight: normal;
+}
+.areg-section-line-info .-info-tip b.active{
+	color: #ff5500;
+}
+.areg-section-line-info .-info-smart{
+	float: right;
+}
+.areg-section-line-info .-info-smart b{
+	font-weight: normal;
+	padding: 0 8px;
+}
+/*b元素激活状态*/
+.areg-section-line-info .-info-smart .active{
+	color: #ff5500;
+}
+.areg-section-line-info .-info-smartnum{
+	display: none;
+}
+.areg-section-line-info .-info-smartnum i{
+	font-style: normal;  
+}
+.areg-section-line-info .-info-smartnum i.active{
+	color: #ff5500;
+}
+/*************end************/
+
+
+
+.areg-section-line input{
+	width: 100%;
+	height: 18px;
+	padding:11px 0 11px 10px;
+	line-height: 18px;
+	border: 1px #ccc solid;
+	border-radius: 4px;
+	font-size: 14px;
+	background: #fff;
+	display:block;
+}
+.areg-section-line input:focus{
+	border-color:#0096ff;
+	outline: none;
+}
+.areg-section-line .areg-btn{
+	width: 100%;
+}
+.areg-section-line a{
+	font-weight: bold;
+	color: #0096ff;
+}
+/*==============错误状态=============*/
+.areg-section-line-false{
+}
+.areg-section-line-false input{
+	
+}
+.areg-section-line-false .areg-section-line-tip b{
+	display: inline;
+}
+/*=============end=================*/
+/*邀请人信息列表*/
+.areg-section-inviteinfo{
+	border-bottom: 1px #ccc dashed;
+}
+.areg-section-inviteinfo .-invite-btn{
+	margin-top: 10px;
+}
+.areg-section-inviteinfo .-invite-tip{
+	line-height: 40px;
+	color: #b3b3b3;
+}
+.areg-section-inviteinfo-box{
+	padding: 20px;
+	text-align: left;
+	border:1px #ccc solid;
+	border-radius: 4px;
+}
+.areg-section-inviteinfo-box .-inviteinfo-title{
+	font-size: 110%;
+}
+.areg-section-inviteinfo-box p{
+	line-height: 30px;
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.areg-section-inviteinfo-box p span{
+	color: #999;
+	display: inline-block;
+	width: 80px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+/*基本信息 start*/
+.areg-section .-info-readonly{
+	background: #eee;
+}
+/*end*/
+
+/*注册成功*/
+.areg-section-success{
+	border: 1px #ccc solid;
+	border-radius: 4px;
+	padding: 8px;
+}
+.areg-section-success p{
+	text-align: left;
+	line-height: 22px;
+}
+.areg-section-success p span{
+	display: inline-block;
+	width: 90px;
+	padding-right: 10px;
+	text-align: right;
+}
+.areg-section-success .-success-password{
+	color: #0096ff;
+}
+.areg-success-info{
+	position: relative;
+	text-align: left;
+	width: 80%;
+	padding: 20px 0 0 0;
+	margin: 0 auto;
+	color: #444;
+	font-size: 16px;
+	line-height:22px;
+}
+.areg-imgcode-left{
+	margin-right: 110px;
+}
+.areg-imgcode-right{
+	float: right;
+	width: 95px;
+	height: 33px;
+	background: #fff;
+	position: relative;
+}
+.areg-imgcode-right img{width: 100%;height: 100%;}
+.areg-imgcode-right span{color: #b2b2b2;
+text-decoration: none;
+position: absolute;
+bottom: -23px;
+right: 0;
+font-size: 80%;}
+.areg-imgcode{
+	width: 80%;
+	margin: 0 auto;
+}
+.areg-footer{
+	height:50px;
+	background: #383838;
+}
+.areg-footer-info{
+	color: #fff;
+	margin-top: 9px;
+}
+.areg-footer-info h6{
+	color: #c3bcb1;
+	font-weight: normal;
+	font-size: 12px;
+}
+.areg-footer-info p{
+	color: #9c978f;
+	font-size: 11px;
+}
+.areg-footer-phone{
+	width: 50px;
+	height:50px;
+	/*background: url(../image/footer_phone.png);*/
+}
+/*========按钮样式========*/
+.areg-btn{
+	height:40px;display: inline-block;color:#fff;text-align: center;
+	line-height: 40px;
+	background-color: #f89c18;
+	border-radius: 4px;
+	-webkit-box-shadow:inset 0 0 0.5px 1px rgba(255,255,255,0.45);
+	-moz-box-shadow:inset 0 0 0.5px 1px rgba(255,255,255,0.45);;
+	box-shadow: inset 0 0 0.5px 1px rgba(255,255,255,0.45);
+	border: 1px #e0a018 solid;
+	cursor: pointer;
+	font-family: "微软雅黑";
+	font-size: 18px;
+}
+.areg-btn span{display: none}
+/*==按钮false样式==*/
+.areg-btn-false{
+	background-color: #e6e6e6;
+	border-color: #ccc;
+	color: #aaa;
+}
+.areg-btn-false span{display: inline;}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SVG path</title>
+  <script src="js/jquery.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <svg width="1200" height="1200">
+  	<!--绘制直线-->
+    <path d="M300 200 l0 200 200 0 0 -200 Z"
+    style="fill:#eee;stroke:#00baff;stroke-width:1"/>    
+    <!--绘制水平线和竖直线-->
+    <path d="M50 50 h200 v200 h-200 Z"
+    style="fill:#eee;stroke:#00baff;stroke-width:1"/>
+    <!--绘制圆弧-->
+    <path d="M80 80 A80 80,0,0,0,125 125 L125 80 "
+    style="fill:#eee;stroke:#00baff;stroke-width:4"/>
+    <path d="M400 400 A200 200 0 1 1 399 400" stroke="#00baff" fill="none" stroke-width="10"/>
+  </svg>
+</body>
+</html>

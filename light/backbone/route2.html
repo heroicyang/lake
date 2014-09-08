@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+</head>
+<body>
+	<div bone-view>
+		<a href="#linux/search">linux/search</a>
+		<a href="#arch/avaer">arch/avaer</a>
+		<a href="#lakeroom/avaer">lakeroom/avaer</a>
+	</div>
+	<div class="view">
+		hello world
+	</div>
+	<script>
+	var view={};
+	view['linux']=function(arg){
+		console.log('linux');
+		console.log(arg);
+	}
+	view['arch']=function(arg){
+		console.log('arch');
+		console.log(arg);
+	}
+	view['lakeroom']=function(arg){
+		console.log('lakeroom');
+		console.log(arg);
+	}
+
+	var Route=Backbone.Router.extend({
+		routes:{
+			":veca/:vecb":"naver"
+		},
+		naver:function(veca,vecb){
+			$('.view').empty();
+			view[veca](vecb);
+		}
+	});
+	
+	var router=new Route;
+
+	Backbone.history.start();
+	</script>
+</body>
+</html>

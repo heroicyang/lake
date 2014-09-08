@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+    var Dat=new Date(2013,5,28,14,11,52)  //规定时间 注意月份里0代表1月，11代表12月
+    var Ts={}
+    /*
+     以毫秒为单位
+     记录各单位值
+    */
+    Ts.sec=1000
+    Ts.min=60*Ts.sec
+    Ts.hour=60*Ts.min
+    Ts.day=24*Ts.hour
+    /*
+    根据现在时间和输入的date
+    计算差值 
+    返回间隔Time
+    */
+    Ts.remain=function(date){
+        var cur=new Date()
+        var Ti=date.getTime()-cur.getTime()
+
+        var Tiday=Math.floor(Ti/this.day)
+        Ti=Ti-Tiday*this.day
+        var Tihour=Math.floor(Ti/this.hour)
+        Ti=Ti-Tihour*this.hour
+        var Timinu=Math.floor(Ti/this.min)
+        Ti=Ti-Timinu*this.min
+        var Tisec=Math.floor(Ti/this.sec)
+        Timic=Ti-Tisec*this.sec
+
+        var Time={
+            day:Tiday,
+            hour:Tihour,
+            minute:Timinu,
+            sec:Tisec,
+            mic:Timic
+        }
+        return Time
+    }
+
+    setInterval(function(){
+        var a=Ts.remain(Dat)
+        console.log(a.day+":"+a.hour+":"+a.minute+":"+a.sec+":"+a.mic);
+    }, 1000);
+    </script>
+</body>
+</html>

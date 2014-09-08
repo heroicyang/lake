@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var a=1;
+var b=4;
+function haha(va,vb){
+        var a=1;
+		var b=2;
+		function add(va,vb){
+			var vc=va+vb+this.a+this.b;
+			return vc;
+		}
+		var c=add(va,vb);
+		return c;
+}
+var c=haha(0,1);
+console.log(c);
+</script>
+</body>
+</html>

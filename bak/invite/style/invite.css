@@ -1,0 +1,486 @@
+﻿@charset "utf-8";
+/*系统类样式*/
+.s-global-loading{
+	background: rgba(0,0,0,0.1);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	overflow-y:auto;
+}
+.s-global-loading .-loading-content{
+	display: block;
+	width: 110px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: rgba(0,0,0,0.75) url(imgs/loading.gif) no-repeat center 35px;
+	background-size: 16px 16px;
+	border-radius: 4px;
+	margin-left: -55px;
+	margin-top: -50px;
+}
+.s-global-loading .-loading-content p{
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	margin-top: 70px;
+	letter-spacing: 0.2em;
+}
+.s-global-mask{
+	background: #fff;
+	filter:alpha(opacity=60);  
+    -moz-opacity:0.6;  
+    -khtml-opacity: 0.6;  
+    opacity: 0.6; 
+	width: 100%;
+	height:100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	overflow-y:auto; 
+}
+.s-alert{
+	display: block;
+	position: fixed;
+	background: #fff;
+	z-index: 101;
+	width:80%;
+	box-sizing:border-box;
+	border-radius: 4px;
+	padding:20px;
+	border: 1px #ccc solid;
+	left: 10%;
+	top: 20%;
+}
+.s-alert-content{
+	padding:10px 0 16px 0;
+	word-wrap: break-word;
+}
+.s-alert-close{
+	position: absolute;
+	top:8px;
+	right:8px;
+	width:16px;
+	height:16px;
+	cursor: pointer;
+	background:url(imgs/blackx.png) no-repeat;
+}
+.s-alert-button{
+	text-align: right;
+}
+.s-alert-button span{
+	font-weight: bold;
+	color: #0096ff;
+	border: 1px #ccc solid;
+	cursor: pointer;
+	display: inline-block;
+	padding:6px 12px;
+	font-size: 80%;
+	line-height: 20px;
+}
+/*icon类样式*/
+.i-icon-phone{
+	display: inline-block;
+	width: 9px;
+	height: 15px;
+	background: url(imgs/phone_icon.png) no-repeat;
+	background-size:9px 15px;
+}
+.i-icon-close{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url(imgs/close_icon.png) no-repeat center center;
+	background-size: 17px 16px;
+}
+/*ui 按钮类样式*/
+.u-btn{
+	display: block;
+	color: #fff;
+	background: #ffa21a;
+	font-size: 18px;
+	text-shadow:0px 1px 2px rgba(0,0,0,0.2);
+	height:43px;
+	line-height:43px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 0px #d98a16;
+}
+.u-btn span{
+	display: none;
+}
+.u-btn-false{
+	background: #feae3a;
+	box-shadow: 0 2px 0px #e69929;
+	color: rgba(255,255,255,0.5);
+}
+.u-btn-false span{
+	display: inline-block;
+}
+/*手机验证框*/
+.-invite-in{
+	border: 1px #dbd8d7 solid;
+	background:#fff;
+	margin: 0 0 25px 0;
+	text-align: left;
+	position: relative;
+}
+.-invite-in-focus{
+	background: #fff;
+	border:2px #ffa63b solid;
+	margin-top:-1px;
+	margin-left:-1px;
+	margin-bottom:24px;
+}
+.-invite-in-focus input{
+	background: #faffff;
+}
+.-invite-in-tip{
+	position: absolute;
+	top: -24px;
+	right: 0;
+	font-weight: 1em;
+	color: #ff812c;
+	display: none;
+}
+.-invite-in-icon{
+	max-width: 20%;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 15px;
+}
+.-invite-in-input{
+	width: 78%;
+	display:inline-block;
+	color:#423e39;
+	font-size: 16px;
+	padding:11px 0;
+	border:0;
+	outline: 0;
+	background: #fff;
+}
+.-invite-in-input::-webkit-input-placeholder {
+	color:#b5b1a5;
+}
+.-invite-in-input::-moz-placeholder{
+	color:#b5b1a5;
+}
+.invite-title{
+	text-align: left;
+	background: #f3fdff;
+	font-size:19px;
+	padding: 0 8.1%;
+	height:64px;
+	line-height: 64px;
+	border-bottom: 1px #dae8ea solid;
+	/*white-space: nowrap;*/
+}
+.invite-title p{
+	display:inline-block;
+   	vertical-align:middle;
+   	line-height:24px;
+   	max-height: 48px;
+   	overflow: hidden;
+   	color: #3b4247;
+	text-overflow: ellipsis;
+}
+/*每一个模块*/
+.invite-section{
+	text-align: center;
+	background: #fff;
+	padding: 0 8.1%;
+	position:relative;
+	/*min-height: 780px;*/
+}
+.invite-section .-section-head{
+	position: relative;
+	padding-top: 20px;
+}
+.invite-section-a{
+	/*background:-webkit-gradient(linear, 0 210, 0 100%, from(#2074af), to(#2c91d2));*/
+	min-height: 230px;
+}
+.invite-section-b{
+	min-height: 310px;
+}
+.invite-section-b .-section-vector{
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-27.5px;
+	width:55px;
+	height:18px;
+	background:url(imgs/mms_top.jpg);
+	background-size:55px 18px;
+}
+.invite-section-c{min-height: 430px;}
+.invite-section-c .-section-vector{
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-27.5px;
+	width:55px;
+	height:18px;
+	background:url(imgs/info_top.jpg);
+	background-size:55px 18px;
+}
+/*第四步*/
+.invite-section-d{
+	min-height: 460px;
+}
+.invite-section h2{
+	font-size:20px;
+	padding: 16px 0 4px 0;
+	font-weight: normal;
+	color: #77695c;
+}
+.invite-section h3{
+	font-size: 15px;
+	line-height: 80px;
+	font-weight: normal;
+	color: #77695c;
+}
+.invite-section h4{
+	font-size: 13px;
+	line-height: 30px;
+	margin-bottom: 10px;
+	font-weight: normal;
+	color: #77695c;
+}
+.invite-section .-section-b-tip span{
+	cursor: pointer;
+	text-decoration: underline;
+}
+/*短信验证部分*/
+.code-err {
+	position: relative;
+	font-weight: 1em;
+	color: #ff812c;
+	width: 48%;
+	text-align: right;
+	height: 24px;
+	line-height: 24px;
+	visibility: hidden;
+}
+.invite-section .-section-verify{
+	margin-bottom: 25px;
+	height: 42px;
+}
+.invite-section .-section-verify input{
+	display: inline-block;
+	width: 48%;
+	font-size: 17px;
+	padding: 11px 4px;
+	color: #4e4b46;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box; 
+	border: 1px #dbd8d7 solid;
+	outline:none;
+	border-radius:0px;
+	-webkit-box-shadow:none;
+	background:#fff;
+}
+.invite-section .-section-verify input:focus{
+	border: 2px #fc990b solid;
+	margin-top: -1px;
+	margin-left: -1px;
+	margin-bottom:-1px;
+	background:#faffff;
+}
+.invite-section .-section-verify-btn{
+	display: inline-block;
+	width: 48%;
+	font-size: 17px;
+	border-radius: 4px;
+	background: #ffa21a;
+	color: #fff;
+	line-height: 43px;
+	cursor: pointer;           
+}
+.invite-section .-section-verify-btn span{
+	display:none;
+} 
+.invite-section .-verify-btn-false{
+	background:#ffa21a;
+	color:#ffd18d;
+}
+.invite-section .-verify-btn-false span{
+	display:inline-block;
+} 
+
+.info-err{
+	position:fixed;
+	z-index: 200;
+	font-weight: 1em;
+	color: #ff5500;
+	width: 100%;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	background: rgba(255,238,247,0.9);
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: none;
+}
+
+.invite-section .-section-form{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.invite-section .-section-line{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height:55px;
+	background: #fff;
+	border: 1px #dbd8d7 solid;
+	margin-top: -2px;
+	overflow:hidden;
+}
+.invite-section .-section-line-focus{
+	border:2px #ffa63b solid;
+	margin-top: -4px;
+	margin-left:-1px;
+	top: 1px;
+	z-index: 4;
+}
+.invite-section .-section-line span{
+	display:inline-block;
+	vertical-align: middle;
+	width: 30%;
+	font-size: 1em;
+	padding: 18px 4px;
+	color: #646566;
+	box-sizing:border-box;
+	float:left;
+}
+.invite-section .-section-line input{
+	display: inline-block;
+	vertical-align: middle;
+	width: 66%;
+	font-size: 1em;
+	padding: 18px 4px;
+	border:0;
+	outline: 0;
+	color: #423e39;
+	background: #fff;
+	float:right;
+}
+.invite-section .-section-line input::-webkit-input-placeholder {
+	color:#b1b2b2;
+}
+.invite-section .-section-line input::-moz-placeholder{
+	color:#b1b2b2;
+}
+.invite-section .-section-line i{
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	cursor: pointer;
+	display: none;
+}
+.invite-section .-section-success{
+	width:300px;
+	margin: 0 auto;
+	padding-top: 190px;
+	height:78px;
+	background: url(imgs/success_bg.png) no-repeat center top;
+	margin: 0 auto;
+}
+.invite-section .-section-success a{
+	display: block;
+	height: 50px;
+}
+
+.invite-section .success-area{
+	margin:0 auto;
+}
+.invite-section .success-area img{
+	display:block;
+	border:0;
+	margin:0 auto;
+}
+.invite-section .success-area .-area-info{
+	display: none;
+	padding-top: 90px;
+}
+.invite-section .success-area .-area-info h2{
+	font-size:20px;
+	margin: 0;
+	padding: 0 0 22px 0;
+	color:#f98b06;
+}
+.invite-section .success-area .-area-info h4{
+	font-size:13px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0;
+	color:#f4ae62;
+}
+.invite-section .success-area .-area-info h5{
+	font-size: 13px;
+	line-height: 24px;
+	margin: 0;
+	padding: 0;
+	color: #f4ae62;
+	font-weight: normal;
+	position: relative;
+	top: 55px;
+}
+.invite-section .success-area .-area-download{
+}
+.invite-section .success-area .-area-download h2{
+	padding: 80px 0 0 0;
+	font-size: 20px;
+	color: #646566;
+}
+.invite-section .success-area .-area-download h4{
+	font-size: 15px;
+	color: #646566;
+	padding-top:6px;
+	margin-bottom: 120px;
+}
+.invite-section .success-area .-area-download-btn{
+	display: block;
+	height: 207px;
+	width: 250px;
+	margin: 0 auto;
+	height: 48px;
+	line-height: 42px;
+	color: #fff;
+	background: url(imgs/success.png) no-repeat center top;
+	background-size:191px 48px; 
+}
+.invite-section .success-area-active  .-area-download h2,
+.invite-section .success-area-active  .-area-download h4{
+	display: none;
+}
+
+.invite-section .success-area-active .-area-info{
+	display: block;
+}
+.invite-section .success-area-active .-area-download{
+	padding-top: 70px;
+}
+
+/*底部电话*/
+.invite-phone{
+	border-top: 1px #e8e2da solid;
+	background: #f2ede9;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+}
+.invite-phone a{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+

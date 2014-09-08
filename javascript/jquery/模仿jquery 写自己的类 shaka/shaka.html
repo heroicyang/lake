@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var Shaka=function(age){return new Shaka.init(age)};
+	    Shaka.init=function(age){this.age=age;};
+		Shaka.fn=Shaka.prototype={
+		 sayHello:function(){alert("hello world!"+this.age)}
+		};
+		Shaka.init.prototype=Shaka.fn;
+    var da=Shaka(22);
+        da.sayHello();
+</script>
+</body>
+</html>

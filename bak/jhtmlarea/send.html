@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="jHtmlArea.css">
+  <script src="jquery.js"></script>
+  <script src="jHtmlArea.js"></script>
+</head>
+<body>
+<table>
+<tbody>
+   <tr>
+    <td>
+      <form action="">
+        <textarea name="" id="sendemail" cols="30" rows="4" style="width:560px;height:220px">
+        </textarea>
+      </form>
+    </td>
+  </tr>
+</tbody>
+</table>
+  <script>
+      var msgarea=$("#sendemail");//邮件编辑框
+      msgarea.htmlarea();//邮件编辑区初始化
+      //msgarea.htmlarea('toHtmlString');//返回邮件编辑框的html源文件
+  </script>
+  </div>
+</body>
+</html>

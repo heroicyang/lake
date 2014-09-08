@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layer</title>
+	<meta name="viewport" content="width=1080">
+	<script src="js/zepto.js"></script>
+	<script src="js/swipe.js"></script>
+	<script src="js/zepto_help.js"></script>
+	<script src="js/zepto_layer.js"></script>
+	<script src="js/statistics.js"></script>
+</head>
+<body>
+	<button class="a">layer</button>
+	<button class="b">destory</button>
+	<script>
+	var layer=new $.Layer({content:'<h1>hello world</h1>',width:800});
+	$('.a').click(function(event) {
+		layer.show()
+	});
+	$('.b').click(function(event){
+		layer.destory();
+	})
+	</script>
+</body>
+</html>

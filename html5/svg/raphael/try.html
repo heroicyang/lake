@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Document
+        </title>
+        <script src="metro/raphael.js"></script>
+        <script src="metro/raphael.wave.js"></script>
+        <script src="metro/render.js"></script>
+        <style>
+            body{ background: #f7f7f7; }
+        </style>
+    </head>
+    
+    <body>
+    <h4>请在绿色标识标签中选择</h4>
+<script type="text/javascript">
+/*\
+渲染图
+\*/
+var paper = Raphael(0, 0, 800, 600);
+
+var datas =[
+{id: 0,prev: null,next: [1, 3],name: "已登记",active: true},
+{id: 1,prev: [0, 2],next:[2],name: "信息缺失"},
+{id: 2,prev: [1],next:[1,3],name: "等待补全"},
+{id: 3,prev: [0, 2, 5],next:[4,6],name: "正在查重"},
+{id: 4,prev: [3],next: [5],name: "重复过高"},
+{id: 5,prev: [4, 7],next:[3],name: "等待修改"},
+{id: 6,prev: [3],next:[7,8],name: "正在审稿"},
+{id: 7,prev: [6],next:[5],name: "二审未过"},
+{id: 8,prev: [6],next: [9, 10],name: "等待收款"},
+{id: 9,prev: [8],next:[11],name: "等待印刷"},
+{id: 10,prev:[8],next:[12],name: "收款逾期"},
+{id: 11,prev:[9],next:[12],name: "正在寄送"},
+{id: 12,prev:[10,11],next:null,name: "结束"},
+]
+//广序遍历后完成的数组
+var arr=Tu.trans(datas);
+//绘制后的元素指针
+var SS=render(arr,paper);
+
+//将SS.circles元素存入组markers
+var markers=paper.set();
+for(var i=0;i<SS.circles.length;i++){
+    markers.push(SS.circles[i]);
+}
+active();
+function active(){
+    var current=datas[SS.active].id;
+    var next=datas[SS.active].next;
+    for(var i=0;i<next.length;i++){
+        SS.lines[current][next[i]].attr({stroke: "#3399ff"});
+        SS.circles[next[i]].attr({stroke:'#3399ff'}).click(function(){
+            shine(this.data('id'));
+        });
+    }
+    SS.circles[current].attr({stroke:'#3399ff',fill:'#3399ff'});
+}
+function shine(num){
+    var next=datas[SS.active].next;
+    for(var i=0;i<next.length;i++){
+        SS.circles[next[i]].attr({fill:"#ff6600"});
+    }
+    SS.circles[num].attr({fill:'#3399ff'})
+}
+</script>
+</body>
+</html>
