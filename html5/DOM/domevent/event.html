@@ -37,7 +37,16 @@
     		var book=document.querySelector('#book');
             var bookinfo=document.querySelector('#book-info');
             var booktag=document.querySelector('#book-tag');
-            
+            /**
+            * 任何事件 都会先捕捉后冒泡
+            * addEventlistener(name,callback,bool);
+            * bool 在哪个阶段触发  默认false      
+            * true  捕捉阶段触发 
+            * false 冒泡阶段触发
+            */
+            /**
+            * 手动触发dom事件时 必须新建Event对象 然后触发
+            */
             book.addEventListener('click',function(e){
                 console.log('1 book click');
             },true);
@@ -45,11 +54,11 @@
             bookinfo.addEventListener('click',function(e){
                 //e.stopPropagation();
                 console.log('2 bookinfo click');
-            },true);
+            },false);
 
             booktag.addEventListener('click',function(e){
                 console.log('3 booktag click');
-            },false)
+            },true)
 
     	</script>
 </body>

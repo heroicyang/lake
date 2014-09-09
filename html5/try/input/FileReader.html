@@ -12,6 +12,11 @@
 	<span>haha</span>
 	<button>render</button>
 	<script>
+		/**
+		* Blob 对象 可以直接new Blob() 但是File 和 FileList 只能通过input元素获得
+		* File 对象 
+		* FileList 对象  一般文件上传的时候里面的文件类型 是这个类型
+		*/
 		var input=document.querySelector('[name="blob"]');
 		var img=new Image;
 		var btn=document.querySelector('button');
