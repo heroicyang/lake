@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+</head>
+<body>
+	<div bone-view>
+		<a href="#help">help</a>
+		<a href="#search/avaer">serach/avaer</a>
+		<a href="#search/avaer/p6">search/avaer/p6</a>
+	</div>
+	<script>
+		var router=new Backbone.Router;
+		Backbone.history.start();
+
+		router.avaer=function(){
+			console.log('this is avaer');
+		};
+		router.route("search/avaer",'avaer');
+	</script>
+</body>
+</html>

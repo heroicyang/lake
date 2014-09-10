@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+</head>
+<body>
+	<div bone-view>
+		<a href="#help">help</a>
+		<a href="#search/avaer">serach/avaer</a>
+		<a href="#search/avaer/p6">search/avaer/p6</a>
+	</div>
+	<script>
+		var Route=Backbone.Router.extend({
+			routes:{
+				"help": "help",
+				"search/:query": "search",
+				"search/:query/p:page": "search",
+				"search/avaer/p6":"searchb"
+			},
+			help:function(){
+				console.log('RouteA');
+				console.log('help');
+			},
+			search:function(query,page){
+				console.log(query);
+				console.log(page);
+			},
+			searchb:function(query,page){
+				console.log('this is searchb');
+			}
+		});
+		var router=new Route;
+
+		Backbone.history.start();
+		
+		/*
+		var $window=$(window);
+		$window.on('popstate',function(data){
+			console.log('popstate');
+			console.log(window.history.state);
+		})
+		*/
+	</script>
+</body>
+</html>
