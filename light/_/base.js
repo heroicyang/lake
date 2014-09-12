@@ -71,7 +71,6 @@ var Event=Class.extend({
     *事件可以接受参数 若事件为all 第一个参数为原事件name
     *on('event',function(arg0,arg1,arg2){})
     *on('all',function(name,arg1,arg2){})
-    *话说events中第二个键值context有什么用
     */
     'on':function(name,callback,context){
         var self=this;
@@ -82,8 +81,8 @@ var Event=Class.extend({
 
         var events=self._events[name] || (self._events[name]=[]);
 
-        //ctx参数 作用域如果没传默认指向自己 
-        events.push({callback:callback,context:context,ctx:context || self});
+        //context参数默认为self 
+        events.push({callback:callback,context:context || self});
         return self;
     },
 
@@ -194,39 +193,34 @@ var Event=Class.extend({
     */
     'trigger':function(name){
         var self=this;
+       
         if(!self._events) return self;
 
         var args=self.slice.call(arguments,1);
-        //若事件库里有all选项
-        //则需要给all callback的第一个参数传name
-        //其他的则无需name
-        var events=self._events[name];
-        var allEvents=self._events['all'];
-        if(events) self._triggerEvents(events,args);
-        if(allEvents) self._triggerEvents(allEvents,arguments);
+
+        var i=0,
+            ev,
+            events=self._events[name],
+            allEvents=self._events['all'];
+
+        if(events){
+            for(i=0;i<events.length;i++){
+                ev=events[i];
+                ev.callback.apply(ev.context,args);
+            }
+        }
+        /**
+        *allevents
+        *第一个参数需要获取 事件名
+        */
+        if(allEvents){
+            for(i=0;i<events.length;i++){
+                ev=events[i];
+                ev.callback.apply(ev.context,arguments);
+            }
+        }
 
         return self;
-    },
-
-    /**
-    *触发事件调用函数
-    *events为事件函数数组库
-    *call的性能比apply强 超过三个参数调用apply 三个参数或三个参数以下调用call
-    */
-    '_triggerEvents':function(events,args){
-        var ev,i=-1,l=events.length,a1=args[0],a2=args[1],a3=args[2];
-        switch(args.length){
-            case 0:
-                while(++i < l){ 
-                    ev=events[i];
-                    ev.callback.call(ev.ctx);
-                }
-                return; 
-            case 1:while(++i < l){ ev=events[i];ev.callback.call(ev.ctx, a1);}return; 
-            case 2:while(++i < l){ ev=events[i];ev.callback.call(ev.ctx,a1,a2);}return; 
-            case 3:while(++i < l){ ev=events[i];ev.callback.call(ev.ctx,a1,a2,a3);}return; 
-            default:while(++i < l){ ev=events[i];ev.callback.apply(ev.ctx,args);}return;
-        }
     }
 })
 
