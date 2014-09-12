@@ -68,9 +68,7 @@ var Event=Class.extend({
 
     /**
     *注册事件
-    *事件可以接受参数 若事件为all 第一个参数为原事件name
-    *on('event',function(arg0,arg1,arg2){})
-    *on('all',function(name,arg1,arg2){})
+    *事件对象存储函数对象和环境(默认为self)
     */
     'on':function(name,callback,context){
         var self=this;
@@ -85,49 +83,42 @@ var Event=Class.extend({
         events.push({callback:callback,context:context || self});
         return self;
     },
-
-    //只触发一次事件
-    'once':function(name,callback,context){
+    /**
+    *trigger 触发事件
+    *如果事件库里有all
+    *同时会触发all库里的事件
+    */
+    'trigger':function(name){
         var self=this;
-        var oncefunc=function(){
-            callback.apply(this,arguments);
-            self.off(name,oncefunc,context);
+       
+        if(!self._events) return self;
+
+        var args=self.slice.call(arguments,1);
+
+        var i=0,
+            ev,
+            events=self._events[name],
+            allEvents=self._events['all'];
+
+        if(events){
+            for(i=0;i<events.length;i++){
+                ev=events[i];
+                ev.callback.apply(ev.context,args);
+            }
         }
-        self.on(name,oncefunc,context);
+        /**
+        *allevents
+        *第一个参数需要获取 事件名
+        */
+        if(allEvents){
+            for(i=0;i<allEvents.length;i++){
+                ev=allEvents[i];
+                ev.callback.apply(ev.context,arguments);
+            }
+        }
+
         return self;
     },
-
-    /**
-    *listento 事件
-    *倾听别处的事件
-    */
-    'listenTo':function(obj,name,callback){
-        var self=this;
-
-        var listeningTo=self._listeningTo || (self._listeningTo={});
-        var id=obj._listenId || ( obj._listenId=(LISTEN_ID++).toString() );
-
-        listeningTo[id]=obj;
-
-        obj.on(name,callback,self);
-        return self;
-    },
-
-    /**
-    *listentoonce
-    */
-    'listenToOnce':function(obj,name,callback){
-        var self=this;
-
-        var listeningTo=self._listeningTo || (self._listeningTo={});
-        var id=obj._listenId || ( obj._listenId=(LISTEN_ID++).toString() );
-
-        listeningTo[id]=obj;
-
-        obj.once(name,callback,self);
-        return self;
-    },
-
     /**
     *off 注销事件
     */
@@ -172,6 +163,51 @@ var Event=Class.extend({
 
         return self;
     },
+    /*
+    *只触发一次事件
+    */
+    'once':function(name,callback,context){
+        var self=this;
+        var oncefunc=function(){
+            callback.apply(this,arguments);
+            self.off(name,oncefunc,context);
+        }
+        self.on(name,oncefunc,context);
+        return self;
+    },
+    /*
+    *listento 事件
+    *倾听别处的事件
+    */
+    'listenTo':function(obj,name,callback){
+        var self=this;
+
+        var listeningTo=self._listeningTo || (self._listeningTo={});
+        var id=obj._listenId || ( obj._listenId=(LISTEN_ID++).toString() );
+
+        listeningTo[id]=obj;
+
+        obj.on(name,callback,self);
+        return self;
+    },
+
+    /*
+    *listentoonce
+    */
+    'listenToOnce':function(obj,name,callback){
+        var self=this;
+
+        var listeningTo=self._listeningTo || (self._listeningTo={});
+        var id=obj._listenId || ( obj._listenId=(LISTEN_ID++).toString() );
+
+        listeningTo[id]=obj;
+
+        obj.once(name,callback,self);
+        return self;
+    },
+    /*
+    *会清除掉 倾听对象上挂载的相应事件队列函数
+    */
     stopListening: function(obj, name, callback) {
         var listeningTo = this._listeningTo;
         if (!listeningTo) return this;
@@ -184,43 +220,6 @@ var Event=Class.extend({
             if (remove || _.isEmpty(obj._events)) delete this._listeningTo[id];
         }
         return this;
-    },
-
-    /**
-    *trigger 触发事件
-    *如果事件库里有all
-    *同时会触发all库里的事件
-    */
-    'trigger':function(name){
-        var self=this;
-       
-        if(!self._events) return self;
-
-        var args=self.slice.call(arguments,1);
-
-        var i=0,
-            ev,
-            events=self._events[name],
-            allEvents=self._events['all'];
-
-        if(events){
-            for(i=0;i<events.length;i++){
-                ev=events[i];
-                ev.callback.apply(ev.context,args);
-            }
-        }
-        /**
-        *allevents
-        *第一个参数需要获取 事件名
-        */
-        if(allEvents){
-            for(i=0;i<events.length;i++){
-                ev=events[i];
-                ev.callback.apply(ev.context,arguments);
-            }
-        }
-
-        return self;
     }
 })
 

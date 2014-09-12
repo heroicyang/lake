@@ -9,8 +9,10 @@
 <body>
 	<script>   
 		var base=new Event();
-		base.on('evea',function(){
-			console.log('i am evea');
+		base.on('evea',function(arga,argb){
+			console.log('i am evea0');
+			console.log(arga);
+			console.log(argb);
 		})
 		base.on('evea',function(arga,argb){
 			console.log('i am evea1');
@@ -23,15 +25,17 @@
 		base.on('evec',function(){
 			console.log('i am evec');
 		})
-		base.on('all',function(arga,argb){
+		base.on('all',function(arga,argb,argc){
 			console.log('i am all 1');
 			console.log(arga);
 			console.log(argb);
+			console.log(argc);
 		})
-		base.on('all',function(arga,argb){
+		base.on('all',function(arga,argb,argc){
 			console.log("i am all 2");
 			console.log(arga);
 			console.log(argb);
+			console.log(argc);
 		})
 		base.trigger('evea',123,456);
 	</script>
