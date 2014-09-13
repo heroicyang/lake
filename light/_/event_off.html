@@ -9,21 +9,36 @@
 <body>
 	<script>   
 		var base=new Event();
-		base.once('a',function(){
-			console.log('i am once a');
-		});
-		base.on('a',function(){
-			console.log('i am a_1');
-		});
-		base.on('a',function(){
-			console.log('i am a_2');
-		});
-		base.on('a',function(){
-			console.log('i am a_3');
-		});
-		base.on('a',function(){
-			console.log('i am a_4');
+		function all_a(){
+			console.log('i am all_a na:'+this.na);
+		}
+		function all_b(){
+			console.log('i am all_b na:'+this.na);
+		}
+		var try_b=all_b;
+		var contexta={na:'contexta'};
+		var contextb={na:'contextb'};
+
+		base.on('evea',function(){
+			console.log('i am evea 0');
 		})
+		base.on('evea',function(){
+			console.log('i am evea 1');
+		})
+		base.on('eveb',function(){
+			console.log('i am eveb 1');
+		})
+		base.on('evec',function(){
+			console.log('i am evec 1');
+		})
+		base.on('all',all_a,contexta);
+		base.on('all',all_a,contextb);
+		base.on('all',all_b,contexta);
+		base.on('all',all_b,contextb);
+		base.trigger('evea');
+		base.off('all',all_b,contextb);
+		console.log('------------------------------------------------------------');
+		base.trigger('evea');
 	</script>
 </body>
 </html>
