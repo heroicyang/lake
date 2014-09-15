@@ -62,6 +62,7 @@ Class.prototype={
 /**
 * 事件类
 * Event
+* 未解决问题 _listenId的回收问题 _listeningTo[id]的回收问题
 */
 var LISTEN_ID=0;
 var Event=Class.extend({
@@ -178,6 +179,7 @@ var Event=Class.extend({
     /*
     *listento 事件
     *倾听别处的事件
+    *将事件压入倾听对象的事件队列 
     */
     'listenTo':function(obj,name,callback){
         var self=this;
@@ -207,19 +209,32 @@ var Event=Class.extend({
     },
     /*
     *会清除掉 倾听对象上挂载的相应事件队列函数
+    *如果 obj为空 则清除掉 所有倾听队列上的对象
+    *如果只传obj参数 清除obj相应函数后 同时删除listeningTo[id]
     */
     stopListening: function(obj, name, callback) {
-        var listeningTo = this._listeningTo;
-        if (!listeningTo) return this;
-        var remove = !name && !callback;
-        if (!callback && typeof name === 'object') callback = this;
-        if (obj) (listeningTo = {})[obj._listenId] = obj;
-        for (var id in listeningTo) {
-            obj = listeningTo[id];
-            obj.off(name, callback, this);
-            if (remove || _.isEmpty(obj._events)) delete this._listeningTo[id];
+        var self=this;
+        if(!self._listeningTo) return self;
+
+        //获取倾听对象列表
+        //如果obj为空 则取全部倾听对象队列
+        var listenArray;
+        if(obj && obj._listenId){
+            listenArray={};
+            listenArray[obj._listenId]=obj;
+        }else{
+            listenArray=self._listeningTo;
         }
-        return this;
+
+        //清除相应队列上的事件函数
+        var id,
+            listenObj;
+        for(id in listenArray){
+            listenObj=listenArray[id];
+            listenObj.off(name,callback,self);
+            if(!name && !callback) delete self._listeningTo[id];
+        }
+        return self;
     }
 })
 

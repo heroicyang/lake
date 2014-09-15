@@ -5,6 +5,15 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<script>
+		var file;
+		var xhr = new XMLHttpRequest();
+		xhr.send(file);
+		xhr.upload.addEventListener("progress", function (e) {
+        	//e.loaded
+            //e.total
+            //e.lengthComputable ??????????????????????????
+        }, false);
+	</script>
 </body>
 </html>

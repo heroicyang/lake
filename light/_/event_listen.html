@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BASE</title>
+	<script src="underscore.js" type="text/javascript"></script>
+	<script src="base.js" type="text/javascript"></script>
+</head>
+<body>
+	<script>   
+		var pa=new Event();
+		var pb=new Event();
+
+		pa.name="photoshop a";
+		pb.name="photoshop b";
+
+		function evea0(){
+			console.log('pb evea 0');
+		}
+		function evea1(){
+			console.log('pb evea 1');
+		}
+		function eveb0(){
+			console.log('pb eveb 0');
+		}
+		function eveb1(){
+			console.log('pb eveb 1');
+		}
+
+		pa.listenTo(pb,'evea',evea0);
+		pa.listenTo(pb,'evea',evea1);
+		pa.listenTo(pb,'eveb',eveb0);
+		pa.listenTo(pb,'eveb',eveb1);
+
+		pb.trigger('evea');
+		pb.trigger('eveb');
+		console.log('--------------------------------------------------------------');
+		pa.stopListening(pb,'eveb',eveb0);
+		pb.trigger('evea');
+		pb.trigger('eveb');
+
+	</script>
+</body>
+</html>
