@@ -28,6 +28,7 @@ sera.on('request',function(req,res){
 		pathname=pathname+set.index;
 	}
 
+	//
 	var realpath=path.join(set.spath,path.normalize(pathname.replace('..','')));
 	console.log(req.url);
     console.log(realpath);
@@ -44,9 +45,15 @@ sera.on('request',function(req,res){
 			var ext=path.extname(realpath);
 			ext=ext ? ext.slice(1):'unknown';
 
-			var raw=fs.createReadStream(realpath);
 			var contenttype=mime[ext] || "text/plain";
-			res.writeHead(200,{'Content-Type':contenttype});
+
+			res.setHeader('X-powerd-by','avaer');
+			res.setHeader('Hello','world');
+			res.setHeader('Content-Type',contenttype);
+			res.removeHeader('Hello');
+			res.writeHead(200);
+			
+			var raw=fs.createReadStream(realpath);			
 			raw.pipe(res);
 		}
 	})

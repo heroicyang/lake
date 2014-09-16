@@ -3,5 +3,5 @@
 *=========*/
 module.exports={
 	index:"index.html",
-	spath:"s"
+	spath:"../../html5/try/ajax"
 };
