@@ -9,23 +9,41 @@ module.exports=function(grunt){
 				]
 			}
 		},
-		//合并命令
+		/*
+		*文件合并命令
+		*/
 		concat:{
-			dist:{
+			js:{
 				src:['src/**/*.js'],
 				dest:'dist/main.js'
+			},
+			css:{
+				src:['src/style/**/*.css'],
+				dest:'dist/style/main.css'
 			}
 		},
-		//压缩命令
+		/**
+		*js压缩合并命令
+		*/
 		uglify:{
 			options: {
       			banner: '/*hello world\n haha*/\n'
     		},
 			dist:{
-				files:{'dist/main.min.js':['src/**/*.js']}
+				files:{'dest/main.min.js':['src/lib/underscore.js','src/lib/**/*.js','src/app.js','src/module/**/*.js']}
 			}
 		},
-		//观察任务
+		/**
+		*css合并压缩命令
+		*/
+		cssmin:{
+			main:{
+				files:{'dist/style/main.css':['src/style/**/*.css']}
+			}
+		},
+		/**
+		*观察任务
+		*/
 		watch:{
 			files:['src/**/*.js'],
 			tasks:['uglify']
@@ -36,6 +54,7 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.registerTask('default',['uglify']);
 }
