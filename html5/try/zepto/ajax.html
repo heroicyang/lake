@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="zepto.min.js"></script>
+	<script src="callbacks.js"></script>
+	<script src="deferred.js"></script>
+</head>
+<body>
+	<h1>Hello Ajax!</h1>
+	<script>
+	var xhr=$.ajax({
+		type:'get',
+		url:'water.txt',
+		beforeSend:function(xhr,settings){
+			//console.log('--------------beforeSend settings----------');
+			//console.log(xhr);
+			//console.log(settings);
+		},
+		error:function(xhr, errorType, error){
+
+		},
+		success:function(data,status,xhr){
+			console.log('-------------success callback---------------');
+			console.log(data);
+			console.log(status);
+			console.log(xhr);
+		},
+		complete:function(xhr, status){
+			console.log('------------complete callback---------------');
+			console.log(xhr);
+			console.log(status);
+		}
+	})
+	
+	//var xhr=$.ajax({type:'get',url:'water.txt'});
+	xhr.done(function(){
+		console.log('[done]');
+	});
+	xhr.fail(function(){
+		console.log('[fail]');
+	});
+	xhr.always(function(){
+		console.log('[always]');
+	});
+	xhr.then(function(){
+		console.log('[then done]');
+	},function(){
+		console.log('[then fail]');
+	});
+	</script>
+</body>
+</html>

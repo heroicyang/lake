@@ -30,8 +30,8 @@ sera.on('request',function(req,res){
 
 	//
 	var realpath=path.join(set.spath,path.normalize(pathname.replace('..','')));
-	console.log(req.url);
-    console.log(realpath);
+	//console.log(req.url);
+    //console.log(realpath);
      
 
 	/////////读取文件 并传送
@@ -47,10 +47,10 @@ sera.on('request',function(req,res){
 
 			var contenttype=mime[ext] || "text/plain";
 
-			res.setHeader('X-powerd-by','avaer');
-			res.setHeader('Hello','world');
+			//res.setHeader('X-powerd-by','avaer');
+			//res.setHeader('Hello','world');
 			res.setHeader('Content-Type',contenttype);
-			res.removeHeader('Hello');
+			//res.removeHeader('Hello');
 			res.writeHead(200);
 			
 			var raw=fs.createReadStream(realpath);			
