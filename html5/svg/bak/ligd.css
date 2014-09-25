@@ -1,0 +1,20 @@
+.tpl-chart{
+	margin-top: 20px;
+}
+.tpl-chart-card{
+	background: #fefefe;
+	height: 360px;
+	margin-bottom: 20px;
+	border: 1px #ccc solid;
+}
+.tpl-module{
+	background: #fefefe;
+	border: 1px #ccc solid;
+}
+#chart-funnel{height: 600px;}
+.mn-select-box .mn-select-title{
+	width: 272px;
+}
+.test .ui-select-item{
+	width: 300px;
+}

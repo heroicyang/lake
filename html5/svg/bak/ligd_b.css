@@ -1,0 +1,13 @@
+.tpl-module{
+	margin-top: 20px;
+	background: #fff;
+	border: 1px #ccc solid;
+	min-height: 110px;
+	padding: 20px;
+}
+.overlay{
+	min-height: 200px;
+}
+.-module-schedule-container{
+	width: 300px;
+}
