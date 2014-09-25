@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Line</title>
+    <script src="../metro/underscore.js"></script>
+	<script src="../metro/jquery.js"></script>
+	<script src="../metro/raphael.js"></script>
+	<script src="../metro/chart-helper.js"></script>
+	<script src="../metro/chart.js"></script>
+    <style>
+        body{
+            background: #eee;
+        }
+        #lineWrapper{
+            width: 1200px;
+            margin: 20px auto;
+            height: 400px;
+            background:#fff;
+            border-radius: 4px;
+            padding: 0 20px;
+            border: 1px #ccc solid;
+        }
+        #bubbleWrapper{
+            width: 1200px;
+            margin: 20px auto;
+            height: 400px;
+            background:#fff;
+            border-radius: 4px;
+            padding: 0 20px;
+            border: 1px #ccc solid;
+        }
+        #funnelWrapper{
+            width: 1200px;
+            margin: 20px auto;
+            height: 400px;
+            background:#fff;
+            border-radius: 4px;
+            padding: 0 20px;
+            border: 1px #ccc solid;
+        }
+        #popWrapper{
+            width: 1200px;
+            margin: 20px auto;
+            height: 400px;
+            background:#fff;
+            border-radius: 4px;
+            padding: 0 20px;
+            border: 1px #ccc solid;
+        }
+    </style>
+</head>
+<body>
+	<div id="lineWrapper">
+		
+	</div>
+    <div id="bubbleWrapper">
+        
+    </div>
+
+    <div id="funnelWrapper">
+        
+    </div>
+
+    <div id="popWrapper">
+        
+    </div>
+	<script>
+        //初始化line图
+		var line=new Line({
+            "element":"#lineWrapper"
+        });
+        line.render({
+            xAxis:['a','b','c','d','e','f','g','h','i','j','k','l'],
+            yAxis:{
+                max:800,
+                linenum:5
+            },
+            title:"潘达拉的星空",
+            template:"<%=num%>树木<%=dataa%>,河水<%=datab%>",
+            width:1200,          //宽度(px)
+            height:400,         //高度(px)
+            topgutter:60,       //顶部边距(px)
+            bottomgutter:60,    //底部边距(px)
+            series:[
+                {
+                    name:'部落A',
+                    type:'cube',
+                    mark:'dataa',
+                    data:[10,180,110,300,220,520,116,460,120,340,311,660],
+                    color:'orange'
+                },
+                {
+                    name:'部落B',
+                    type:'dbcube',
+                    mark:'datab',
+                    data:[[10,10],[180,110],[130,110],[520,300],[460,220],[520,340],[280,116],[660,460],[240,120],[600,340],[540,311],[660,220]],
+                    color:'#ccc',
+                    lcolor:'orange'
+                },
+                {
+                    name:'部落C',
+                    type:'line',
+                    mark:'datac',
+                    data:[10,180,110,300,220,520,116,460,120,340,311,660],
+                    color:'green'
+                },
+                {
+                    name:'部落D',
+                    type:'line',
+                    mark:'datad',
+                    data:[240,320,10,30,520,120,316,160,420,140,211,160],
+                    color:'#00aeff'
+                }
+            ]
+        })
+
+        //初始化Bubble图
+        var bubble=new Bubble({
+            "element":"#bubbleWrapper",
+        });
+        bubble.render({
+            width:1200,          //宽度(em)
+            height:400,         //高度(em)
+            topgutter:60,       //顶部边距(em)
+            bottomgutter:60,    //底部边距(em)
+            rightgutter:20,     //右边距(em)
+            tip:"森林是<%=name%>,河水是<%=num%>",
+            xAxis:{
+                label:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                start:0,
+                end:120  
+            },
+            yAxis:{
+                max:100,
+                linenum:2,
+                label:function(value){
+                    return value+'%';
+                }
+            },
+            series:[
+                
+                {   
+                    type:'normal',
+                    name:'bubblea',
+                    data: [[97,36,18],[94,74,28],[68,76,18],[64,87,28],[68,27,18],[74,90,28],[7,93,18],[51,16,38],[38,12,48],[57,86,18]],
+                    color:'#0ba6da'
+                },
+                {
+                    type:'normal',
+                    name:'bubbleb',
+                    data:[[25,10,18],[2,75,18],[11,54,9],[86,55,7],[5,30,11],[90,63,22],[91,33,11],[97,30,13],[15,67,21],[54,25,18]],
+                    color:'#5153aa'
+                },
+                
+                {
+                    type:'num',
+                    name:'bubblec',
+                    data:[[15,47,4],[25,12,8],[35,76,2],[45,30,8],[55,98,8],[65,17,8],[75,60,8],[85,78,8],[95,12,8],[105,77,12]],
+                    color:'#1ed2dc'
+                },
+                {
+                    type:'num',
+                    name:'bubbled',
+                    data:[[5,47,8],[15,12,8],[25,176,8],[35,30,8],[45,98,8],[55,17,8],[65,60,8],[75,78,8],[85,12,8],[95,77,8]],
+                    color:'orange'
+                }
+            ]
+        })
+
+        //初始化漏斗图
+        var funnel=new Funnel({
+            "element":"#funnelWrapper"
+        });
+        funnel.render({
+                width:450,                //宽度(em)
+                height:460,               //高度(em)
+                toppadding:0,            //顶部边距(em)
+                bottompadding:0,         //底部边距(em)
+                rightpadding:150,         //右部边距(em)
+                title:"部落图",
+                series:{
+                    name:'Unique users',
+                    label:function(val){return '呼呼'+val},
+                    data:[
+                        ['部落A',600,'#1ed2dc'],
+                        ['部落B',500,'#277ebf'],
+                        ['部落C',400,'#a434a6'],
+                        ['部落D',300,'#ee5582'],
+                        ['部落E',200,'#f3674c'],
+                        ['部落F',100,'#ff963c']
+                    ]
+                }
+        });
+
+        //popup试验
+        var poppaper=Raphael($('#popWrapper')[0],600,400);
+
+        poppaper.circle(200,100,6);
+        poppaper.circle(300,100,6);
+        poppaper.circle(400,100,6);
+        poppaper.circle(200,200,6);
+        poppaper.circle(300,200,6);
+        poppaper.circle(400,200,6);
+        poppaper.circle(200,300,6);
+        poppaper.circle(300,300,6);
+        poppaper.circle(400,300,6);
+
+
+        var popup=poppaper.popup(200,100,"hello world \n this is pandula world \n what a beautiful world","left-top","start");
+        poppaper.popup(300,100,"hello world","middle-top");
+        poppaper.popup(400,100,"hello world","right-top");
+        poppaper.popup(200,200,"hello world","left-middle");
+        poppaper.popup(300,200,"hello world","middle-middle");
+        poppaper.popup(400,200,"hello world","right-middle");
+        poppaper.popup(200,300,"hello world","left-bottom");
+        poppaper.popup(300,300,"hello world","middle-bottom");
+        poppaper.popup(400,300,"hello world","right-bottom");
+        popup.ltranslate(400,0,"hello world \n this is pandula world \n what a beautiful world","right-bottom");
+	</script>
+</body>
+</html>
+

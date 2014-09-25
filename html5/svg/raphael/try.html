@@ -8,6 +8,7 @@
         </title>
         <script src="metro/raphael.js"></script>
         <script src="metro/raphael.wave.js"></script>
+        <script src="metro/Tu.js"></script>
         <script src="metro/render.js"></script>
         <style>
             body{ background: #f7f7f7; }
@@ -40,7 +41,7 @@ var datas =[
 //广序遍历后完成的数组
 var arr=Tu.trans(datas);
 //绘制后的元素指针
-var SS=render(arr,paper);
+var SS=Tu.render(arr,paper);
 
 //将SS.circles元素存入组markers
 var markers=paper.set();
