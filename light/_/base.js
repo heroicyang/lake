@@ -208,6 +208,8 @@ var Event=Class.extend({
         return self;
     },
     /*
+    *对象如果继承自Event且有listen队列 则destory时
+    *要调用下stoplistenging 避免listen对象上挂载过多的 无用事件函数
     *会清除掉 倾听对象上挂载的相应事件队列函数
     *如果 obj为空 则清除掉 所有倾听队列上的对象
     *如果只传obj参数 清除obj相应函数后 同时删除listeningTo[id]
