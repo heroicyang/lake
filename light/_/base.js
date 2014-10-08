@@ -3,7 +3,11 @@
 * Base
 */
 var ARRAY=[];
-
+/*
+*Class 基类
+*由Class继承的类
+*默认执行_init_函数        
+*/
 function Class(){
 
 }
@@ -239,6 +243,19 @@ var Event=Class.extend({
         return self;
     }
 })
-
+/**
+*Controller
+*destory的时候
+*应该注意什么
+* 首先 remove linkDom
+*      stopListening
+*      清除掉$wrapper???
+*      清除掉所有属性
+*/
+var Controller=Event.extend({
+    _init_:function(WraperEl){
+        this.$wrapper=WraperEl;
+    }
+})
 
 
