@@ -64,8 +64,26 @@
                 name: 'London',
                 data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
             }
+        var  xAxis={
+                categories: ['Janjanjanjan', 'Febfebfebfebfeb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels:{
+                    rotation:-40
+                }
+            }
+        var yAxis={
+             title: {
+                    text: 'Temperature (°C)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+        }
         var chart=new Highcharts.Chart(options);
     //chart.destroy();
+    //chart.series[0].remove()
+    //chart.addSeries(serie)
 	</script>
 </body>
 </html>
