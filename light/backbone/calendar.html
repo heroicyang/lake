@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="underscore.js"></script>
+	<script src="jquery.js"></script>
+	<script src="backbone.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="calendar">
+			<div><span>LL</span><span>2014</span><span>II</span></div>
+			<table>
+				<tr><td>一月</td><td>二月</td><td>三月</td><td>四月</td></tr>
+				<tr><td>五月</td><td>六月</td><td>七月</td><td>八月</td></tr>
+				<tr><td>九月</td><td>十月</td><td>十一月</td><td>十二月</td></tr>
+			</table>
+		</div>
+	</div>
+	<script type="text/template" id="calendar">
+	 
+	</script>
+	<script>
+
+		var Calendar=Backbone.View.extend({
+			el:"<section>",
+			template:"<p>mengge</p>",
+			events:{
+				"click p":"action"
+			},
+			initialize:function(){
+				this.$el.html(this.template);
+			},
+			action:function(){
+				this.model.aa();
+			}
+		})
+	
+		//$('.container').append(viewa.el).append(viewb.el);
+	</script>
+</body>
+</html>
